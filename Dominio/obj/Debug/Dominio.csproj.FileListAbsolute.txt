@@ -1,0 +1,6 @@
+C:\Mis Proyectos\TP_Final_Grupal\Dominio\bin\Debug\Dominio.dll
+C:\Mis Proyectos\TP_Final_Grupal\Dominio\bin\Debug\Dominio.pdb
+C:\Mis Proyectos\TP_Final_Grupal\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Mis Proyectos\TP_Final_Grupal\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Mis Proyectos\TP_Final_Grupal\Dominio\obj\Debug\Dominio.dll
+C:\Mis Proyectos\TP_Final_Grupal\Dominio\obj\Debug\Dominio.pdb
