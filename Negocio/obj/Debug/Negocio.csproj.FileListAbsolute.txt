@@ -7,3 +7,12 @@ C:\Mis Proyectos\TP_Final_Grupal\Negocio\obj\Debug\Negocio.csproj.CoreCompileInp
 C:\Mis Proyectos\TP_Final_Grupal\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Mis Proyectos\TP_Final_Grupal\Negocio\obj\Debug\Negocio.dll
 C:\Mis Proyectos\TP_Final_Grupal\Negocio\obj\Debug\Negocio.pdb
+C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Negocio\obj\Debug\Negocio.dll
+C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Negocio\obj\Debug\Negocio.pdb
+C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Negocio\bin\Debug\Negocio.dll
+C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Negocio\bin\Debug\Negocio.pdb
+C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Negocio\bin\Debug\Dominio.dll
+C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Negocio\bin\Debug\Dominio.pdb
+C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Negocio\obj\Debug\Negocio.csproj.CopyComplete

@@ -12,6 +12,7 @@ namespace Negocio
         public SqlDataReader lector { get; set; }
         public SqlConnection conexion { get; }
         public SqlCommand comando { get; set; }
+        private int affectedRows;
 
         //funcion para conectar a base de datos
         public AccesoDatos()
@@ -20,6 +21,7 @@ namespace Negocio
             conexion = new SqlConnection("data source=localhost\\SQLEXPRESS; initial catalog=POKEDEX_DB; integrated security=sspi");
             comando = new SqlCommand();
             comando.Connection = conexion;
+            affectedRows = 0;
         }
 
         // funcion para modificar consultas a base de datos
@@ -28,6 +30,24 @@ namespace Negocio
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = consulta;
         }
+
+        public void prepareStatement(string statement)
+        {
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = statement;
+        }
+
+        // funcion para obtener lector
+        public SqlDataReader getReader()
+        {
+            return lector;
+        }
+        // funcion para obtener filas afectadas
+        public int getAffectedRows()
+        {
+            return affectedRows;
+        }
+
 
         // funcion para modificar stored procedures
         public void setearSP(string sp)
@@ -40,6 +60,13 @@ namespace Negocio
         {
             comando.Parameters.AddWithValue(nombre, valor);
         }
+
+        //funcion para cerrar conexion
+        public void cerrarConexion()
+        {
+            conexion.Close();
+        }
+
 
         //funcion para ejecutra lectura de base de datos
         public void ejecutarLector()
@@ -55,7 +82,7 @@ namespace Negocio
             }
             finally
             {
-              conexion.Close();
+                cerrarConexion();
             }
         }
 
@@ -74,9 +101,13 @@ namespace Negocio
             }
             finally
             {
-                conexion.Close();
+                cerrarConexion();
             }
         }
+
+        
+
+
 
     }
 }
