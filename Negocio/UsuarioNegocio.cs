@@ -18,7 +18,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearQuery("insert into clientes values(@nombreusuario,@contraseña,@nombre,@apellido,@dni,@localidad,@direccion,@numero,@cp,@telefono,@email,@estado)");
+                datos.setearQuery("insert into clientes values(@nombreusuario,@contraseña,@nombre,@apellido,@dni,@localidad,@direccion,@cp,@telefono,@email,@estado)");
                 datos.agregarParametro("@nombreusuario", cliente.nombre);
                 datos.agregarParametro("@constraseña", cliente.constraseña);
                 datos.agregarParametro("@nombre", cliente.nombre);
@@ -26,7 +26,6 @@ namespace Negocio
                 datos.agregarParametro("@dni", cliente.dni);
                 datos.agregarParametro("@localidad", cliente.localidad);
                 datos.agregarParametro("@direccion", cliente.direccion);
-                datos.agregarParametro("@numero",cliente.numero);
                 datos.agregarParametro("@cp", cliente.cp);
                 datos.agregarParametro("@telefono", cliente.telefono);
                 datos.agregarParametro("@email", cliente.email);

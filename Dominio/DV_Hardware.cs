@@ -14,7 +14,6 @@ namespace Dominio
         public Double precio_unitario { get; set; }
         public int cantidad_total { get; set; }
         public double subtotal { get; set; }
-        public Boolean estado { get; set; }
 
     }
 }

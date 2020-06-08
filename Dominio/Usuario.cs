@@ -16,7 +16,6 @@ namespace Dominio
         public string dni { get; set; }
         public string localidad { get; set; }
         public string direccion { get; set; }
-        public int numero { get; set; }
         public string cp { get; set; }
         public string telefono { get; set; }
         public string email { get; set; }

@@ -13,7 +13,6 @@ namespace Dominio
         public int id_actividad { get; set; }
         public string descripcion { get; set; }
         public double subtotal { get; set; }
-        public Boolean estado { get; set; }
 
     }
 }

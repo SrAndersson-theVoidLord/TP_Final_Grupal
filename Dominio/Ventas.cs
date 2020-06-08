@@ -12,7 +12,6 @@ namespace Dominio
         public int id_cliente { get; set; }
         public DateTime fecha { get; set; }
         public Double total { get; set; }
-        public Boolean estado { get; set; }
 
 
     }

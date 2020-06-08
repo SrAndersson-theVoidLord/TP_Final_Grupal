@@ -16,7 +16,6 @@ namespace Dominio
         public Double precio_final { get; set; }
         public DateTime fecha { get; set; }
         public string estado_act { get; set; }
-        public Boolean estado { get; set; }
 
     }
 }
