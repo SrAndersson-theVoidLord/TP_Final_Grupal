@@ -6,7 +6,17 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+<asp:Content ID="Content2" ContentPlaceHolderID="Contenido_menu_contextual" runat="server">
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="Contenido_menu_principal" runat="server">
+
+    <h5> Menu principal </h5>
+
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p>
         <br />
     </p>

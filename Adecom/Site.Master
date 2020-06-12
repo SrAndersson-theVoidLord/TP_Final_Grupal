@@ -27,8 +27,77 @@
     </header>
     <form id="form1" runat="server">
         <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+
+            <div id = "Encabesado">
+
+                <div id = "Contenido_encabesado">
+                    
+                    <div id = "Barra_horizontal">
+                        
+                    </div>
+
+                    <div id = "Logotipo">
+                        
+                    </div>
+
+                    <div id = "Titulo">
+                        
+                        <h1> Adecom </h1>
+
+                    </div>
+
+                    <div id = "Sub_titulo">
+                        
+                        <h3> Tecnologia y servicios varios </h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id = "Columnas">
+
+                <div id = "Columna_izquierda">
+                    <asp:ContentPlaceHolder ID="Contenido_menu_contextual" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+
+                <div id = "Columna_centro">
+
+                    <div id = "Columna_centro_tutulo">
+                        <asp:ContentPlaceHolder ID="Contenido_menu_principal" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+
+                    <div id = "Columna_centro_contenido">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+
+                </div>
+
+                <div id = "Columna_derecha">
+                    
+                </div>
+
+            </div>
+
+            <div id = "Pie_de_pagina">
+
+                <div id = "Pie_superior">
+                    
+                </div>
+
+                <div id = "Pie_inferior">
+                    
+                </div>
+
+            </div>
+
+            <%--<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>--%>
+
         </div>
     </form>
 

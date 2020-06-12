@@ -10,3 +10,9 @@ C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Dominio\obj\Debug\Dominio.csproj
 C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Dominio\obj\Debug\Dominio.dll
 C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Dominio\obj\Debug\Dominio.pdb
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Dominio\bin\Debug\Dominio.dll
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Dominio\bin\Debug\Dominio.pdb
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Dominio\obj\Debug\Dominio.dll
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Dominio\obj\Debug\Dominio.pdb

@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\Temas\Estilo_principal.css" />
     <Content Include="Cliente_armados_a_pedido.aspx" />
     <Content Include="Cliente_contactos.aspx" />
     <Content Include="Cliente_Reparaciones.aspx" />
