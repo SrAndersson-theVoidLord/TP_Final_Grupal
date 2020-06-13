@@ -1,21 +1,114 @@
 ﻿body {
 }
 
+/*Encabesado*/
+
 #Encabesado {
     height: 150px;
     background-color: #a3a2a2;
     color: white;
     /*border: 1px dashed #000000;*/
-    /*box-shadow: 0px 0px 10px #000000;*/
+    box-shadow: 0px 0px 10px #000000;
 }
 
 #Contenido_encabesado {
 
-    width: 800px;
+    width: 960px;
     margin: auto;
 
 }
 
-#Barra_horizontal{
+#Barra_horizontal {
+    height: 40px;
+    background-color: #808080;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0px 0px 10px #000000 inset;
+}
+
+#Logotipo {
+    width: 40%;
+    float: left;
+    text-align: center;
+    margin-top: 5px;
+}
+
+    #Logotipo > img {
+        
+    }
+
+#Titulo {
+    width: 60%;
+    float: left;
+}
+
+    #Titulo > h1 {
+        margin-top: 12px;
+    }
+
+#Sub_titulo{
+
+}
+
+    #Sub_titulo > h3 {
+        margin-top: 12px;
+    }
+
+/*Columnas*/
+
+#Columnas {
+    /*width: 960px;*/
+    /*margin: auto;*/
+    background-color: #303030;
+    /*border-radius: 0px 0px 20px 20px;*/
+    overflow: auto;
+    
+}
+
+#Columna_izquierda, Columna_derecha {
+
+    float: left;
+    width: 20%;
+    min-height: 500px;
+
+}
+
+#Columna_centro {
+
+    float: left;
+    width: 60%;
+    min-height: 500px;
+    background-color: white;
+
+}
+
+#Columna_centro_tutulo {
+
+}
+
+#Columna_centro_contenido {
+
+}
+
+    #Columna_centro_contenido > Button {
+        height: 30px;
+    }
+
+/*Pie de pagina*/
+
+#Pie_de_pagina {
+
+    height: 30px;
+    background-color: #141414;
+    border-radius: 0px 0px 20px 20px;
+    clear: both;
+    box-shadow: 0px 0px 5px inset;
+
+}
+
+#Pie_superior{
+
+}
+
+#Pie_inferior {
 
 }

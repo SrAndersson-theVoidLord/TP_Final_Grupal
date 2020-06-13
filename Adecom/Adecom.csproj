@@ -75,6 +75,37 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Imagenes\1.jpg" />
+    <Content Include="Imagenes\10.jpg" />
+    <Content Include="Imagenes\11.jpg" />
+    <Content Include="Imagenes\12.jpg" />
+    <Content Include="Imagenes\13.jpg" />
+    <Content Include="Imagenes\14.jpg" />
+    <Content Include="Imagenes\15.jpg" />
+    <Content Include="Imagenes\16.jpg" />
+    <Content Include="Imagenes\17.jpg" />
+    <Content Include="Imagenes\18.jpg" />
+    <Content Include="Imagenes\19.jpg" />
+    <Content Include="Imagenes\2.jpg" />
+    <Content Include="Imagenes\20.jpg" />
+    <Content Include="Imagenes\21.jpg" />
+    <Content Include="Imagenes\22.jpg" />
+    <Content Include="Imagenes\23.jpg" />
+    <Content Include="Imagenes\24.jpg" />
+    <Content Include="Imagenes\25.jpg" />
+    <Content Include="Imagenes\26.jpg" />
+    <Content Include="Imagenes\27.jpg" />
+    <Content Include="Imagenes\28.jpg" />
+    <Content Include="Imagenes\29.jpg" />
+    <Content Include="Imagenes\3.jpg" />
+    <Content Include="Imagenes\30.jpg" />
+    <Content Include="Imagenes\4.jpg" />
+    <Content Include="Imagenes\5.jpg" />
+    <Content Include="Imagenes\6.jpg" />
+    <Content Include="Imagenes\7.jpg" />
+    <Content Include="Imagenes\8.jpg" />
+    <Content Include="Imagenes\9.jpg" />
+    <Content Include="Imagenes\Logo.png" />
     <Content Include="Login.aspx" />
     <Content Include="Cliente_Productos.aspx" />
     <Content Include="Registro.aspx" />
@@ -167,6 +198,7 @@
       <Name>Negocio</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
