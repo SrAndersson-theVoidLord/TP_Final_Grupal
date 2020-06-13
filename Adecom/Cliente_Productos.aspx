@@ -17,24 +17,32 @@
     <table class="auto-style1">
         <tr>
             <td class="auto-style3">
-                <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource2" DataKeyField="Id_Provincia">
-                    <ItemTemplate>
-                        <br />
-                        <asp:Button ID="btn_provincias" runat="server" CommandArgument='<%# Eval("Id_Provincia") %>' CommandName="Evento_provincia" Height="40px" OnCommand="btn_provincias_Command" Text='<%# Eval("DescripcionProvincia") %>' Width="200px" />
-                    </ItemTemplate>
-                </asp:DataList>
-            </td>
+                &nbsp;</td>
             <td class="auto-style4">
-                <asp:ListView ID="lvSucursales" runat="server"  GroupItemCount="3" OnSelectedIndexChanged="ListView1_SelectedIndexChanged">
+                <asp:ListView ID="lvProductos" runat="server" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="ListView1_SelectedIndexChanged" GroupItemCount="3">
+                    
+                  
+                <%--    <AlternatingItemTemplate>
+                        <td runat="server" style="background-color:#FFF8DC;">Nombre_HAR:
+                            <asp:Label ID="Nombre_HARLabel" runat="server" Text='<%# Eval("Nombre_HAR") %>' />
+                            <br />
+                            Imagen_HAR:
+                            <asp:Label ID="Imagen_HARLabel" runat="server" Text='<%# Eval("Imagen_HAR") %>' />
+                            <br />
+                            Precio_HAR:
+                            <asp:Label ID="Precio_HARLabel" runat="server" Text='<%# Eval("Precio_HAR") %>' />
+                            <br />
+                        </td>
+                    </AlternatingItemTemplate>--%>
                     <EditItemTemplate>
-                        <td runat="server" style="background-color:#008A8C;color: #FFFFFF;">NombreSucursal:
-                                <asp:TextBox ID="NombreSucursalTextBox" runat="server" Text='<%# Bind("NombreSucursal") %>' />
+                        <td runat="server" style="background-color:#008A8C;color: #FFFFFF;">Nombre_HAR:
+                            <asp:TextBox ID="Nombre_HARTextBox" runat="server" Text='<%# Bind("Nombre_HAR") %>' />
                             <br />
-                            DescripcionSucursal:
-                                <asp:TextBox ID="DescripcionSucursalTextBox" runat="server" Text='<%# Bind("DescripcionSucursal") %>' />
+                            Imagen_HAR:
+                            <asp:TextBox ID="Imagen_HARTextBox" runat="server" Text='<%# Bind("Imagen_HAR") %>' />
                             <br />
-                            URL_Imagen_Sucursal:
-                                <asp:TextBox ID="URL_Imagen_SucursalTextBox" runat="server" Text='<%# Bind("URL_Imagen_Sucursal") %>' />
+                            Precio_HAR:
+                            <asp:TextBox ID="Precio_HARTextBox" runat="server" Text='<%# Bind("Precio_HAR") %>' />
                             <br />
                             <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Actualizar" />
                             <br />
@@ -58,29 +66,31 @@
                         </tr>
                     </GroupTemplate>
                     <InsertItemTemplate>
-                        <td runat="server" style="">NombreSucursal:
-                                <asp:TextBox ID="NombreSucursalTextBox0" runat="server" Text='<%# Bind("NombreSucursal") %>' />
+                        <td runat="server" style="">Nombre_HAR:
+                            <asp:TextBox ID="Nombre_HARTextBox" runat="server" Text='<%# Bind("Nombre_HAR") %>' />
                             <br />
-                            DescripcionSucursal:
-                                <asp:TextBox ID="DescripcionSucursalTextBox0" runat="server" Text='<%# Bind("DescripcionSucursal") %>' />
+                            Imagen_HAR:
+                            <asp:TextBox ID="Imagen_HARTextBox" runat="server" Text='<%# Bind("Imagen_HAR") %>' />
                             <br />
-                            URL_Imagen_Sucursal:
-                                <asp:TextBox ID="URL_Imagen_SucursalTextBox0" runat="server" Text='<%# Bind("URL_Imagen_Sucursal") %>' />
+                            Precio_HAR:
+                            <asp:TextBox ID="Precio_HARTextBox" runat="server" Text='<%# Bind("Precio_HAR") %>' />
                             <br />
                             <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insertar" />
                             <br />
-                            <asp:Button ID="CancelButton0" runat="server" CommandName="Cancel" Text="Borrar" />
+                            <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Borrar" />
                             <br />
                         </td>
                     </InsertItemTemplate>
                     <ItemTemplate>
-                        <td runat="server" style="background-color:#DCDCDC;color: #000000;">&nbsp;<asp:Label ID="NombreSucursalLabel" runat="server" Text='<%# Eval("NombreSucursal") %>' />
-                            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("URL_Imagen_Sucursal") %>' Height="150px" Width="230px" />
+                        <td runat="server" style="background-color:#DCDCDC;color: #000000;">Nombre:
+                            <asp:Label ID="Nombre_HARLabel" runat="server" Text='<%# Eval("Nombre_HAR") %>' />
                             <br />
-                            &nbsp;<asp:Label ID="DescripcionSucursalLabel" runat="server" Text='<%# Eval("DescripcionSucursal") %>' />
+                            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("Imagen_HAR") %>' />
                             <br />
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:Button ID="btnSeleccionar" runat="server" Text="Seleccionar" CommandName="EventoSeleccionar" OnCommand="btnSeleccionar_Command" CommandArgument='<%# Eval("Id_Sucursal") + " ; " + Eval("NombreSucursal") + " ; " + Eval("DescripcionSucursal") %>' />
+                            Precio:$
+                            <asp:Label ID="Precio_HARLabel" runat="server" Text='<%# Eval("Precio_HAR") %>' />
+                            <br />
+                            <asp:Button ID="btnAniadir" runat="server" Text="añadir al carrito" />
                             <br />
                         </td>
                     </ItemTemplate>
@@ -96,11 +106,9 @@
                             </tr>
                             <tr runat="server">
                                 <td runat="server" style="text-align: center;background-color: #CCCCCC;font-family: Verdana, Arial, Helvetica, sans-serif;color: #000000;">
-                                    <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
+                                    <asp:DataPager ID="DataPager1" runat="server" PageSize="12">
                                         <Fields>
-                                            <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
-                                            <asp:NumericPagerField />
-                                            <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                            <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowLastPageButton="True" />
                                         </Fields>
                                     </asp:DataPager>
                                 </td>
@@ -108,14 +116,14 @@
                         </table>
                     </LayoutTemplate>
                     <SelectedItemTemplate>
-                        <td runat="server" style="background-color:#008A8C;font-weight: bold;color: #FFFFFF;">NombreSucursal:
-                                <asp:Label ID="NombreSucursalLabel0" runat="server" Text='<%# Eval("NombreSucursal") %>' />
+                        <td runat="server" style="background-color:#008A8C;font-weight: bold;color: #FFFFFF;">Nombre_HAR:
+                            <asp:Label ID="Nombre_HARLabel" runat="server" Text='<%# Eval("Nombre_HAR") %>' />
                             <br />
-                            DescripcionSucursal:
-                                <asp:Label ID="DescripcionSucursalLabel0" runat="server" Text='<%# Eval("DescripcionSucursal") %>' />
+                            Imagen_HAR:
+                            <asp:Label ID="Imagen_HARLabel" runat="server" Text='<%# Eval("Imagen_HAR") %>' />
                             <br />
-                            URL_Imagen_Sucursal:
-                                <asp:Label ID="URL_Imagen_SucursalLabel" runat="server" Text='<%# Eval("URL_Imagen_Sucursal") %>' />
+                            Precio_HAR:
+                            <asp:Label ID="Precio_HARLabel" runat="server" Text='<%# Eval("Precio_HAR") %>' />
                             <br />
                         </td>
                     </SelectedItemTemplate>
@@ -124,10 +132,9 @@
         </tr>
         <tr>
             <td class="auto-style3">
-                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [DescripcionProvincia], [Id_Provincia] FROM [Provincia]"></asp:SqlDataSource>
-            </td>
+                &nbsp;</td>
             <td class="auto-style4">
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AdecomConnectionString2 %>" SelectCommand="SELECT [Nombre_HAR], [Imagen_HAR], [Precio_HAR] FROM [Hardware]"></asp:SqlDataSource>
             </td>
         </tr>
     </table>
