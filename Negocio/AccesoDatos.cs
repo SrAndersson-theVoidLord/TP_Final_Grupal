@@ -82,7 +82,7 @@ namespace Negocio
             }
             finally
             {
-                cerrarConexion();
+           
             }
         }
 
@@ -101,7 +101,7 @@ namespace Negocio
             }
             finally
             {
-                cerrarConexion();
+             
             }
         }
 

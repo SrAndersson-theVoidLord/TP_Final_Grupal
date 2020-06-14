@@ -4,17 +4,38 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Contenido_menu_contextual" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Contenido_menu_principal" runat="server">
-     <div class="d-flex p-2 bd-highlight">
-        <a class="btn btn-outline-secondary btn-lg border-dark w-25" href="/Cliente_Productos.aspx" >Productos</a>
-        <a class="btn btn-outline-secondary btn-lg border-dark w-25" href="/Cliente_armados_a_pedido.aspx" >Armados a Pedido</a>
-        <a class="btn btn-outline-secondary btn-lg border-dark w-25" href="/Cliente_Reparaciones.aspx" >Reparaciones</a>
-        <a class="btn btn-outline-secondary btn-lg border-dark w-25" href="/Cliente_Contactos.aspx" >Contacto</a>
+         <div class="d-flex p-2 bd-highlight">
+        <a class="btn btn-outline-secondary btn-lg border-dark " style="width:20%" href="/Empleados_Productos.aspx" >Hardware</a>
+        <a class="btn btn-outline-secondary btn-lg border-dark" style="width:20%" href="/Empleados_armados_a_pedido.aspx" >Armados a Pedido</a>
+        <a class="btn btn-outline-secondary btn-lg border-dark" style="width:20%" href="/Empleados_Reparaciones.aspx" >Reparaciones</a>
+        <a class="btn btn-outline-secondary btn-lg border-dark" style="width:20%" href="/Empleados_Usuarios.aspx" >Usuarios</a>
+         <a class="btn btn-outline-secondary btn-lg border-dark" style="width:20%" href="/Empleados_Informes.aspx" >Informes</a>
+        
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-           <div class="bg-light text-center font-weight-bold border border-danger" >
-        <h3>Configuracion Productos</h3>
-
-
+    <div class="bg-light text-center font-weight-bold border border-dark">
+        <h3>Listado Hardware</h3>
     </div>
+    <br />
+    <div >
+       <asp:Button CssClass="btn btn-outline-success w-100" ID="btnAgregarHarware" Text="Agregar Hardware" runat="server" />
+    </div>
+    <div class="card-columns" style="margin-left: 10px; margin-right: 10px;">
+        <% foreach (var item in ListaHardware)
+    
+                       { %>
+        <div class="card">
+            <div class="card-body" style="width: 300px; height: 300px">
+                <div class="card-header text-center bg-white ">ID Hardware: <% = item.id_hardware %></div>
+                <img src="<% = item.imagen %>" class="card-img-top" alt="..." style="width: 200px;">
+                <div class="card-tite  w-100"><% = item.nombre %></div>
+            </div>
+            <asp:Button CssClass="btn btn-outline-warning w-100" ID="btnModificarHarware" Text="Modificar" runat="server" />
+            <asp:Button CssClass="btn btn-outline-danger w-100" ID="btnEliminarHarware" Text="Eliminar" runat="server" />
+        </div>
+        <% } %>
+    </div>
+
+
 </asp:Content>

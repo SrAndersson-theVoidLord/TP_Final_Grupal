@@ -51,7 +51,7 @@ namespace Negocio
             //INSTANCIO LA CONECCION A LA BASE
             AccesoDatos datos = new AccesoDatos();
             //TIRO LA QUERY
-            datos.setearQuery("select nombre, apellido, dni, direccion, localidad, telefono, mail from Clientes where estado = 1");
+            datos.setearQuery("select id_Cliente_CLI, DNI_CLI, Nombre_CLI, Apellido_CLI,NombreUsuario_CLI, Direccion_CLI, Localidad_CLI,Codigo_Postal_CLI, Telefono_CLI, Email_CLI,Estado_CLI from Clientes ");
             //EJECUTO EL LECTOR
             datos.ejecutarLector();
 
@@ -61,13 +61,17 @@ namespace Negocio
             {
                 aux = new Usuario();
 
-                aux.nombre = datos.lector["Nombre"].ToString();
-                aux.apellido = datos.lector["Apellido"].ToString();
-                aux.dni = datos.lector["DNI"].ToString();
-                aux.direccion = datos.lector["Direccion"].ToString();
-                aux.localidad = datos.lector["Localidad"].ToString();
-                aux.telefono = datos.lector["Telefono"].ToString();
-                aux.email = datos.lector["Mail"].ToString();
+                aux.id_Usuario = (int)datos.lector["id_Cliente_CLI"];
+                aux.dni = datos.lector["DNI_CLI"].ToString();
+                aux.nombre = datos.lector["Nombre_CLI"].ToString();
+                aux.apellido = datos.lector["Apellido_CLI"].ToString();
+                aux.nombreusuario = datos.lector["NombreUsuario_CLI"].ToString();
+                aux.direccion = datos.lector["Direccion_CLI"].ToString();
+                aux.localidad = datos.lector["Localidad_CLI"].ToString();
+                aux.cp = datos.lector["Codigo_Postal_CLI"].ToString();
+                aux.telefono = datos.lector["Telefono_CLI"].ToString();
+                aux.email = datos.lector["Email_CLI"].ToString();
+                aux.estado = (Boolean)datos.lector["Estado_CLI"];
 
                 lista.Add(aux);
 

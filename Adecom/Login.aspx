@@ -49,10 +49,10 @@
 
     <div style="height: 70px; width: 10%; float: left">&nbsp</div>
     <div style="height: 70px; width: 15%; float: left">
-        <asp:Button ID="btnInciarSesion" Text="Iniciar Sesion" CssClass="btn btn-dark" runat="server" Width="80%" />
+        <asp:Button ID="btnInciarSesion" Text="Iniciar Sesion" CssClass="btn btn-dark" runat="server" Width="80%" OnClick="btnInciarSesion_Click" />
     </div>
         <div style="height: 70px; width: 45%; float: left">
-        <asp:Button ID="btnRegistrarse" Text="Registrarse" CssClass="btn btn-danger" runat="server" Width="80%" />
+        <asp:Button ID="btnRegistrarse" Text="Registrarse" CssClass="btn btn-danger" runat="server" Width="80%" OnClick="btnRegistrarse_Click" />
     </div>
     <div style="height: 70px; width: 30%; float: left">&nbsp</div>
         

@@ -28,6 +28,10 @@
        <div class="bg-light text-center font-weight-bold border border-danger">
         <h3>Hardware</h3>
     </div>
+    
+    <div class="overflow-auto">
+
+    
     <table class="auto-style1">
         <tr>
             <td class="auto-style3">&nbsp;</td>
@@ -150,4 +154,5 @@
             </td>
         </tr>
     </table>
+ </div>
 </asp:Content>

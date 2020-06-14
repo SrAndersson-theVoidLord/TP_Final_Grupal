@@ -13,5 +13,24 @@ namespace Adecom
         {
 
         }
+
+        protected void btnInciarSesion_Click(object sender, EventArgs e)
+        {
+            if (cbSoyEmpleado.Checked is true)
+            {
+             Response.Redirect("/Empleados_Productos.aspx");
+            }
+            else
+            {
+            Response.Redirect("/Cliente_Productos.aspx");
+            }    
+            
+
+        }
+
+        protected void btnRegistrarse_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Registro.aspx");
+        }
     }
 }

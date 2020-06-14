@@ -10,33 +10,33 @@
 namespace Adecom {
     
     
-    public partial class Empleados_Productos {
+    public partial class Empleados_Usuarios {
         
         /// <summary>
-        /// Control btnAgregarHarware.
+        /// Control btnMostrarClientes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregarHarware;
+        protected global::System.Web.UI.WebControls.Button btnMostrarClientes;
         
         /// <summary>
-        /// Control btnModificarHarware.
+        /// Control btnMostrarEmpleados.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnModificarHarware;
+        protected global::System.Web.UI.WebControls.Button btnMostrarEmpleados;
         
         /// <summary>
-        /// Control btnEliminarHarware.
+        /// Control gvUsuarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEliminarHarware;
+        protected global::System.Web.UI.WebControls.GridView gvUsuarios;
     }
 }
