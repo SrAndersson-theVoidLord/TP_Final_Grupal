@@ -3,26 +3,39 @@
     <style type="text/css">
 
         .auto-style3 {
-            width: 546px;
+            width: 19%;
         }
         .auto-style4 {
-            width: 348px;
+            width: 79%;
         }
         .auto-style1 {
             width: 100%;
         }
         </style>
 </asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="Contenido_menu_principal" runat="server">
+
+    <div class="d-flex p-2 bd-highlight">
+        <a class="btn btn-outline-secondary btn-lg border-dark w-25" href="/Cliente_Productos.aspx" >Productos</a>
+        <a class="btn btn-outline-secondary btn-lg border-dark w-25" href="/Cliente_armados_a_pedido.aspx" >Armados a Pedido</a>
+        <a class="btn btn-outline-secondary btn-lg border-dark w-25" href="/Cliente_Reparaciones.aspx" >Reparaciones</a>
+        <a class="btn btn-outline-secondary btn-lg border-dark w-25" href="/Cliente_Contactos.aspx" >Contacto</a>
+    </div>
+
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+       <div class="bg-light text-center font-weight-bold border border-danger">
+        <h3>Hardware</h3>
+    </div>
     <table class="auto-style1">
         <tr>
-            <td class="auto-style3">
-                &nbsp;</td>
+            <td class="auto-style3">&nbsp;</td>
             <td class="auto-style4">
                 <asp:ListView ID="lvProductos" runat="server" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="ListView1_SelectedIndexChanged" GroupItemCount="3">
-                    
-                  
-                <%--    <AlternatingItemTemplate>
+
+
+                    <%--    <AlternatingItemTemplate>
                         <td runat="server" style="background-color:#FFF8DC;">Nombre_HAR:
                             <asp:Label ID="Nombre_HARLabel" runat="server" Text='<%# Eval("Nombre_HAR") %>' />
                             <br />
@@ -35,7 +48,7 @@
                         </td>
                     </AlternatingItemTemplate>--%>
                     <EditItemTemplate>
-                        <td runat="server" style="background-color:#008A8C;color: #FFFFFF;">Nombre_HAR:
+                        <td runat="server" style="background-color: #008A8C; color: #FFFFFF;">Nombre_HAR:
                             <asp:TextBox ID="Nombre_HARTextBox" runat="server" Text='<%# Bind("Nombre_HAR") %>' />
                             <br />
                             Imagen_HAR:
@@ -51,7 +64,7 @@
                         </td>
                     </EditItemTemplate>
                     <EmptyDataTemplate>
-                        <table runat="server" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;">
+                        <table runat="server" style="background-color: #FFFFFF; border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px;">
                             <tr>
                                 <td>No se han devuelto datos.</td>
                             </tr>
@@ -82,7 +95,7 @@
                         </td>
                     </InsertItemTemplate>
                     <ItemTemplate>
-                        <td runat="server" style="background-color:#DCDCDC;color: #000000;">Nombre:
+                        <td runat="server" style="background-color: #DCDCDC; color: #000000;">Nombre:
                             <asp:Label ID="Nombre_HARLabel" runat="server" Text='<%# Eval("Nombre_HAR") %>' />
                             <br />
                             <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("Imagen_HAR") %>' />
@@ -98,14 +111,14 @@
                         <table runat="server">
                             <tr runat="server">
                                 <td runat="server">
-                                    <table id="groupPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
+                                    <table id="groupPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF; border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px; font-family: Verdana, Arial, Helvetica, sans-serif;">
                                         <tr id="groupPlaceholder" runat="server">
                                         </tr>
                                     </table>
                                 </td>
                             </tr>
                             <tr runat="server">
-                                <td runat="server" style="text-align: center;background-color: #CCCCCC;font-family: Verdana, Arial, Helvetica, sans-serif;color: #000000;">
+                                <td runat="server" style="text-align: center; background-color: #CCCCCC; font-family: Verdana, Arial, Helvetica, sans-serif; color: #000000;">
                                     <asp:DataPager ID="DataPager1" runat="server" PageSize="12">
                                         <Fields>
                                             <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowLastPageButton="True" />
@@ -116,7 +129,7 @@
                         </table>
                     </LayoutTemplate>
                     <SelectedItemTemplate>
-                        <td runat="server" style="background-color:#008A8C;font-weight: bold;color: #FFFFFF;">Nombre_HAR:
+                        <td runat="server" style="background-color: #008A8C; font-weight: bold; color: #FFFFFF;">Nombre_HAR:
                             <asp:Label ID="Nombre_HARLabel" runat="server" Text='<%# Eval("Nombre_HAR") %>' />
                             <br />
                             Imagen_HAR:
@@ -131,8 +144,7 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style3">
-                &nbsp;</td>
+            <td class="auto-style3">&nbsp;</td>
             <td class="auto-style4">
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AdecomConnectionString2 %>" SelectCommand="SELECT [Nombre_HAR], [Imagen_HAR], [Precio_HAR] FROM [Hardware]"></asp:SqlDataSource>
             </td>

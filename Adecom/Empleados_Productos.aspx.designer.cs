@@ -10,6 +10,6 @@
 namespace Adecom {
     
     
-    public partial class Default {
+    public partial class Empleados_Productos {
     }
 }

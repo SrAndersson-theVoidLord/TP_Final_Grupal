@@ -4,108 +4,94 @@
 
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link href="Content\bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
-    <link href="Content\bootstrap-reboot.min.css" rel="stylesheet" type="text/css"/>
-    <link href="Content\bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="Content\bootstrap-grid.min.css" rel="stylesheet" type="text/css" />
+    <link href="Content\bootstrap-reboot.min.css" rel="stylesheet" type="text/css" />
+    <link href="Content\bootstrap.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <header>
-        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-            <h5 class="my-0 mr-md-auto font-weight-normal">ADECOM</h5>
-            <nav class="my-2 my-md-0 mr-md-3">
-                <a class="p-2 text-dark" href="#">&nbsp</a>
-                <a class="p-2 text-dark" href="#">&nbsp</a>
-                <a class="p-2 text-dark" href="#">&nbsp</a>
-                <a class="p-2 text-dark" href="#">Ver Carrito</a>
-            </nav>
-          <a class="btn btn-outline-primary" href="#">Iniciar Sesion</a>
-        </div>
-    </header>
     <form id="form1" runat="server">
+        <div class="d-flex flex-column flex-md-row  p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+            <asp:HyperLink ID="hlPaginaPrincipal" CssClass="my-0 mr-md-auto font-weight-bold text-dark text-decoration-none" Font-Size="X-Large" runat="server" NavigateUrl="~/pagina_principal.aspx">ADECOM</asp:HyperLink>
+
+            <nav class="my-2 my-md-0 mr-md-3">
+                <asp:HyperLink ID="hlVerCarrito" CssClass="my-0 mr-md-auto font-weight-bold text-dark text-decoration-none" runat="server" NavigateUrl="~/VerCarrito.aspx" ImageUrl="~/Imagenes/Carrito2.png" ImageHeight="40px"></asp:HyperLink>
+            </nav>
+            <asp:HyperLink ID="hlIniciarSesion" CssClass="btn btn-outline-success" runat="server" NavigateUrl="~/Login.aspx">Iniciar Sesion</asp:HyperLink>
+        </div>
         <div>
 
-            <div id = "Encabesado">
+            <div id="Encabesado">
 
-                <div id = "Contenido_encabesado">
-                    
-                    <div id = "Barra_horizontal">
-                        
+                <div id="Contenido_encabesado">
+
+                    <div id="Barra_horizontal">
                     </div>
 
-                    <div id = "Logotipo">
-                        
-                        <img src="/Imagenes/Logo.png" alt ="Logo" height="100px"/>
+                    <div id="Logotipo">
 
-                    </div>
-
-                    <div id = "Titulo">
-                        
-                        <h1> Adecom </h1>
+                        <img src="/Imagenes/Logo.png" alt="Logo" height="100px" />
 
                     </div>
 
-                    <div id = "Sub_titulo">
-                        
-                        <h3> Tecnologia y servicios varios </h3>
+                    <div id="Titulo">
+
+                        <h1>Adecom </h1>
+
+                    </div>
+
+                    <div id="Sub_titulo">
+
+                        <h3>Tecnologia y servicios varios </h3>
 
                     </div>
 
                 </div>
 
             </div>
+            <div class="flex-row border-bottom" style="height: 10px">&nbsp</div>
+            <div id="Columnas">
 
-            <div id = "Columnas">
-
-                <div id = "Columna_izquierda">
+                <div id="Columna_izquierda">
                     <asp:ContentPlaceHolder ID="Contenido_menu_contextual" runat="server">
                     </asp:ContentPlaceHolder>
                 </div>
 
-                <div id = "Columna_centro">
+                <div id="Columna_centro">
 
-                    <div id = "Columna_centro_tutulo">
+                    <div id="Columna_centro_tutulo">
                         <asp:ContentPlaceHolder ID="Contenido_menu_principal" runat="server">
                         </asp:ContentPlaceHolder>
                     </div>
 
-                    <div id = "Columna_centro_contenido">
+                    <div id="Columna_centro_contenido">
                         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                         </asp:ContentPlaceHolder>
                     </div>
 
                 </div>
 
-                <div id = "Columna_derecha">
-                    
+                <div id="Columna_derecha">
                 </div>
 
             </div>
 
-            <div id = "Pie_de_pagina">
+            <div id="Pie_de_pagina">
 
-                <div id = "Pie_superior">
-                    
+                <div id="Pie_superior">
                 </div>
 
-                <div id = "Pie_inferior">
-                    
+                <div id="Pie_inferior">
                 </div>
 
             </div>
 
-            <%--<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>--%>
+
 
         </div>
     </form>
-
-   
-    <footer>
-
-    </footer>
 </body>
 </html>

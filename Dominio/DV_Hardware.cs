@@ -8,7 +8,6 @@ namespace Dominio
 {
     public class DV_Hardware
     {
-        public int id_dv { get; set; }
         public int id_ventas { get; set; }
         public int id_hardware { get; set; }
         public Double precio_unitario { get; set; }

@@ -74,7 +74,8 @@
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Default.aspx" />
+    <Content Include="Empleados_Informes.aspx" />
+    <Content Include="Empleados_Productos.aspx" />
     <Content Include="Imagenes\1.jpg" />
     <Content Include="Imagenes\10.jpg" />
     <Content Include="Imagenes\11.jpg" />
@@ -105,10 +106,12 @@
     <Content Include="Imagenes\7.jpg" />
     <Content Include="Imagenes\8.jpg" />
     <Content Include="Imagenes\9.jpg" />
+    <Content Include="Imagenes\Carrito2.png" />
     <Content Include="Imagenes\Logo.png" />
     <Content Include="Login.aspx" />
     <Content Include="Cliente_Productos.aspx" />
     <Content Include="Registro.aspx" />
+    <Content Include="VerCarrito.aspx" />
     <Content Include="Web.config" />
     <Content Include="pagina_principal.aspx" />
   </ItemGroup>
@@ -134,12 +137,19 @@
     <Compile Include="Cliente_Reparaciones.aspx.designer.cs">
       <DependentUpon>Cliente_Reparaciones.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Empleados_Informes.aspx.cs">
+      <DependentUpon>Empleados_Informes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Empleados_Informes.aspx.designer.cs">
+      <DependentUpon>Empleados_Informes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados_Productos.aspx.cs">
+      <DependentUpon>Empleados_Productos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados_Productos.aspx.designer.cs">
+      <DependentUpon>Empleados_Productos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -176,6 +186,13 @@
     </Compile>
     <Compile Include="pagina_principal.aspx.designer.cs">
       <DependentUpon>pagina_principal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerCarrito.aspx.cs">
+      <DependentUpon>VerCarrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerCarrito.aspx.designer.cs">
+      <DependentUpon>VerCarrito.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

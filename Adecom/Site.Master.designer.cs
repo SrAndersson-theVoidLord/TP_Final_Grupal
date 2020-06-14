@@ -7,13 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Adecom
-{
-
-
-    public partial class Site
-    {
-
+namespace Adecom {
+    
+    
+    public partial class Site {
+        
         /// <summary>
         /// Control head.
         /// </summary>
@@ -22,7 +20,7 @@ namespace Adecom
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-
+        
         /// <summary>
         /// Control form1.
         /// </summary>
@@ -31,7 +29,34 @@ namespace Adecom
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
+        /// <summary>
+        /// Control hlPaginaPrincipal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlPaginaPrincipal;
+        
+        /// <summary>
+        /// Control hlVerCarrito.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlVerCarrito;
+        
+        /// <summary>
+        /// Control hlIniciarSesion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlIniciarSesion;
+        
         /// <summary>
         /// Control Contenido_menu_contextual.
         /// </summary>
@@ -40,7 +65,7 @@ namespace Adecom
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder Contenido_menu_contextual;
-
+        
         /// <summary>
         /// Control Contenido_menu_principal.
         /// </summary>
@@ -49,7 +74,7 @@ namespace Adecom
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder Contenido_menu_principal;
-
+        
         /// <summary>
         /// Control ContentPlaceHolder1.
         /// </summary>

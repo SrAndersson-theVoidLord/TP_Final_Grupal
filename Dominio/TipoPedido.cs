@@ -10,7 +10,7 @@ namespace Dominio
     {
         public int id_tipo { get; set; }
         public string descripcion { get; set; }
-        public string mano_de_obra { get; set; }
+        public double precio_por_hora { get; set; }
 
     }
 }

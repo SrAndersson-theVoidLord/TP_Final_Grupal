@@ -8,7 +8,6 @@ namespace Dominio
 {
     public class DV_Servicios
     {
-        public int id_dv_servicios { get; set; }
         public int id_venta { get; set; }
         public int id_actividad { get; set; }
         public string descripcion { get; set; }

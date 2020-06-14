@@ -18,7 +18,7 @@ namespace Negocio
         public AccesoDatos()
         {
             //colocar el nombre de la base de datos
-            conexion = new SqlConnection("data source=localhost\\SQLEXPRESS; initial catalog=POKEDEX_DB; integrated security=sspi");
+            conexion = new SqlConnection("data source=localhost\\SQLEXPRESS; initial catalog=Adecom; integrated security=sspi");
             comando = new SqlCommand();
             comando.Connection = conexion;
             affectedRows = 0;

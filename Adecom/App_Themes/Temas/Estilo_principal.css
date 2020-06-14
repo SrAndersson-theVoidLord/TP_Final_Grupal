@@ -27,6 +27,7 @@
 
 #Logotipo {
     width: 40%;
+    
     float: left;
     text-align: center;
     margin-top: 5px;
@@ -64,13 +65,14 @@
     
 }
 
-#Columna_izquierda, Columna_derecha {
+#Columna_izquierda, #Columna_derecha {
 
     float: left;
     width: 20%;
     min-height: 500px;
 
 }
+
 
 #Columna_centro {
 

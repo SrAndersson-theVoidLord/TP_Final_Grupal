@@ -10,6 +10,6 @@
 namespace Adecom {
     
     
-    public partial class Cliente_contactos {
+    public partial class Empleados_Informes {
     }
 }

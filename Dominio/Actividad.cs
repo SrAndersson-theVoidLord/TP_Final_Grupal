@@ -13,9 +13,10 @@ namespace Dominio
         public int id_empleado { get; set; }
         public int id_tipo_pedido { get; set; }
         public string descripcion { get; set; }
-        public Double precio_final { get; set; }
+        public double precio_por_Hora { get; set; }
+        public int horas_trabajadas { get; set; }
+        public Double subtotal { get; set; }
         public DateTime fecha { get; set; }
         public string estado_act { get; set; }
-
     }
 }
