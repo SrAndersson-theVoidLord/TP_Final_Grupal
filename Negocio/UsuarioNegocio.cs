@@ -166,32 +166,43 @@ namespace Negocio
             return cliente;
         }
 
-        public bool ModificarCliente(Usuario Cliente)
+        public void ModificarCliente(Usuario Cliente)
         {
             AccesoDatos data = new AccesoDatos();
-            data.prepareStatement("update clientes set nombre = @nombre, apellido = @apellido, dni = @dni, direccion = @direccion, localidad = @localidad, telefono = @telefono, mail = @mail where dni = '" + Cliente.dni + "'");
-            data.agregarParametro("@nombre", Cliente.nombre);
-            data.agregarParametro("@apellido", Cliente.apellido);
-            data.agregarParametro("@dni", Cliente.dni);
-            data.agregarParametro("@direccion", Cliente.direccion);
-            data.agregarParametro("@localidad", Cliente.localidad);
-            data.agregarParametro("@telefono", Cliente.telefono);
-            data.agregarParametro("@mail", Cliente.email);
-            data.ejecutarAccion();
-            data.cerrarConexion();
-
-            if (data.getAffectedRows() <= 0)
+            try
             {
-                return false;
+                //data.prepareStatement("update clientes set nombre = @nombre, apellido = @apellido, dni = @dni, direccion = @direccion, localidad = @localidad, telefono = @telefono, mail = @mail where dni = '" + Cliente.dni + "'");
+                data.setearQuery("update clientes set Nombre_CLI = @nombre, Apellido_CLI = @apellido, DNI_CLI = @dni,NombreUsuario_CLI=@usuario , Direccion_CLI = @direccion, Localidad_CLI = @localidad, Telefono_CLI = @telefono,Codigo_Postal_CLI = @cp ,Email_CLI = @mail where id_Cliente_CLI = @id_Usuario ");
+                data.agregarParametro("@id_Usuario", Cliente.id_Usuario);
+                data.agregarParametro("@nombre", Cliente.nombre);
+                data.agregarParametro("@apellido", Cliente.apellido);
+                data.agregarParametro("@dni", Cliente.dni);
+                data.agregarParametro("@usuario", Cliente.nombreusuario);
+                data.agregarParametro("@direccion", Cliente.direccion);
+                data.agregarParametro("@localidad", Cliente.localidad);
+                data.agregarParametro("@telefono", Cliente.telefono);
+                data.agregarParametro("@mail", Cliente.email);
+                data.agregarParametro("@cp", Cliente.cp);
+                data.ejecutarAccion();
+                data.cerrarConexion();
             }
-            return true;
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+
         }
 
 
+
+
         /////////////////////////////////////////////////////////////////////////////////////
-        
-            
-            /// Empleados:
+
+
+        /// Empleados:
 
 
         public List<Usuario> listar_Empleados()
@@ -203,7 +214,7 @@ namespace Negocio
             //INSTANCIO LA CONECCION A LA BASE
             AccesoDatos datos = new AccesoDatos();
             //TIRO LA QUERY
-            datos.setearQuery("select nombre, apellido, dni, direccion, localidad, telefono, mail from Clientes where estado = 1");
+            datos.setearQuery("select id_Empleado_EMP, DNI_EMP, Nombre_EMP, Apellido_EMP,NombreUsuario_EMP, Direccion_EMP, Localidad_EMP,Codigo_Postal_EMP, Telefono_EMP, Email_EMP,Estado_EMP from Empleados ");
             //EJECUTO EL LECTOR
             datos.ejecutarLector();
 
@@ -213,13 +224,17 @@ namespace Negocio
             {
                 aux = new Usuario();
 
-                aux.nombre = datos.lector["Nombre"].ToString();
-                aux.apellido = datos.lector["Apellido"].ToString();
-                aux.dni = datos.lector["DNI"].ToString();
-                aux.direccion = datos.lector["Direccion"].ToString();
-                aux.localidad = datos.lector["Localidad"].ToString();
-                aux.telefono = datos.lector["Telefono"].ToString();
-                aux.email = datos.lector["Mail"].ToString();
+                aux.id_Usuario = (int)datos.lector["id_Empleado_EMP"];
+                aux.dni = datos.lector["DNI_EMP"].ToString();
+                aux.nombre = datos.lector["Nombre_EMP"].ToString();
+                aux.apellido = datos.lector["Apellido_EMP"].ToString();
+                aux.nombreusuario = datos.lector["NombreUsuario_EMP"].ToString();
+                aux.direccion = datos.lector["Direccion_EMP"].ToString();
+                aux.localidad = datos.lector["Localidad_EMP"].ToString();
+                aux.cp = datos.lector["Codigo_Postal_EMP"].ToString();
+                aux.telefono = datos.lector["Telefono_EMP"].ToString();
+                aux.email = datos.lector["Email_EMP"].ToString();
+                aux.estado = (Boolean)datos.lector["Estado_EMP"];
 
                 lista.Add(aux);
 
@@ -229,7 +244,7 @@ namespace Negocio
             //datos.cerrarConexion();
         }
 
-        
+
 
         public bool bajaEmpleado(Usuario aux)
         {
@@ -299,26 +314,37 @@ namespace Negocio
             return Empleado;
         }
 
-        public bool ModificarEmpleado(Usuario Empleado)
+
+        public void ModificarEmpleado(Usuario Empleado)
         {
             AccesoDatos data = new AccesoDatos();
-            data.prepareStatement("update clientes set nombre = @nombre, apellido = @apellido, dni = @dni, direccion = @direccion, localidad = @localidad, telefono = @telefono, mail = @mail where dni = '" + Empleado.dni + "'");
-            data.agregarParametro("@nombre", Empleado.nombre);
-            data.agregarParametro("@apellido", Empleado.apellido);
-            data.agregarParametro("@dni", Empleado.dni);
-            data.agregarParametro("@direccion", Empleado.direccion);
-            data.agregarParametro("@localidad", Empleado.localidad);
-            data.agregarParametro("@telefono", Empleado.telefono);
-            data.agregarParametro("@mail", Empleado.email);
-            data.ejecutarAccion();
-            data.cerrarConexion();
-
-            if (data.getAffectedRows() <= 0)
+            try
             {
-                return false;
+                data.setearQuery("update Empleados set Nombre_EMP = @nombre, Apellido_EMP = @apellido, DNI_EMP = @dni,NombreUsuario_EMP=@usuario , Direccion_EMP = @direccion, Localidad_EMP = @localidad, Telefono_EMP = @telefono,Codigo_Postal_EMP = @cp ,Email_EMP = @mail where id_Empleado_EMP = @id_Usuario ");
+                data.agregarParametro("@id_Usuario", Empleado.id_Usuario);
+                data.agregarParametro("@nombre", Empleado.nombre);
+                data.agregarParametro("@apellido", Empleado.apellido);
+                data.agregarParametro("@dni", Empleado.dni);
+                data.agregarParametro("@usuario", Empleado.nombreusuario);
+                data.agregarParametro("@direccion", Empleado.direccion);
+                data.agregarParametro("@localidad", Empleado.localidad);
+                data.agregarParametro("@telefono", Empleado.telefono);
+                data.agregarParametro("@mail", Empleado.email);
+                data.agregarParametro("@cp", Empleado.cp);
+                data.ejecutarAccion();
+                data.cerrarConexion();
             }
-            return true;
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+
         }
+
+
 
 
     }
