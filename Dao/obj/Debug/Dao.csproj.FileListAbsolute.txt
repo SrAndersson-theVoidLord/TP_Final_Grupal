@@ -1,0 +1,6 @@
+C:\Mis Proyectos\TP_Final_Grupal\Dao\bin\Debug\Dao.dll
+C:\Mis Proyectos\TP_Final_Grupal\Dao\bin\Debug\Dao.pdb
+C:\Mis Proyectos\TP_Final_Grupal\Dao\obj\Debug\Dao.csprojAssemblyReference.cache
+C:\Mis Proyectos\TP_Final_Grupal\Dao\obj\Debug\Dao.csproj.CoreCompileInputs.cache
+C:\Mis Proyectos\TP_Final_Grupal\Dao\obj\Debug\Dao.dll
+C:\Mis Proyectos\TP_Final_Grupal\Dao\obj\Debug\Dao.pdb

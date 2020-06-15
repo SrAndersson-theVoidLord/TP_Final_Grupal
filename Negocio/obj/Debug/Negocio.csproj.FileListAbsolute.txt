@@ -25,3 +25,5 @@ D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final
 D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Negocio\obj\Debug\Negocio.dll
 D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Negocio\obj\Debug\Negocio.pdb
+C:\Mis Proyectos\TP_Final_Grupal\Negocio\bin\Debug\Dao.dll
+C:\Mis Proyectos\TP_Final_Grupal\Negocio\bin\Debug\Dao.pdb

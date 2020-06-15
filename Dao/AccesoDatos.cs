@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
-namespace Negocio
+namespace Dao
 {
     public class AccesoDatos
     {
@@ -82,13 +82,13 @@ namespace Negocio
             }
             finally
             {
-           
+
             }
         }
 
 
         //ejecuta acciones que no son de lectura
-        internal void ejecutarAccion()
+        public void ejecutarAccion()
         {
             try
             {
@@ -101,13 +101,8 @@ namespace Negocio
             }
             finally
             {
-             
+
             }
         }
-
-        
-
-
-
     }
 }
