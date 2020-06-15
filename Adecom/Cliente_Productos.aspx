@@ -3,10 +3,11 @@
     <style type="text/css">
 
         .auto-style3 {
-            width: 19%;
+            width: 2%;
+            
         }
         .auto-style4 {
-            width: 79%;
+            width: 97%;
         }
         .auto-style1 {
             width: 100%;
@@ -14,20 +15,26 @@
         </style>
 </asp:Content>
 
-<asp:Content ID="Content3" ContentPlaceHolderID="Contenido_menu_principal" runat="server">
+<asp:Content ID="Content4" ContentPlaceHolderID="Contenido_menu_contextual" runat="server">
 
-    <div class="d-flex p-2 bd-highlight">
-        <a class="btn btn-outline-secondary btn-lg border-dark w-25" href="/Cliente_Productos.aspx" >Productos</a>
-        <a class="btn btn-outline-secondary btn-lg border-dark w-25" href="/Cliente_armados_a_pedido.aspx" >Armados a Pedido</a>
-        <a class="btn btn-outline-secondary btn-lg border-dark w-25" href="/Cliente_Reparaciones.aspx" >Reparaciones</a>
-        <a class="btn btn-outline-secondary btn-lg border-dark w-25" href="/Cliente_Contactos.aspx" >Contacto</a>
+    <div class="d-flex flex-column p-2 bd-highlight">
+        <a class="btn btn-outline-secondary btn-lg border-dark w-100" href="/Cliente_Productos.aspx">Productos</a>
+        <a class="btn btn-outline-secondary btn-lg border-dark w-100" href="/Cliente_armados_a_pedido.aspx">Armados a Pedido</a>
+        <a class="btn btn-outline-secondary btn-lg border-dark w-100" href="/Cliente_Reparaciones.aspx">Reparaciones</a>
+        <a class="btn btn-outline-secondary btn-lg border-dark w-100" href="/Cliente_Contactos.aspx">Contacto</a>
     </div>
+</asp:Content>
+
+
+<asp:Content ID="Content3" ContentPlaceHolderID="Contenido_menu_principal" runat="server">
+           <div class="bg-light text-center font-weight-bold">
+        <h3>Hardware</h3>
+    </div>
+
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-       <div class="bg-light text-center font-weight-bold border border-danger">
-        <h3>Hardware</h3>
-    </div>
+
     
     <div class="overflow-auto">
 
