@@ -74,6 +74,7 @@
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Empleados_AMProductos.aspx" />
     <Content Include="Empleados_armados_a_pedido.aspx" />
     <Content Include="Empleados_Informes.aspx" />
     <Content Include="Empleados_Productos.aspx" />
@@ -139,6 +140,13 @@
     </Compile>
     <Compile Include="Cliente_Reparaciones.aspx.designer.cs">
       <DependentUpon>Cliente_Reparaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados_AMProductos.aspx.cs">
+      <DependentUpon>Empleados_AMProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados_AMProductos.aspx.designer.cs">
+      <DependentUpon>Empleados_AMProductos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Empleados_armados_a_pedido.aspx.cs">
       <DependentUpon>Empleados_armados_a_pedido.aspx</DependentUpon>
