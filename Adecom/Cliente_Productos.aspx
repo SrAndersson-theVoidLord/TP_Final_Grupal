@@ -99,15 +99,15 @@
                         </td>
                     </InsertItemTemplate>
                     <ItemTemplate>
-                        <td runat="server" style="background-color: #DCDCDC; color: #000000;">Nombre:
-                            <asp:Label ID="Nombre_HARLabel" runat="server" Text='<%# Eval("Nombre_HAR") %>' />
+                        <td runat="server" style="background-color: #DCDCDC; color: #59a897;">Nombre: 
+                            <asp:Label ID="Nombre_HARLabel" runat="server" Text='<%# Eval("Nombre_HAR") %>' ForeColor="#0066FF" CssClass="ccfgaLabel"/>
                             <br />
-                            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("Imagen_HAR") %>' />
+                            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("Imagen_HAR") %>' Height="200px" />
                             <br />
                             Precio:$
                             <asp:Label ID="Precio_HARLabel" runat="server" Text='<%# Eval("Precio_HAR") %>' />
                             <br />
-                            <asp:Button ID="btnAniadir" runat="server" Text="añadir al carrito" />
+                            <asp:Button ID="btnAniadir" runat="server" Text="añadir al carrito" ForeColor="#0066FF" />
                             <br />
                         </td>
                     </ItemTemplate>
