@@ -189,3 +189,5 @@ C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\VBCSCompiler.exe
 C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\VBCSCompiler.exe.config
 C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\Dao.dll
 C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\Dao.pdb
+C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Adecom\bin\Dao.dll
+C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Adecom\bin\Dao.pdb
