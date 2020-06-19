@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Empleados_Reparaciones.aspx.cs" Inherits="Adecom.Empleados_Reparaciones" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+            text-align: center;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contenido_menu_contextual" runat="server">
              <div class="d-flex flex-column p-2 bd-highlight">
@@ -17,4 +22,11 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <p>
+        <br />
+    </p>
+    <p class="auto-style1">
+        <asp:GridView ID="GridView1" runat="server">
+        </asp:GridView>
+    </p>
 </asp:Content>
