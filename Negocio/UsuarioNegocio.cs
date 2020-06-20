@@ -20,17 +20,17 @@ namespace Negocio
             try
             {
                 datos.setearQuery("insert into clientes values(@nombreusuario,@contraseña,@nombre,@apellido,@dni,@localidad,@direccion,@cp,@telefono,@email,@estado)");
-                datos.agregarParametro("@nombreusuario", cliente.nombre);
-                datos.agregarParametro("@constraseña", cliente.constraseña);
-                datos.agregarParametro("@nombre", cliente.nombre);
-                datos.agregarParametro("@apellido", cliente.apellido);
-                datos.agregarParametro("@dni", cliente.dni);
-                datos.agregarParametro("@localidad", cliente.localidad);
-                datos.agregarParametro("@direccion", cliente.direccion);
-                datos.agregarParametro("@cp", cliente.cp);
-                datos.agregarParametro("@telefono", cliente.telefono);
-                datos.agregarParametro("@email", cliente.email);
-                datos.agregarParametro("@estado", cliente.estado);
+                datos.agregarParametro("@nombreusuario", cliente.Nombre);
+                datos.agregarParametro("@constraseña", cliente.Constraseña);
+                datos.agregarParametro("@nombre", cliente.Nombre);
+                datos.agregarParametro("@apellido", cliente.Apellido);
+                datos.agregarParametro("@dni", cliente.Dni);
+                datos.agregarParametro("@localidad", cliente.Localidad);
+                datos.agregarParametro("@direccion", cliente.Direccion);
+                datos.agregarParametro("@cp", cliente.Cp);
+                datos.agregarParametro("@telefono", cliente.Telefono);
+                datos.agregarParametro("@email", cliente.Email);
+                datos.agregarParametro("@estado", cliente.Estado);
 
                 datos.ejecutarAccion();
             }
@@ -62,24 +62,24 @@ namespace Negocio
             {
                 aux = new Usuario();
 
-                aux.id_Usuario = (int)datos.lector["id_Cliente_CLI"];
-                aux.dni = datos.lector["DNI_CLI"].ToString();
-                aux.nombre = datos.lector["Nombre_CLI"].ToString();
-                aux.apellido = datos.lector["Apellido_CLI"].ToString();
-                aux.nombreusuario = datos.lector["NombreUsuario_CLI"].ToString();
-                aux.direccion = datos.lector["Direccion_CLI"].ToString();
-                aux.localidad = datos.lector["Localidad_CLI"].ToString();
-                aux.cp = datos.lector["Codigo_Postal_CLI"].ToString();
-                aux.telefono = datos.lector["Telefono_CLI"].ToString();
-                aux.email = datos.lector["Email_CLI"].ToString();
-                aux.estado = (Boolean)datos.lector["Estado_CLI"];
+                aux.Id_Usuario = (int)datos.lector["id_Cliente_CLI"];
+                aux.Dni = datos.lector["DNI_CLI"].ToString();
+                aux.Nombre = datos.lector["Nombre_CLI"].ToString();
+                aux.Apellido = datos.lector["Apellido_CLI"].ToString();
+                aux.Nombreusuario = datos.lector["NombreUsuario_CLI"].ToString();
+                aux.Direccion = datos.lector["Direccion_CLI"].ToString();
+                aux.Localidad = datos.lector["Localidad_CLI"].ToString();
+                aux.Cp = datos.lector["Codigo_Postal_CLI"].ToString();
+                aux.Telefono = datos.lector["Telefono_CLI"].ToString();
+                aux.Email = datos.lector["Email_CLI"].ToString();
+                aux.Estado = (Boolean)datos.lector["Estado_CLI"];
 
                 lista.Add(aux);
 
 
             }
+            datos.cerrarConexion();
             return lista;
-            //datos.cerrarConexion();
         }
 
         public bool altaCliente(Usuario aux)
@@ -87,7 +87,7 @@ namespace Negocio
 
             AccesoDatos data = new AccesoDatos();
             data.prepareStatement("" +
-                "INSERT INTO Clientes VALUES ('" + aux.nombre + "', '" + aux.apellido + "', '" + aux.dni + "', '" + aux.direccion + "', '" + aux.localidad + "', '" + aux.telefono + "', '" + aux.email + "', 1)");
+                "INSERT INTO Clientes VALUES ('" + aux.Nombre + "', '" + aux.Apellido + "', '" + aux.Dni + "', '" + aux.Direccion + "', '" + aux.Localidad + "', '" + aux.Telefono + "', '" + aux.Email + "', 1)");
             data.ejecutarAccion();
             data.cerrarConexion();
 
@@ -102,7 +102,7 @@ namespace Negocio
         public bool bajaCliente(Usuario aux)
         {
             AccesoDatos data = new AccesoDatos();
-            data.prepareStatement("update clientes set estado = 0 where DNI = '" + aux.dni + "'");
+            data.prepareStatement("update clientes set estado = 0 where DNI = '" + aux.Dni + "'");
             data.ejecutarAccion();
             data.cerrarConexion();
 
@@ -123,9 +123,9 @@ namespace Negocio
             datos.ejecutarLector();
             if (datos.lector.Read())
             {
-                cli.id_Usuario = datos.lector.GetInt32(0);
-                cli.dni = datos.lector.GetString(1);
-                cli.estado = datos.lector.GetBoolean(2);
+                cli.Id_Usuario = datos.lector.GetInt32(0);
+                cli.Dni = datos.lector.GetString(1);
+                cli.Estado = datos.lector.GetBoolean(2);
             }
             else
             {
@@ -153,14 +153,14 @@ namespace Negocio
             while (datos.lector.Read())
             {
 
-                cliente.id_Usuario = Convert.ToInt32(datos.lector["id"]);
-                cliente.nombre = datos.lector["Nombre"].ToString();
-                cliente.apellido = datos.lector["Apellido"].ToString();
-                cliente.dni = datos.lector["DNI"].ToString();
-                cliente.direccion = datos.lector["Direccion"].ToString();
-                cliente.localidad = datos.lector["Localidad"].ToString();
-                cliente.telefono = datos.lector["Telefono"].ToString();
-                cliente.email = datos.lector["Mail"].ToString();
+                cliente.Id_Usuario = Convert.ToInt32(datos.lector["id"]);
+                cliente.Nombre = datos.lector["Nombre"].ToString();
+                cliente.Apellido = datos.lector["Apellido"].ToString();
+                cliente.Dni = datos.lector["DNI"].ToString();
+                cliente.Direccion = datos.lector["Direccion"].ToString();
+                cliente.Localidad = datos.lector["Localidad"].ToString();
+                cliente.Telefono = datos.lector["Telefono"].ToString();
+                cliente.Email = datos.lector["Mail"].ToString();
 
 
             }
@@ -174,16 +174,16 @@ namespace Negocio
             {
                 //data.prepareStatement("update clientes set nombre = @nombre, apellido = @apellido, dni = @dni, direccion = @direccion, localidad = @localidad, telefono = @telefono, mail = @mail where dni = '" + Cliente.dni + "'");
                 data.setearQuery("update clientes set Nombre_CLI = @nombre, Apellido_CLI = @apellido, DNI_CLI = @dni,NombreUsuario_CLI=@usuario , Direccion_CLI = @direccion, Localidad_CLI = @localidad, Telefono_CLI = @telefono,Codigo_Postal_CLI = @cp ,Email_CLI = @mail where id_Cliente_CLI = @id_Usuario ");
-                data.agregarParametro("@id_Usuario", Cliente.id_Usuario);
-                data.agregarParametro("@nombre", Cliente.nombre);
-                data.agregarParametro("@apellido", Cliente.apellido);
-                data.agregarParametro("@dni", Cliente.dni);
-                data.agregarParametro("@usuario", Cliente.nombreusuario);
-                data.agregarParametro("@direccion", Cliente.direccion);
-                data.agregarParametro("@localidad", Cliente.localidad);
-                data.agregarParametro("@telefono", Cliente.telefono);
-                data.agregarParametro("@mail", Cliente.email);
-                data.agregarParametro("@cp", Cliente.cp);
+                data.agregarParametro("@id_Usuario", Cliente.Id_Usuario);
+                data.agregarParametro("@nombre", Cliente.Nombre);
+                data.agregarParametro("@apellido", Cliente.Apellido);
+                data.agregarParametro("@dni", Cliente.Dni);
+                data.agregarParametro("@usuario", Cliente.Nombreusuario);
+                data.agregarParametro("@direccion", Cliente.Direccion);
+                data.agregarParametro("@localidad", Cliente.Localidad);
+                data.agregarParametro("@telefono", Cliente.Telefono);
+                data.agregarParametro("@mail", Cliente.Email);
+                data.agregarParametro("@cp", Cliente.Cp);
                 data.ejecutarAccion();
                 data.cerrarConexion();
             }
@@ -225,24 +225,24 @@ namespace Negocio
             {
                 aux = new Usuario();
 
-                aux.id_Usuario = (int)datos.lector["id_Empleado_EMP"];
-                aux.dni = datos.lector["DNI_EMP"].ToString();
-                aux.nombre = datos.lector["Nombre_EMP"].ToString();
-                aux.apellido = datos.lector["Apellido_EMP"].ToString();
-                aux.nombreusuario = datos.lector["NombreUsuario_EMP"].ToString();
-                aux.direccion = datos.lector["Direccion_EMP"].ToString();
-                aux.localidad = datos.lector["Localidad_EMP"].ToString();
-                aux.cp = datos.lector["Codigo_Postal_EMP"].ToString();
-                aux.telefono = datos.lector["Telefono_EMP"].ToString();
-                aux.email = datos.lector["Email_EMP"].ToString();
-                aux.estado = (Boolean)datos.lector["Estado_EMP"];
+                aux.Id_Usuario = (int)datos.lector["id_Empleado_EMP"];
+                aux.Dni = datos.lector["DNI_EMP"].ToString();
+                aux.Nombre = datos.lector["Nombre_EMP"].ToString();
+                aux.Apellido = datos.lector["Apellido_EMP"].ToString();
+                aux.Nombreusuario = datos.lector["NombreUsuario_EMP"].ToString();
+                aux.Direccion = datos.lector["Direccion_EMP"].ToString();
+                aux.Localidad = datos.lector["Localidad_EMP"].ToString();
+                aux.Cp = datos.lector["Codigo_Postal_EMP"].ToString();
+                aux.Telefono = datos.lector["Telefono_EMP"].ToString();
+                aux.Email = datos.lector["Email_EMP"].ToString();
+                aux.Estado = (Boolean)datos.lector["Estado_EMP"];
 
                 lista.Add(aux);
 
 
             }
+            datos.cerrarConexion();
             return lista;
-            //datos.cerrarConexion();
         }
 
 
@@ -250,7 +250,7 @@ namespace Negocio
         public bool bajaEmpleado(Usuario aux)
         {
             AccesoDatos data = new AccesoDatos();
-            data.prepareStatement("update empleados set estado = 0 where DNI = '" + aux.dni + "'");
+            data.prepareStatement("update empleados set estado = 0 where DNI = '" + aux.Dni + "'");
             data.ejecutarAccion();
             data.cerrarConexion();
 
@@ -271,9 +271,9 @@ namespace Negocio
             datos.ejecutarLector();
             if (datos.lector.Read())
             {
-                emp.id_Usuario = datos.lector.GetInt32(0);
-                emp.dni = datos.lector.GetString(1);
-                emp.estado = datos.lector.GetBoolean(2);
+                emp.Id_Usuario = datos.lector.GetInt32(0);
+                emp.Dni = datos.lector.GetString(1);
+                emp.Estado = datos.lector.GetBoolean(2);
             }
             else
             {
@@ -301,14 +301,14 @@ namespace Negocio
             while (datos.lector.Read())
             {
 
-                Empleado.id_Usuario = Convert.ToInt32(datos.lector["id"]);
-                Empleado.nombre = datos.lector["Nombre"].ToString();
-                Empleado.apellido = datos.lector["Apellido"].ToString();
-                Empleado.dni = datos.lector["DNI"].ToString();
-                Empleado.direccion = datos.lector["Direccion"].ToString();
-                Empleado.localidad = datos.lector["Localidad"].ToString();
-                Empleado.telefono = datos.lector["Telefono"].ToString();
-                Empleado.email = datos.lector["Mail"].ToString();
+                Empleado.Id_Usuario = Convert.ToInt32(datos.lector["id"]);
+                Empleado.Nombre = datos.lector["Nombre"].ToString();
+                Empleado.Apellido = datos.lector["Apellido"].ToString();
+                Empleado.Dni = datos.lector["DNI"].ToString();
+                Empleado.Direccion = datos.lector["Direccion"].ToString();
+                Empleado.Localidad = datos.lector["Localidad"].ToString();
+                Empleado.Telefono = datos.lector["Telefono"].ToString();
+                Empleado.Email = datos.lector["Mail"].ToString();
 
 
             }
@@ -322,16 +322,16 @@ namespace Negocio
             try
             {
                 data.setearQuery("update Empleados set Nombre_EMP = @nombre, Apellido_EMP = @apellido, DNI_EMP = @dni,NombreUsuario_EMP=@usuario , Direccion_EMP = @direccion, Localidad_EMP = @localidad, Telefono_EMP = @telefono,Codigo_Postal_EMP = @cp ,Email_EMP = @mail where id_Empleado_EMP = @id_Usuario ");
-                data.agregarParametro("@id_Usuario", Empleado.id_Usuario);
-                data.agregarParametro("@nombre", Empleado.nombre);
-                data.agregarParametro("@apellido", Empleado.apellido);
-                data.agregarParametro("@dni", Empleado.dni);
-                data.agregarParametro("@usuario", Empleado.nombreusuario);
-                data.agregarParametro("@direccion", Empleado.direccion);
-                data.agregarParametro("@localidad", Empleado.localidad);
-                data.agregarParametro("@telefono", Empleado.telefono);
-                data.agregarParametro("@mail", Empleado.email);
-                data.agregarParametro("@cp", Empleado.cp);
+                data.agregarParametro("@id_Usuario", Empleado.Id_Usuario);
+                data.agregarParametro("@nombre", Empleado.Nombre);
+                data.agregarParametro("@apellido", Empleado.Apellido);
+                data.agregarParametro("@dni", Empleado.Dni);
+                data.agregarParametro("@usuario", Empleado.Nombreusuario);
+                data.agregarParametro("@direccion", Empleado.Direccion);
+                data.agregarParametro("@localidad", Empleado.Localidad);
+                data.agregarParametro("@telefono", Empleado.Telefono);
+                data.agregarParametro("@mail", Empleado.Email);
+                data.agregarParametro("@cp", Empleado.Cp);
                 data.ejecutarAccion();
                 data.cerrarConexion();
             }

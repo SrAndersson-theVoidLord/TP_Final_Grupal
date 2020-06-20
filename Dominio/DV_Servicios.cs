@@ -8,10 +8,19 @@ namespace Dominio
 {
     public class DV_Servicios
     {
-        public int id_venta { get; set; }
-        public int id_actividad { get; set; }
-        public string descripcion { get; set; }
-        public double subtotal { get; set; }
+        private int id_venta;
+        private int id_actividad;
+        private string descripcion;
+        private double subtotal;
 
+        public DV_Servicios()
+        {
+
+        }
+
+        public int Id_venta { get => id_venta; set => id_venta = value; }
+        public int Id_actividad { get => id_actividad; set => id_actividad = value; }
+        public string Descripcion { get => descripcion; set => descripcion = value; }
+        public double Subtotal { get => subtotal; set => subtotal = value; }
     }
 }

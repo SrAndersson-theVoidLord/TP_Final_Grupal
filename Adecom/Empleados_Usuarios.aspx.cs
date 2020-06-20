@@ -66,16 +66,16 @@ namespace Adecom
         protected void gvUsuarios_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             Usuario usuario = new Usuario();
-            usuario.nombre = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("tb_nombre")).Text;
-            usuario.apellido= ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("tb_apellido")).Text;
-            usuario.dni=((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("tb_dni")).Text;
-            usuario.nombreusuario= ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("tb_nombreusuario")).Text;
-            usuario.direccion= ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("tb_direccion")).Text;
-            usuario.localidad= ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("tb_localidad")).Text;
-            usuario.telefono= ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("tb_telefono")).Text;
-            usuario.email= ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("tb_email")).Text;
-            usuario.cp= ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("tb_codigopostal")).Text;
-            usuario.id_Usuario = Convert.ToInt32(((Label)gvUsuarios.Rows[e.RowIndex].FindControl("lbl_idusuario")).Text);
+            usuario.Nombre = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("tb_nombre")).Text;
+            usuario.Apellido= ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("tb_apellido")).Text;
+            usuario.Dni=((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("tb_dni")).Text;
+            usuario.Nombreusuario= ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("tb_nombreusuario")).Text;
+            usuario.Direccion= ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("tb_direccion")).Text;
+            usuario.Localidad= ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("tb_localidad")).Text;
+            usuario.Telefono= ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("tb_telefono")).Text;
+            usuario.Email= ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("tb_email")).Text;
+            usuario.Cp= ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("tb_codigopostal")).Text;
+            usuario.Id_Usuario = Convert.ToInt32(((Label)gvUsuarios.Rows[e.RowIndex].FindControl("lbl_idusuario")).Text);
             UsuarioNegocio negocio = new UsuarioNegocio();
 
             if (Session["Grilla"].ToString() == "cliente")

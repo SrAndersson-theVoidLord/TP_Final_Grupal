@@ -8,18 +8,36 @@ namespace Dominio
 {
     public class Usuario
     {
-        public int id_Usuario{ get; set; }
-        public string dni { get; set; }
-        public string nombre { get; set; }
-        public string apellido { get; set; }
-        public string nombreusuario { get; set; }
-        public string constraseña { get; set; }
-        public string direccion { get; set; }
-        public string localidad { get; set; }
-        public string cp { get; set; }
-        public string telefono { get; set; }
-        public string email { get; set; }
-        public Boolean estado { get; set; }
+        private int id_Usuario;
+        private string dni;
+        private string nombre;
+        private string apellido;
+        private string nombreusuario;
+        private string constraseña;
+        private string direccion;
+        private string localidad;
+        private string cp;
+        private string telefono;
+        private string email;
+        private Boolean estado;
 
+        public Usuario()
+        {
+
+        }
+
+
+        public int Id_Usuario { get => id_Usuario; set => id_Usuario = value; }
+        public string Dni { get => dni; set => dni = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Apellido { get => apellido; set => apellido = value; }
+        public string Nombreusuario { get => nombreusuario; set => nombreusuario = value; }
+        public string Constraseña { get => constraseña; set => constraseña = value; }
+        public string Direccion { get => direccion; set => direccion = value; }
+        public string Localidad { get => localidad; set => localidad = value; }
+        public string Cp { get => cp; set => cp = value; }
+        public string Telefono { get => telefono; set => telefono = value; }
+        public string Email { get => email; set => email = value; }
+        public bool Estado { get => estado; set => estado = value; }
     }
 }

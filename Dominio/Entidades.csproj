@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actividad.cs" />
+    <Compile Include="CategoriaHardware.cs" />
     <Compile Include="DV_Hardware.cs" />
     <Compile Include="DV_Servicios.cs" />
     <Compile Include="Hardware.cs" />

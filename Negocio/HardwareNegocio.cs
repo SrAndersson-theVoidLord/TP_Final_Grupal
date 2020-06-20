@@ -24,12 +24,12 @@ namespace Negocio
                 while (datos.lector.Read())
                 {
                     aux = new Hardware();
-                    aux.id_hardware = (int)datos.lector["id_Hardware_HAR"];
-                    aux.nombre = (string)datos.lector["Nombre_HAR"];
-                    aux.descripcion = (string)datos.lector["Descripcion_HAR"];
-                    aux.imagen = (string)datos.lector["Imagen"];
-                    aux.precio_unitario = (double)datos.lector["Precio_HAR"];
-                    aux.estado = (Boolean)datos.lector["Estado_HAR"];
+                    aux.Id_hardware = (int)datos.lector["id_Hardware_HAR"];
+                    aux.Nombre = (string)datos.lector["Nombre_HAR"];
+                    aux.Descripcion = (string)datos.lector["Descripcion_HAR"];
+                    aux.Imagen = (string)datos.lector["Imagen"];
+                    aux.Precio_unitario = (double)datos.lector["Precio_HAR"];
+                    aux.Estado = (Boolean)datos.lector["Estado_HAR"];
 
                     lista.Add(aux);
                 }

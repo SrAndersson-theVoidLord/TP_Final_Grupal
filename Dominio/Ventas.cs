@@ -8,11 +8,19 @@ namespace Dominio
 {
     public class Ventas
     {
-        public int id_venta { get; set; }
-        public int id_cliente { get; set; }
-        public DateTime fecha { get; set; }
-        public Double total { get; set; }
+        private int id_venta;
+        private int id_cliente;
+        private DateTime fecha;
+        private Double total;
 
+        public Ventas()
+        {
 
+        }
+
+        public int Id_venta { get => id_venta; set => id_venta = value; }
+        public int Id_cliente { get => id_cliente; set => id_cliente = value; }
+        public DateTime Fecha { get => fecha; set => fecha = value; }
+        public double Total { get => total; set => total = value; }
     }
 }

@@ -31,9 +31,9 @@
             { %>
         <div class="card">
             <div class="card-body" style="width: 300px; height: 300px">
-                <div class="card-header text-center bg-white ">ID Hardware: <% = item.id_hardware %></div>
-                <img src="<% = item.imagen %>" class="card-img-top" alt="..." style="width: 200px;">
-                <div class="card-tite  w-100"><% = item.nombre %></div>
+                <div class="card-header text-center bg-white ">ID Hardware: <% = item.Id_hardware %></div>
+                <img src="<% = item.Imagen %>" class="card-img-top" alt="..." style="width: 200px;">
+                <div class="card-tite  w-100"><% = item.Nombre %></div>
             </div>
             <asp:Button CssClass="btn btn-outline-warning w-100" ID="btnModificarHarware" Text="Modificar" runat="server" />
             <asp:Button CssClass="btn btn-outline-danger w-100" ID="btnEliminarHarware" Text="Eliminar" runat="server" />

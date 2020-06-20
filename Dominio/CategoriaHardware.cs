@@ -6,19 +6,17 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class TipoPedido
+    public class CategoriaHardware
     {
-        private int id_tipo;
+        private string id_categoria;
         private string descripcion;
-        private double precio_por_hora;
-
-        public TipoPedido()
+        
+        public CategoriaHardware()
         {
 
         }
 
-        public int Id_tipo { get => id_tipo; set => id_tipo = value; }
+        public string Id_categoria { get => id_categoria; set => id_categoria = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
-        public double Precio_por_hora { get => precio_por_hora; set => precio_por_hora = value; }
     }
 }
