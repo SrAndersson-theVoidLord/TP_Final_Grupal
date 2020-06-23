@@ -114,7 +114,7 @@
                             Precio:$
                             <asp:Label ID="Precio_HARLabel" runat="server" Text='<%# Eval("Precio_HAR") %>' />
                             <br />
-                            <asp:Button ID="btnAniadir" runat="server" Text="añadir al carrito" ForeColor="#0066FF" />
+                            <asp:Button ID="btnAniadir" runat="server" Text="añadir al carrito" ForeColor="#0066FF" OnCommand="btn_añadir_producto" />
                             <br />
                         </td>
                     </ItemTemplate>
