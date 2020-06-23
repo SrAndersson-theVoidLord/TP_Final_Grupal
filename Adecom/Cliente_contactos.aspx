@@ -18,10 +18,14 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="Contenido_menu_principal" runat="server">
 
     <div class="bg-light text-center font-weight-bold">
-        <h3>Contacto</h3>
+        <h3>Contactos</h3>
 
     </div>
-    <br />
+    Mail: <a href="mailto:adecom@gmail.com">adecom@gmail.com</a><br />
+    Telefono: 4795-7230<br />
+    WhatsApp:15-6234-8976<br />
+    Instagram: @Adecom<br />
+    Facebook:<a href="https://es-la.facebook.com/adecomdevillaadelina/">https://es-la.facebook.com/adecomdevillaadelina/</a><br />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
