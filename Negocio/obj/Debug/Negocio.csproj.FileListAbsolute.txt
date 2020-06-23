@@ -27,3 +27,13 @@ D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final
 D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Negocio\obj\Debug\Negocio.pdb
 C:\Mis Proyectos\TP_Final_Grupal\Negocio\bin\Debug\Dao.dll
 C:\Mis Proyectos\TP_Final_Grupal\Negocio\bin\Debug\Dao.pdb
+C:\Users\Matias\Documents\GitHub\TP_Final_Grupal\Negocio\bin\Debug\Negocio.dll
+C:\Users\Matias\Documents\GitHub\TP_Final_Grupal\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Matias\Documents\GitHub\TP_Final_Grupal\Negocio\bin\Debug\Dao.dll
+C:\Users\Matias\Documents\GitHub\TP_Final_Grupal\Negocio\bin\Debug\Dominio.dll
+C:\Users\Matias\Documents\GitHub\TP_Final_Grupal\Negocio\bin\Debug\Dao.pdb
+C:\Users\Matias\Documents\GitHub\TP_Final_Grupal\Negocio\bin\Debug\Dominio.pdb
+C:\Users\Matias\Documents\GitHub\TP_Final_Grupal\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\Matias\Documents\GitHub\TP_Final_Grupal\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\Matias\Documents\GitHub\TP_Final_Grupal\Negocio\obj\Debug\Negocio.dll
+C:\Users\Matias\Documents\GitHub\TP_Final_Grupal\Negocio\obj\Debug\Negocio.pdb

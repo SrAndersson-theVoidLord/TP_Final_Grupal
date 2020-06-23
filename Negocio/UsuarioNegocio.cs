@@ -21,7 +21,7 @@ namespace Negocio
             {
                 datos.setearQuery("insert into clientes values(@nombreusuario,@contraseña,@nombre,@apellido,@dni,@localidad,@direccion,@cp,@telefono,@email,@estado)");
                 datos.agregarParametro("@nombreusuario", cliente.Nombre);
-                datos.agregarParametro("@constraseña", cliente.Constraseña);
+                datos.agregarParametro("@contraseña", cliente.Constraseña);
                 datos.agregarParametro("@nombre", cliente.Nombre);
                 datos.agregarParametro("@apellido", cliente.Apellido);
                 datos.agregarParametro("@dni", cliente.Dni);
