@@ -22,28 +22,57 @@ namespace Adecom
 
             float total_carrito = 0;
             DataTable dt = (DataTable)Session["Carrito"];
-            for (int i = 0; i < dt.Rows.Count; i++)
+
+            if(total_carrito == 0)
+            {
+                Total.Text = "No hay productos cargados en el carrito";
+            }
+            else
             {
 
-                total_carrito += Convert.ToSingle(dt.Rows[i]["Precio"]);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+
+                    total_carrito += Convert.ToSingle(dt.Rows[i]["Precio"]);
 
 
 
-                //if (datos[0] == dt.Rows[i]["ID"].ToString())
-                //{
-                //    //flag = true;
+                    //if (datos[0] == dt.Rows[i]["ID"].ToString())
+                    //{
+                    //    //flag = true;
 
-                //    dt.Rows[i]["Cantidad"] = 1;
+                    //    dt.Rows[i]["Cantidad"] = 1;
 
-                //    Session["Carrito"]
+                    //    Session["Carrito"]
 
-                //}
+                    //}
+                }
+
+                Total.Text = "Total del carrito: " + Convert.ToString(total_carrito);
+
             }
 
-            Total.Text = "Total del carrito: " + Convert.ToString(total_carrito);
+
+
 
         }
 
+        protected void btnBorrar_Click(object sender, EventArgs e)
+        {
+            if (Session["Carrito"] != null)
+            {
+                Session["Carrito"] = null;
+                GridView_Carrito.DataSource = (DataTable)Session["Carrito"];
+                GridView_Carrito.DataBind();
+                Total.Text = "Borrado exitoso: Ya no hay productos cargados en el carrito";
 
+            }
+            
+        }
+
+        protected void btnConfirmar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

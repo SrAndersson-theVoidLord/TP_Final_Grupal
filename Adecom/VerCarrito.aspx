@@ -37,4 +37,15 @@
 
 
 
+    <br />
+    <br />
+    <asp:Button ID="btnConfirmar" runat="server" OnClick="btnConfirmar_Click" Text="Confirmar compra" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:Button ID="btnBorrar" runat="server" OnClick="btnBorrar_Click" Text="Borrar carrito" />
+
+    
+            
+
+
+
 </asp:Content>
