@@ -22,4 +22,12 @@
 
 
 
+    <asp:GridView ID="GridView_Carrito" runat="server">
+    </asp:GridView>
+
+    
+            
+
+
+
 </asp:Content>

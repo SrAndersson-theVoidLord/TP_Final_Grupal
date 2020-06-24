@@ -114,7 +114,7 @@
                             Precio:$
                             <asp:Label ID="Precio_HARLabel" runat="server" Text='<%# Eval("Precio_HAR") %>' />
                             <br />
-                            <asp:Button ID="btnAniadir" runat="server" Text="añadir al carrito" ForeColor="#0066FF" OnCommand="btn_añadir_producto" />
+                            <asp:Button ID="btnAniadir" runat="server" Text="añadir al carrito" ForeColor="#0066FF" OnCommand="btn_añadir_producto" CommandArgument='<%# Eval("Id_Hardware_HAR") + ";" + Eval("Categoria_HAR") + ";" + Eval("Nombre_HAR") + ";" + Eval("Descripcion_HAR") + ";" + Eval("Imagen_HAR") + ";" + Eval("Precio_HAR") %>' CommandName="añadir_producto" />
                             <br />
                         </td>
                     </ItemTemplate>
@@ -157,7 +157,8 @@
         <tr>
             <td class="auto-style3">&nbsp;</td>
             <td class="auto-style4">
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AdecomConnectionString2 %>" SelectCommand="SELECT [Nombre_HAR], [Imagen_HAR], [Precio_HAR] FROM [Hardware]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AdecomConnectionString2 %>" SelectCommand="SELECT [Nombre_HAR], [Imagen_HAR], [Precio_HAR], [Id_Hardware_HAR], [Categoria_HAR], [Descripcion_HAR] FROM [Hardware]"></asp:SqlDataSource>
+                <asp:Label ID="Label1" runat="server"></asp:Label>
             </td>
         </tr>
     </table>

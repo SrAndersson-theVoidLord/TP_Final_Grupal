@@ -24,8 +24,10 @@ namespace Adecom
         protected void btn_añadir_producto(object sender, CommandEventArgs e)
         {
 
-            if (e.CommandName == "Comando_Añadir")
+            if (e.CommandName == "añadir_producto")
             {
+
+                Label1.Text = "aaaaaa";
 
                 if (Session["Carrito"] == null)
                 {
