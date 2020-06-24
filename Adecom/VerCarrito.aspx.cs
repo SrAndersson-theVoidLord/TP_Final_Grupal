@@ -20,6 +20,28 @@ namespace Adecom
                 GridView_Carrito.DataBind();
             }
 
+            float total_carrito = 0;
+            DataTable dt = (DataTable)Session["Carrito"];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+
+                total_carrito += Convert.ToSingle(dt.Rows[i]["Precio"]);
+
+
+
+                //if (datos[0] == dt.Rows[i]["ID"].ToString())
+                //{
+                //    //flag = true;
+
+                //    dt.Rows[i]["Cantidad"] = 1;
+
+                //    Session["Carrito"]
+
+                //}
+            }
+
+            Total.Text = "Total del carrito: " + Convert.ToString(total_carrito);
+
         }
 
 

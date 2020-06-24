@@ -30,4 +30,11 @@
 
 
 
+    <asp:Label ID="Total" runat="server"></asp:Label>
+
+    
+            
+
+
+
 </asp:Content>

@@ -36,30 +36,35 @@ namespace Adecom
 
                 }
 
-                string[] datos = new string[6];
+                string[] datos = new string[5];
                 datos = e.CommandArgument.ToString().Split(';');
 
                 bool flag = false;
-                DataTable dt = (DataTable)Session["Carrito"];
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    if (datos[0] == dt.Rows[i]["ID"].ToString())
-                    {
-                        flag = true;
-                    }
-                }
+                //DataTable dt = (DataTable)Session["Carrito"];
+                //for (int i = 0; i < dt.Rows.Count; i++)
+                //{
+                //    if (datos[0] == dt.Rows[i]["ID"].ToString())
+                //    {
+                //        //flag = true;
 
-                if (!flag)
-                {
+                //        dt.Rows[i]["Cantidad"] = 1;
+
+                //        Session["Carrito"]
+
+                //    }
+                //}
+
+                //if (!flag)
+                //{
                     int ID_Producto = Convert.ToInt32(datos[0]);
                     string Categoria_Producto = datos[1];
                     string Nombre_Producto = datos[2];
                     string Descripcion_Producto = datos[3];
-                    string Imagen_Producto = datos[4];
-                    float Precio_Producto = Convert.ToSingle(datos[5]);
+                    //string Imagen_Producto = datos[4];
+                    float Precio_Producto = Convert.ToSingle(datos[4]);
 
-                    Crear_columna((DataTable)Session["Carrito"], ID_Producto, Categoria_Producto, Nombre_Producto, Descripcion_Producto, Imagen_Producto, Precio_Producto);
-                }
+                    Crear_columna((DataTable)Session["Carrito"], ID_Producto, Categoria_Producto, Nombre_Producto, Descripcion_Producto, Precio_Producto);
+                //}
             }
 
         }
@@ -82,8 +87,8 @@ namespace Adecom
             aux_column = new DataColumn("Descripcion", System.Type.GetType("System.String"));
             aux_table.Columns.Add(aux_column);
 
-            aux_column = new DataColumn("Imagen", System.Type.GetType("System.String"));
-            aux_table.Columns.Add(aux_column);
+            //aux_column = new DataColumn("Imagen", System.Type.GetType("System.String"));
+            //aux_table.Columns.Add(aux_column);
 
             aux_column = new DataColumn("Precio", System.Type.GetType("System.Single"));
             aux_table.Columns.Add(aux_column);
@@ -95,7 +100,7 @@ namespace Adecom
 
         }
 
-        public void Crear_columna(DataTable aux_table, int ID_Producto, string Categoria_Producto, string Nombre_Producto, string Descripcion_Producto, string Imagen_Producto, float Precio_Producto)
+        public void Crear_columna(DataTable aux_table, int ID_Producto, string Categoria_Producto, string Nombre_Producto, string Descripcion_Producto, float Precio_Producto)
         {
 
             DataRow aux_columna = aux_table.NewRow();
@@ -104,7 +109,7 @@ namespace Adecom
             aux_columna["Categoria"] = Categoria_Producto;
             aux_columna["Nombre"] = Nombre_Producto;
             aux_columna["Descripcion"] = Descripcion_Producto;
-            aux_columna["Imagen"] = Imagen_Producto;
+            //aux_columna["Imagen"] = Imagen_Producto;
             aux_columna["Precio"] = Precio_Producto;
             aux_columna["Cantidad"] = 1;
 
