@@ -12,6 +12,25 @@ namespace Adecom
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (!IsPostBack)
+            {
+
+            }
+
+        }
+
+        public void Llenar_drop()
+        {
+
+
+
+        }
+
+        public void Conectar()
+        {
+
+
+
         }
 
         protected void CheckBox1_CheckedChanged(object sender, EventArgs e)

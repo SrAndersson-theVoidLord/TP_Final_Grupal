@@ -46,15 +46,21 @@
         <tr>
             <td class="auto-style5">Tipo:</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList1" runat="server">
+                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR">
                 </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AdecomConnectionString7 %>" SelectCommand="SELECT * FROM [Hardware]"></asp:SqlDataSource>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">Procesador:</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList2" runat="server">
+                <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR">
                 </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AdecomConnectionString8 %>" SelectCommand="SELECT [Id_Hardware_HAR], [Nombre_HAR] FROM [Hardware] WHERE ([Categoria_HAR] = @Categoria_HAR)">
+                    <SelectParameters>
+                        <asp:SessionParameter DefaultValue="PROC" Name="Categoria_HAR" SessionField="Procesador" Type="String" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
             </td>
         </tr>
         <tr>
