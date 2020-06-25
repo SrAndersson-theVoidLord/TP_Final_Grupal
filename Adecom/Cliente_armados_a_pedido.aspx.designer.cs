@@ -141,22 +141,22 @@ namespace Adecom
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource7;
 
         /// <summary>
-        /// Control chkWindows.
+        /// Control DropDownList8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkWindows;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList8;
 
         /// <summary>
-        /// Control chkLinux.
+        /// Control SqlDataSource8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkLinux;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource8;
 
         /// <summary>
         /// Control btnRealizarpedido.

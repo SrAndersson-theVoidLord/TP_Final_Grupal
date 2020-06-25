@@ -4,3 +4,9 @@ C:\Mis Proyectos\TP_Final_Grupal\Dominio\obj\Debug\Dominio.dll
 C:\Mis Proyectos\TP_Final_Grupal\Dominio\obj\Debug\Dominio.pdb
 C:\Mis Proyectos\TP_Final_Grupal\Dominio\bin\Debug\Dominio.dll
 C:\Mis Proyectos\TP_Final_Grupal\Dominio\bin\Debug\Dominio.pdb
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Dominio\obj\Debug\Entidades.csprojAssemblyReference.cache
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Dominio\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Dominio\obj\Debug\Dominio.dll
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Dominio\obj\Debug\Dominio.pdb
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Dominio\bin\Debug\Dominio.dll
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Dominio\bin\Debug\Dominio.pdb

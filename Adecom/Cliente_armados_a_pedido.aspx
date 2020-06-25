@@ -126,9 +126,13 @@
         <tr>
             <td class="auto-style5">Sistema Operativo:</td>
             <td class="auto-style6">
-                <asp:CheckBox ID="chkWindows" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" Text="Windows" />
-&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:CheckBox ID="chkLinux" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" Text="Linux" />
+                <asp:DropDownList ID="DropDownList8" runat="server" DataSourceID="SqlDataSource8" DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:AdecomConnectionString14 %>" SelectCommand="SELECT [Id_Hardware_HAR], [Nombre_HAR] FROM [Hardware] WHERE ([Categoria_HAR] = @Categoria_HAR)">
+                    <SelectParameters>
+                        <asp:SessionParameter DefaultValue="SOFT" Name="Categoria_HAR" SessionField="Software" Type="String" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
             </td>
         </tr>
     </table>

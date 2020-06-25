@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
+using System.Data;
+
 namespace Dao
 {
     public class AccesoDatos
@@ -104,5 +106,39 @@ namespace Dao
 
             }
         }
+
+        //Obtener adaptador
+        private SqlDataAdapter ObtenerAdaptador(String consultaSql, SqlConnection cn)
+        {
+            SqlDataAdapter adaptador;
+            try
+            {
+                adaptador = new SqlDataAdapter(consultaSql, cn);
+                return adaptador;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        //Obtener tabla
+        public DataTable ObtenerTabla(String NombreTabla, String Sql)
+        {
+            DataSet ds = new DataSet();
+            
+            SqlDataAdapter adp = ObtenerAdaptador(Sql, conexion);
+            adp.Fill(ds, NombreTabla);
+            
+            return ds.Tables[NombreTabla];
+        }
+
+
+        //Destructor
+        ~AccesoDatos()
+        {
+            conexion.Close();
+        }
+
     }
 }

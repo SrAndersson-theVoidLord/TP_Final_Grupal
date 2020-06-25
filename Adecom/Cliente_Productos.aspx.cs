@@ -30,7 +30,7 @@ namespace Adecom
             if (e.CommandName == "añadir_producto")
             {
 
-                Label1.Text = "aaaaaa";
+                
 
                 if (Session["Carrito"] == null)
                 {
@@ -42,7 +42,7 @@ namespace Adecom
                 string[] datos = new string[5];
                 datos = e.CommandArgument.ToString().Split(';');
 
-                bool flag = false;
+                //bool flag = false;
                 //DataTable dt = (DataTable)Session["Carrito"];
                 //for (int i = 0; i < dt.Rows.Count; i++)
                 //{

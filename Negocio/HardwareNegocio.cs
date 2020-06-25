@@ -12,6 +12,11 @@ namespace Negocio
     public class HardwareNegocio
     {
 
+        public HardwareNegocio()
+        {
+
+        }
+
         public List<Hardware> listar()
         {
             List<Hardware> lista = new List<Hardware>();
@@ -28,7 +33,7 @@ namespace Negocio
                     aux.Nombre = (string)datos.lector["Nombre_HAR"];
                     aux.Descripcion = (string)datos.lector["Descripcion_HAR"];
                     aux.Imagen = (string)datos.lector["Imagen"];
-                    aux.Precio_unitario = (double)datos.lector["Precio_HAR"];
+                    aux.Precio_unitario = (Single)datos.lector["Precio_HAR"];
                     aux.Estado = (Boolean)datos.lector["Estado_HAR"];
 
                     lista.Add(aux);
@@ -45,6 +50,15 @@ namespace Negocio
                 datos.cerrarConexion();
                 datos = null;
             }
+        }
+
+        public Hardware get_HardwareNegocio(int id)
+        {
+            
+            Hardware cat = new Hardware();
+            DAO_Hardware dao = new DAO_Hardware();
+            cat.Id_hardware = id;
+            return dao.get_Hardware(cat);
         }
 
 

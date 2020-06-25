@@ -4,3 +4,12 @@ C:\Mis Proyectos\TP_Final_Grupal\Dao\obj\Debug\Dao.csprojAssemblyReference.cache
 C:\Mis Proyectos\TP_Final_Grupal\Dao\obj\Debug\Dao.csproj.CoreCompileInputs.cache
 C:\Mis Proyectos\TP_Final_Grupal\Dao\obj\Debug\Dao.dll
 C:\Mis Proyectos\TP_Final_Grupal\Dao\obj\Debug\Dao.pdb
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Dao\obj\Debug\Dao.csprojAssemblyReference.cache
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Dao\obj\Debug\Dao.csproj.CoreCompileInputs.cache
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Dao\obj\Debug\Dao.dll
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Dao\obj\Debug\Dao.pdb
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Dao\bin\Debug\Dao.dll
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Dao\bin\Debug\Dao.pdb
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Dao\bin\Debug\Dominio.dll
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Dao\bin\Debug\Dominio.pdb
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Dao\obj\Debug\Dao.csproj.CopyComplete
