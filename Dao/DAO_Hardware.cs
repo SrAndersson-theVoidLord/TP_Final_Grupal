@@ -30,7 +30,7 @@ namespace Dao
             cat.Nombre = tabla.Rows[0][2].ToString();
             cat.Descripcion = tabla.Rows[0][3].ToString();
             cat.Imagen = tabla.Rows[0][4].ToString();
-            cat.Precio_unitario = Convert.ToSingle(tabla.Rows[0][5].ToString());
+            cat.Precio_unitario = Convert.ToDouble(tabla.Rows[0][5].ToString());
             cat.Estado = Convert.ToBoolean(tabla.Rows[0][6].ToString());
 
             return cat;

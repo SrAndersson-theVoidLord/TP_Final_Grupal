@@ -33,7 +33,7 @@ namespace Negocio
                     aux.Nombre = (string)datos.lector["Nombre_HAR"];
                     aux.Descripcion = (string)datos.lector["Descripcion_HAR"];
                     aux.Imagen = (string)datos.lector["Imagen"];
-                    aux.Precio_unitario = (Single)datos.lector["Precio_HAR"];
+                    aux.Precio_unitario = (double)datos.lector["Precio_HAR"];
                     aux.Estado = (Boolean)datos.lector["Estado_HAR"];
 
                     lista.Add(aux);

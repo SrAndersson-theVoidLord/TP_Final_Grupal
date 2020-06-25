@@ -17,7 +17,7 @@ namespace Dominio
         private int horas_trabajadas;
         private Double subtotal;
         private DateTime fecha;
-        private string estado_act;
+        private bool estado_act;
 
 
         public Actividad()
@@ -34,6 +34,6 @@ namespace Dominio
         public int Horas_trabajadas { get => horas_trabajadas; set => horas_trabajadas = value; }
         public double Subtotal { get => subtotal; set => subtotal = value; }
         public DateTime Fecha { get => fecha; set => fecha = value; }
-        public string Estado_act { get => estado_act; set => estado_act = value; }
+        public bool Estado_act { get => estado_act; set => estado_act = value; }
     }
 }

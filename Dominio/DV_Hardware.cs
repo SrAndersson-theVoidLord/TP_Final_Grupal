@@ -10,7 +10,7 @@ namespace Dominio
     {
         private int id_ventas;
         private int id_hardware;
-                private Double precio_unitario;
+        private Double precio_unitario;
         private int cantidad_total;
         private double subtotal;
 

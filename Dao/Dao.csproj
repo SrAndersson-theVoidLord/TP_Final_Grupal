@@ -42,7 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
+    <Compile Include="DAO_Actividades.cs" />
+    <Compile Include="DAO_Categoria_hardware.cs" />
+    <Compile Include="DAO_DV_Haedware.cs" />
+    <Compile Include="DAO_DV_Servicios.cs" />
     <Compile Include="DAO_Hardware.cs" />
+    <Compile Include="DAO_Tipos_de_pedido.cs" />
+    <Compile Include="DAO_Ventas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

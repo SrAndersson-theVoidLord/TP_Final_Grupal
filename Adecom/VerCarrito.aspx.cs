@@ -20,7 +20,7 @@ namespace Adecom
                 GridView_Carrito.DataBind();
             }
 
-            float total_carrito = 0;
+            double total_carrito = 0;
             DataTable dt = (DataTable)Session["Carrito"];
 
             if(Session["Carrito"] == null)
@@ -48,7 +48,7 @@ namespace Adecom
                     //}
                 }
 
-                Total.Text = "Total del carrito: " + Convert.ToString(total_carrito);
+                Total.Text = "Total del carrito: $" + Convert.ToString(total_carrito);
 
             }
 

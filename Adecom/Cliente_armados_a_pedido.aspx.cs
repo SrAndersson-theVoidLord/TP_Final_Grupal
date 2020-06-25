@@ -39,19 +39,7 @@ namespace Adecom
 
             }
 
-            //string[] datos = new string[5];
-            //datos = e.CommandArgument.ToString().Split(';');
-
-            //bool flag = false;
-
-            //int ID_Producto = Convert.ToInt32(datos[0]);
-            //string Categoria_Producto = datos[1];
-            //string Nombre_Producto = datos[2];
-            //string Descripcion_Producto = datos[3];
-            //float Precio_Producto = Convert.ToSingle(datos[4]);
-
-            //Crear_columna((DataTable)Session["Carrito"], ID_Producto, Categoria_Producto, Nombre_Producto, Descripcion_Producto, Precio_Producto);
-
+            
 
             Llenar_carrito(Convert.ToInt32(DropDownList1.SelectedValue));
             Llenar_carrito(Convert.ToInt32(DropDownList2.SelectedValue));
@@ -76,7 +64,7 @@ namespace Adecom
             string Categoria_Producto = hard.Str_categoria;
             string Nombre_Producto = hard.Nombre;
             string Descripcion_Producto = hard.Descripcion;
-            float Precio_Producto = hard.Precio_unitario;
+            double Precio_Producto = hard.Precio_unitario;
 
             Crear_columna((DataTable)Session["Carrito"], ID_Producto, Categoria_Producto, Nombre_Producto, Descripcion_Producto, Precio_Producto);
 
@@ -86,7 +74,7 @@ namespace Adecom
         public DataTable Crear_tabla()
         {
 
-            DataTable aux_table = new DataTable();
+            DataTable aux_table = new DataTable(); 
             DataColumn aux_column = new DataColumn();
 
             aux_column = new DataColumn("ID", System.Type.GetType("System.Int32"));
@@ -101,7 +89,7 @@ namespace Adecom
             aux_column = new DataColumn("Descripcion", System.Type.GetType("System.String"));
             aux_table.Columns.Add(aux_column);
 
-            aux_column = new DataColumn("Precio", System.Type.GetType("System.Single"));
+            aux_column = new DataColumn("Precio", System.Type.GetType("System.Double"));
             aux_table.Columns.Add(aux_column);
 
             aux_column = new DataColumn("Cantidad", System.Type.GetType("System.Int32"));
@@ -111,7 +99,7 @@ namespace Adecom
 
         }
 
-        public void Crear_columna(DataTable aux_table, int ID_Producto, string Categoria_Producto, string Nombre_Producto, string Descripcion_Producto, float Precio_Producto)
+        public void Crear_columna(DataTable aux_table, int ID_Producto, string Categoria_Producto, string Nombre_Producto, string Descripcion_Producto, double Precio_Producto)
         {
 
             DataRow aux_columna = aux_table.NewRow();
