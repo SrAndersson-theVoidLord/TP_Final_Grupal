@@ -23,7 +23,7 @@ namespace Adecom
             float total_carrito = 0;
             DataTable dt = (DataTable)Session["Carrito"];
 
-            if(total_carrito == 0)
+            if(Session["Carrito"] == null)
             {
                 Total.Text = "No hay productos cargados en el carrito";
             }
