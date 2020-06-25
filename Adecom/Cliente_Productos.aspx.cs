@@ -13,7 +13,10 @@ namespace Adecom
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack == false)
+            {
 
+            }
         }
 
         protected void ListView1_SelectedIndexChanged(object sender, EventArgs e)

@@ -15,6 +15,13 @@ namespace Adecom
         public List<Hardware> ListaHardware { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack == false)
+            {
+                if (Session["usuariovalidado"]==null)
+                {
+                    Response.Redirect("/Login.aspx");
+                }
+            }
             HardwareNegocio negocio = new HardwareNegocio();
             ListaHardware = negocio.listar();
 

@@ -21,6 +21,7 @@
                 <asp:HyperLink ID="hlVerCarrito" CssClass="my-0 mr-md-auto font-weight-bold text-dark text-decoration-none" runat="server" NavigateUrl="~/VerCarrito.aspx" ImageUrl="~/Imagenes/Carrito2.png" ImageHeight="40px"></asp:HyperLink>
             </nav>
             <asp:HyperLink ID="hlIniciarSesion" CssClass="btn btn-outline-success" runat="server" NavigateUrl="~/Login.aspx">Iniciar Sesion</asp:HyperLink>
+            <asp:Button ID="btnCerrarSesion" cssclass="btn btn-outline-success" Text="Cerrar Sesion" runat="server" OnClick="btnCerrarSesion_Click" />
         </div>
         <div>
 

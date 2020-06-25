@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Negocio;
+using Dominio;
 
 namespace Adecom
 {
@@ -11,6 +13,11 @@ namespace Adecom
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(IsPostBack == false)
+            {
+
+            }
+
 
         }
 
@@ -18,15 +25,44 @@ namespace Adecom
         {
             if (cbSoyEmpleado.Checked is true)
             {
-             Response.Redirect("/Empleados_Productos.aspx");
+                UsuarioNegocio login = new UsuarioNegocio();
+                Usuario usuariologin = new Usuario();
+                usuariologin = login.Validar_Empleados(tbUsuario.Text);
+                if (usuariologin.Nombreusuario == tbUsuario.Text)
+                {
+
+                    if (usuariologin.Constraseña == tbContraseña.Text)
+                    {
+                        Session["usuariovalidado"] = (Usuario)usuariologin;
+                        Response.Redirect("/Empleados_Productos.aspx");
+                    }
+                }
+
+       
+
             }
             else
             {
-            Response.Redirect("/Cliente_Productos.aspx");
-            }    
-            
+                UsuarioNegocio login = new UsuarioNegocio();
+                Usuario usuariologin = new Usuario();
+                usuariologin = login.Validar_Clientes(tbUsuario.Text);
+                if (usuariologin.Nombreusuario == tbUsuario.Text)
+                {
 
+                    if (usuariologin.Constraseña == tbContraseña.Text)
+                    {
+                        Session["usuariovalidado"] = (Usuario)usuariologin;
+                        Response.Redirect("/Cliente_Productos.aspx");
+                    }
+                }
+
+
+            }
         }
+
+        
+
+        
 
         protected void btnRegistrarse_Click(object sender, EventArgs e)
         {

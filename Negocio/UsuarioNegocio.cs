@@ -198,7 +198,34 @@ namespace Negocio
         }
 
 
+        public Usuario Validar_Clientes(string usuario)
+        {
 
+            Usuario aux = new Usuario();
+            AccesoDatos datos = new AccesoDatos();
+            datos.setearQuery("select id_Cliente_CLI, DNI_CLI, Nombre_CLI, Apellido_CLI,NombreUsuario_CLI,Contrasenia_CLI, Direccion_CLI, Localidad_CLI,Codigo_Postal_CLI, Telefono_CLI, Email_CLI,Estado_CLI from Clientes where NombreUsuario_CLI = '" + usuario + "'");
+            datos.ejecutarLector();
+            while (datos.lector.Read())
+            {
+                aux.Id_Usuario = (int)datos.lector["id_Cliente_CLI"];
+                aux.Dni = datos.lector["DNI_CLI"].ToString().Trim();
+                aux.Nombre = datos.lector["Nombre_CLI"].ToString().Trim();
+                aux.Apellido = datos.lector["Apellido_CLI"].ToString().Trim();
+                aux.Nombreusuario = datos.lector["NombreUsuario_CLI"].ToString().Trim();
+                aux.Constraseña = datos.lector["Contrasenia_CLI"].ToString().Trim();
+                aux.Direccion = datos.lector["Direccion_CLI"].ToString().Trim();
+                aux.Localidad = datos.lector["Localidad_CLI"].ToString().Trim();
+                aux.Cp = datos.lector["Codigo_Postal_CLI"].ToString().Trim();
+                aux.Telefono = datos.lector["Telefono_CLI"].ToString().Trim();
+                aux.Email = datos.lector["Email_CLI"].ToString().Trim();
+                aux.Estado = (Boolean)datos.lector["Estado_CLI"];
+
+            }
+
+            datos.cerrarConexion();
+
+            return aux;
+        }
 
         /////////////////////////////////////////////////////////////////////////////////////
 
@@ -345,6 +372,34 @@ namespace Negocio
 
         }
 
+        public Usuario Validar_Empleados(string usuario)
+        {
+
+            Usuario aux = new Usuario();
+            AccesoDatos datos = new AccesoDatos();
+            datos.setearQuery("select id_Empleado_EMP, DNI_EMP, Nombre_EMP, Apellido_EMP,NombreUsuario_EMP,Contrasenia_EMP, Direccion_EMP, Localidad_EMP,Codigo_Postal_EMP, Telefono_EMP, Email_EMP,Estado_EMP from Empleados where NombreUsuario_EMP = '" + usuario + "'");
+            datos.ejecutarLector();
+            while (datos.lector.Read())
+            {
+                aux.Id_Usuario = (int)datos.lector["id_Empleado_EMP"];
+                aux.Dni = datos.lector["DNI_EMP"].ToString().Trim();
+                aux.Nombre = datos.lector["Nombre_EMP"].ToString().Trim();
+                aux.Apellido = datos.lector["Apellido_EMP"].ToString().Trim();
+                aux.Nombreusuario = datos.lector["NombreUsuario_EMP"].ToString().Trim();
+                aux.Constraseña = datos.lector["Contrasenia_EMP"].ToString().Trim();
+                aux.Direccion = datos.lector["Direccion_EMP"].ToString().Trim();
+                aux.Localidad = datos.lector["Localidad_EMP"].ToString().Trim();
+                aux.Cp = datos.lector["Codigo_Postal_EMP"].ToString().Trim();
+                aux.Telefono = datos.lector["Telefono_EMP"].ToString().Trim();
+                aux.Email = datos.lector["Email_EMP"].ToString().Trim();
+                aux.Estado = (Boolean)datos.lector["Estado_EMP"];
+
+            }
+
+            datos.cerrarConexion();
+
+            return aux;
+        }
 
 
 
