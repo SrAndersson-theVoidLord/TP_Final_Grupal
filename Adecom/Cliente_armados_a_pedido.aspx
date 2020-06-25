@@ -4,10 +4,6 @@
         .auto-style2 {
             text-align: left;
         }
-        .auto-style3 {
-            text-align: center;
-            font-size: x-large;
-        }
         .auto-style4 {
             width: 100%;
         }
@@ -44,11 +40,15 @@
 
     <table class="auto-style4">
         <tr>
-            <td class="auto-style5">Tipo:</td>
+            <td class="auto-style5">Disco:</td>
             <td class="auto-style6">
                 <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR">
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AdecomConnectionString7 %>" SelectCommand="SELECT * FROM [Hardware]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AdecomConnectionString7 %>" SelectCommand="SELECT [Id_Hardware_HAR], [Nombre_HAR] FROM [Hardware] WHERE ([Categoria_HAR] = 'DISO') OR ([Categoria_HAR] = 'DIRI')">
+                    <SelectParameters>
+                        <asp:SessionParameter DefaultValue="DISO" Name="Categoria_HAR" SessionField="Disco solido" Type="String" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
             </td>
         </tr>
         <tr>
@@ -66,29 +66,61 @@
         <tr>
             <td class="auto-style5">Motheboard:</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList3" runat="server">
+                <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource3" DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR">
                 </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:AdecomConnectionString10 %>" SelectCommand="SELECT [Id_Hardware_HAR], [Nombre_HAR] FROM [Hardware] WHERE ([Categoria_HAR] = @Categoria_HAR)">
+                    <SelectParameters>
+                        <asp:SessionParameter DefaultValue="PLMA" Name="Categoria_HAR" SessionField="Placa madre" Type="String" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">Placa de Video:</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList4" runat="server">
+                <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="SqlDataSource4" DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR">
                 </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:AdecomConnectionString11 %>" SelectCommand="SELECT [Id_Hardware_HAR], [Nombre_HAR] FROM [Hardware] WHERE ([Categoria_HAR] = @Categoria_HAR)">
+                    <SelectParameters>
+                        <asp:SessionParameter DefaultValue="PLVI" Name="Categoria_HAR" SessionField="Placa de video" Type="String" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">Memoria Ram:</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList5" runat="server">
+                <asp:DropDownList ID="DropDownList5" runat="server" DataSourceID="SqlDataSource5" DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR">
                 </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:AdecomConnectionString12 %>" SelectCommand="SELECT [Id_Hardware_HAR], [Nombre_HAR] FROM [Hardware] WHERE ([Categoria_HAR] = @Categoria_HAR)">
+                    <SelectParameters>
+                        <asp:SessionParameter DefaultValue="MRAM" Name="Categoria_HAR" SessionField="Memoria RAM" Type="String" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">Fuente:</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList6" runat="server">
+                <asp:DropDownList ID="DropDownList6" runat="server" DataSourceID="SqlDataSource6" DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR">
                 </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:AdecomConnectionString13 %>" SelectCommand="SELECT [Id_Hardware_HAR], [Nombre_HAR] FROM [Hardware] WHERE ([Categoria_HAR] = @Categoria_HAR)">
+                    <SelectParameters>
+                        <asp:SessionParameter DefaultValue="FUEN" Name="Categoria_HAR" SessionField="Fuente" Type="String" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style5">Gabinete:</td>
+            <td class="auto-style6">
+                <asp:DropDownList ID="DropDownList7" runat="server" DataSourceID="SqlDataSource7" DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:AdecomConnectionString14 %>" SelectCommand="SELECT [Id_Hardware_HAR], [Nombre_HAR] FROM [Hardware] WHERE ([Categoria_HAR] = @Categoria_HAR)">
+                    <SelectParameters>
+                        <asp:SessionParameter DefaultValue="GABI" Name="Categoria_HAR" SessionField="Gabinete" Type="String" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
             </td>
         </tr>
         <tr>
