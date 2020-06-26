@@ -32,5 +32,25 @@ namespace Dao
             return cat;
         }
 
+        private void Armar_Parametros_agregar_DV_Servicios(ref SqlCommand Comando, DV_Servicios cat)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@Id_Venta", SqlDbType.Int);
+            SqlParametros.Value = cat.Id_venta;
+            SqlParametros = Comando.Parameters.Add("@Id_Actividad", SqlDbType.Int);
+            SqlParametros.Value = cat.Id_actividad;
+            SqlParametros = Comando.Parameters.Add("@Descripcion", SqlDbType.VarChar);
+            SqlParametros.Value = cat.Descripcion;
+
+        }
+
+        public int agregar_DV_Servicios(DV_Servicios cat)
+        {
+
+            SqlCommand comando = new SqlCommand();
+            Armar_Parametros_agregar_DV_Servicios(ref comando, cat);
+            return ds.EjecutarProcedimiento(comando, "PRO_ingresar_datos_Detalles_de_ventas_x_Actividades");
+        }
+
     }
 }
