@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace Dao
 {
-    class DAO_Tipos_de_pedido
+    public class DAO_Tipos_de_pedido
     {
 
         AccesoDatos ds = new AccesoDatos();
@@ -19,7 +19,7 @@ namespace Dao
         {
         }
 
-        public TipoPedido get_Hardware(TipoPedido cat)
+        public TipoPedido get_Tipos_de_pedido(TipoPedido cat)
         {
             DataTable tabla = ds.ObtenerTabla("Tipos_de_pedido", "Select * from Tipos_de_pedido where Id_Tipo_TDP =" + cat.Id_tipo);
 

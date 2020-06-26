@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using Negocio;
 
 namespace Adecom
 {
@@ -52,8 +53,15 @@ namespace Adecom
 
             }
 
+        }
 
+        public void Borrar_carrito()
+        {
 
+            Session["Carrito"] = null;
+            GridView_Carrito.DataSource = (DataTable)Session["Carrito"];
+            GridView_Carrito.DataBind();
+            
 
         }
 
@@ -61,17 +69,28 @@ namespace Adecom
         {
             if (Session["Carrito"] != null)
             {
-                Session["Carrito"] = null;
-                GridView_Carrito.DataSource = (DataTable)Session["Carrito"];
-                GridView_Carrito.DataBind();
+
+                Borrar_carrito();
                 Total.Text = "Borrado exitoso: Ya no hay productos cargados en el carrito";
 
             }
             
         }
 
+
+
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
+            VentasNegocio v_neg = new VentasNegocio();
+            int x;
+
+            if (v_neg.agregar_Ventas(1)) //El 1 es de soporte, cuando sepa sacar el cliente de la sesson lo cambiare.
+            {
+                
+                Borrar_carrito();
+                x = v_neg.Obtener_Ultimo_id_ventas();
+                Total.Text = "Venta exitosa";
+            }
 
         }
     }

@@ -133,12 +133,40 @@ namespace Dao
             return ds.Tables[NombreTabla];
         }
 
+        //Obtener ultimo id
+        public int Obtener_Ultimo_id(String consulta)
+        {
+            int max = 0;
+            conexion.Open();
+            SqlCommand cmd = new SqlCommand(consulta, conexion);
+            SqlDataReader datos = cmd.ExecuteReader();
+            if (datos.Read())
+            {
+                max = Convert.ToInt32(datos[0].ToString());
+            }
+            return max;
+        }
+
+        //Ejecutar procedimiento almacenado
+        public int EjecutarProcedimiento(SqlCommand Comando, String NombreSP)
+        {
+            int FilasCambiadas;
+            conexion.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd = Comando;
+            cmd.Connection = conexion;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = NombreSP;
+            FilasCambiadas = cmd.ExecuteNonQuery();
+            
+            return FilasCambiadas;
+        }
 
         //Destructor
-        ~AccesoDatos()
-        {
-            conexion.Close();
-        }
+        //~AccesoDatos()
+        //{
+        //    conexion.Close();
+        //}
 
     }
 }

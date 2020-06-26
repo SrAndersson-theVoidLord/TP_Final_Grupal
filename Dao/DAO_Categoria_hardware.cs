@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace Dao
 {
-    class DAO_Categoria_hardware
+    public class DAO_Categoria_hardware
     {
 
         AccesoDatos ds = new AccesoDatos();
@@ -19,7 +19,7 @@ namespace Dao
         {
         }
 
-        public CategoriaHardware get_Hardware(CategoriaHardware cat)
+        public CategoriaHardware get_Categoria_hardware(CategoriaHardware cat)
         {
             DataTable tabla = ds.ObtenerTabla("Categoria_hardware", "Select * from Categoria_hardware where Id_Categoria_CAT = '" + cat.Id_categoria + "'");
             

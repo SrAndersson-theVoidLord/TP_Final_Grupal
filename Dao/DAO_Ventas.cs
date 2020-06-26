@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace Dao
 {
-    class DAO_Ventas
+    public class DAO_Ventas
     {
 
         AccesoDatos ds = new AccesoDatos();
@@ -19,7 +19,7 @@ namespace Dao
         {
         }
 
-        public Ventas get_Hardware(Ventas cat)
+        public Ventas get_Ventas(Ventas cat)
         {
             DataTable tabla = ds.ObtenerTabla("Ventas", "Select * from Ventas where Id_Venta_VEN =" + cat.Id_venta);
 
@@ -29,6 +29,29 @@ namespace Dao
             cat.Total = Convert.ToDouble(tabla.Rows[0][3].ToString());
             
             return cat;
+        }
+
+        private void Armar_Parametros_agregar_Ventas(ref SqlCommand Comando, Ventas cat)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@Id_Cliente", SqlDbType.Int);
+            SqlParametros.Value = cat.Id_cliente;
+            
+        }
+
+        public int agregar_Ventas(Ventas cat)
+        {
+            
+            SqlCommand comando = new SqlCommand();
+            Armar_Parametros_agregar_Ventas(ref comando, cat);
+            return ds.EjecutarProcedimiento(comando, "PRO_ingresar_datos_Ventas");
+        }
+
+        public int Obtener_Ultimo_id_ventas()
+        {
+
+            return ds.Obtener_Ultimo_id("SELECT max(Id_Venta_VEN) FROM Ventas");
+
         }
 
     }

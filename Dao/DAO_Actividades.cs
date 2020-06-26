@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace Dao
 {
-    class DAO_Actividades
+    public class DAO_Actividades
     {
 
         AccesoDatos ds = new AccesoDatos();
@@ -19,7 +19,7 @@ namespace Dao
         {
         }
 
-        public Actividad get_Hardware(Actividad cat)
+        public Actividad get_Actividades(Actividad cat)
         {
             DataTable tabla = ds.ObtenerTabla("Actividades", "Select * from Actividades where Id_Actividad_A =" + cat.Id_actividad);
             

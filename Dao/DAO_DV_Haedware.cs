@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace Dao
 {
-    class DAO_DV_Haedware
+    public class DAO_DV_Haedware
     {
 
         AccesoDatos ds = new AccesoDatos();
@@ -19,7 +19,7 @@ namespace Dao
         {
         }
 
-        public DV_Hardware get_Hardware(DV_Hardware cat)
+        public DV_Hardware get_DV_Haedware(DV_Hardware cat)
         {
             DataTable tabla = ds.ObtenerTabla("Detalles_de_ventas_x_Hardware", "Select * from Detalles_de_ventas_x_Hardware where Id_Venta_DXV_H = " + cat.Id_ventas + " OR Id_Hardware_DXV_H = " + cat.Id_hardware);
 
