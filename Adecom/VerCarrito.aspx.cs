@@ -82,16 +82,31 @@ namespace Adecom
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
             VentasNegocio v_neg = new VentasNegocio();
-            int x;
+            DV_HardwareNegocio dv_h_neg = new DV_HardwareNegocio();
+            DataTable dt = (DataTable)Session["Carrito"];
+            int id_vent;
 
-            if (v_neg.agregar_Ventas(1)) //El 1 es de soporte, cuando sepa sacar el cliente de la sesson lo cambiare.
+            if (Session["Carrito"] != null)
             {
-                
-                Borrar_carrito();
-                x = v_neg.Obtener_Ultimo_id_ventas();
-                Total.Text = "Venta exitosa";
-            }
 
+                if (v_neg.agregar_Ventas(1)) //El 1 es de soporte, cuando sepa sacar el cliente de la sesson lo cambiare.
+                {
+
+                    id_vent = v_neg.Obtener_Ultimo_id_ventas();
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+
+                        dv_h_neg.agregar_DV_HardwareNegocio(id_vent, Convert.ToInt32(dt.Rows[i]["ID"]), Convert.ToInt32(dt.Rows[i]["Cantidad"]));
+
+
+                    }
+
+                    Borrar_carrito();
+                    Total.Text = "Venta exitosa";
+                }
+
+            }
         }
     }
 }

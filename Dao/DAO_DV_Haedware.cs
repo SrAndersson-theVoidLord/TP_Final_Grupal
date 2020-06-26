@@ -32,5 +32,25 @@ namespace Dao
             return cat;
         }
 
+        private void Armar_Parametros_agregar_DV_Haedware(ref SqlCommand Comando, DV_Hardware cat)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@Id_Venta", SqlDbType.Int);
+            SqlParametros.Value = cat.Id_ventas;
+            SqlParametros = Comando.Parameters.Add("@Id_Hardware", SqlDbType.Int);
+            SqlParametros.Value = cat.Id_hardware;
+            SqlParametros = Comando.Parameters.Add("@Cantidad_Total", SqlDbType.Int);
+            SqlParametros.Value = cat.Cantidad_total;
+
+        }
+
+        public int agregar_DV_Hardware(DV_Hardware cat)
+        {
+
+            SqlCommand comando = new SqlCommand();
+            Armar_Parametros_agregar_DV_Haedware(ref comando, cat);
+            return ds.EjecutarProcedimiento(comando, "PRO_ingresar_datos_Detalles_de_ventas_x_Hardware");
+        }
+
     }
 }
