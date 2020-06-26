@@ -39,3 +39,5 @@ C:\Users\Matias\Documents\GitHub\TP_Final_Grupal\Negocio\obj\Debug\Negocio.dll
 C:\Users\Matias\Documents\GitHub\TP_Final_Grupal\Negocio\obj\Debug\Negocio.pdb
 D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Negocio\bin\Debug\Dao.dll
 D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Negocio\bin\Debug\Dao.pdb
+C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Negocio\bin\Debug\Dao.dll
+C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Negocio\bin\Debug\Dao.pdb
