@@ -18,13 +18,48 @@ namespace Adecom
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            
+            if (IsPostBack == false)
+            {
+
+                Iniciar_DDLs();
+
+            }
 
         }
 
-        
 
-        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        public void Iniciar_DDLs()
+        {
+
+            HardwareNegocio hard_neg = new HardwareNegocio();
+
+            DropDownList1.DataSource = hard_neg.Obtener_tabla_Hardware("SELECT [Id_Hardware_HAR], [Nombre_HAR] FROM [Hardware] WHERE ([Categoria_HAR] = 'DISO') OR ([Categoria_HAR] = 'DIRI')");
+            DropDownList1.DataBind();
+
+            DropDownList2.DataSource = hard_neg.Obtener_tabla_Hardware("SELECT [Id_Hardware_HAR], [Nombre_HAR] FROM [Hardware] WHERE ([Categoria_HAR] = 'PROC')");
+            DropDownList2.DataBind();
+
+            DropDownList3.DataSource = hard_neg.Obtener_tabla_Hardware("SELECT [Id_Hardware_HAR], [Nombre_HAR] FROM [Hardware] WHERE ([Categoria_HAR] = 'PLMA')");
+            DropDownList3.DataBind();
+
+            DropDownList4.DataSource = hard_neg.Obtener_tabla_Hardware("SELECT [Id_Hardware_HAR], [Nombre_HAR] FROM [Hardware] WHERE ([Categoria_HAR] = 'PLVI')");
+            DropDownList4.DataBind();
+
+            DropDownList5.DataSource = hard_neg.Obtener_tabla_Hardware("SELECT [Id_Hardware_HAR], [Nombre_HAR] FROM [Hardware] WHERE ([Categoria_HAR] = 'MRAM')");
+            DropDownList5.DataBind();
+
+            DropDownList6.DataSource = hard_neg.Obtener_tabla_Hardware("SELECT [Id_Hardware_HAR], [Nombre_HAR] FROM [Hardware] WHERE ([Categoria_HAR] = 'FUEN')");
+            DropDownList6.DataBind();
+
+            DropDownList7.DataSource = hard_neg.Obtener_tabla_Hardware("SELECT [Id_Hardware_HAR], [Nombre_HAR] FROM [Hardware] WHERE ([Categoria_HAR] = 'GABI')");
+            DropDownList7.DataBind();
+
+            DropDownList8.DataSource = hard_neg.Obtener_tabla_Hardware("SELECT [Id_Hardware_HAR], [Nombre_HAR] FROM [Hardware] WHERE ([Categoria_HAR] = 'SOFT')");
+            DropDownList8.DataBind();
+
+        }
+
+            protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
 
         }
@@ -52,23 +87,51 @@ namespace Adecom
 
         }
 
+        public bool Repeticion_de_producto(int id)
+        {
+            
+            DataTable dt = (DataTable)Session["Carrito"];
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+
+                if (Convert.ToInt32(dt.Rows[i]["ID"]) == id)
+                {
+
+                    dt.Rows[i]["Cantidad"] = Convert.ToInt32(dt.Rows[i]["Cantidad"]) + 1;
+                    Session["Carrito"] = dt;
+
+
+                    return false;
+
+                }
+                
+                
+            }
+
+            return true;
+
+
+        }
+
         public void Llenar_carrito(int id)
         {
+            if (Repeticion_de_producto(id)) {
 
-            Hardware hard = new Hardware();
-            HardwareNegocio neg = new HardwareNegocio();
+                Hardware hard = new Hardware();
+                HardwareNegocio neg = new HardwareNegocio();
 
-            hard = neg.get_HardwareNegocio(id);
+                hard = neg.get_HardwareNegocio(id);
 
-            int ID_Producto = hard.Id_hardware;
-            string Categoria_Producto = hard.Str_categoria;
-            string Nombre_Producto = hard.Nombre;
-            string Descripcion_Producto = hard.Descripcion;
-            double Precio_Producto = hard.Precio_unitario;
+                int ID_Producto = hard.Id_hardware;
+                string Categoria_Producto = hard.Str_categoria;
+                string Nombre_Producto = hard.Nombre;
+                string Descripcion_Producto = hard.Descripcion;
+                double Precio_Producto = hard.Precio_unitario;
 
-            Crear_columna((DataTable)Session["Carrito"], ID_Producto, Categoria_Producto, Nombre_Producto, Descripcion_Producto, Precio_Producto);
+                Crear_columna((DataTable)Session["Carrito"], ID_Producto, Categoria_Producto, Nombre_Producto, Descripcion_Producto, Precio_Producto);
 
-
+            }
         }
 
         public DataTable Crear_tabla()

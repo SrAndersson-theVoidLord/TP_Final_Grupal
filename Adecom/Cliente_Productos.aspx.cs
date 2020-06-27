@@ -18,16 +18,17 @@ namespace Adecom
         {
             if (IsPostBack == false)
             {
-                Iniciar_DDL();
+                Iniciar_LV();
             }
         }
 
-        public void Iniciar_DDL()
+        public void Iniciar_LV()
         {
 
             HardwareNegocio hard_neg = new HardwareNegocio();
+            string comnado = "SELECT [Nombre_HAR], [Imagen_HAR], [Precio_HAR], [Id_Hardware_HAR], [Categoria_HAR], [Descripcion_HAR] FROM [Hardware]";
 
-            lvProductos.DataSource = hard_neg.Obtener_tabla_Hardware();
+            lvProductos.DataSource = hard_neg.Obtener_tabla_Hardware(comnado);
             lvProductos.DataBind();
 
         }
@@ -55,23 +56,9 @@ namespace Adecom
                 string[] datos = new string[5];
                 datos = e.CommandArgument.ToString().Split(';');
 
-                //bool flag = false;
-                //DataTable dt = (DataTable)Session["Carrito"];
-                //for (int i = 0; i < dt.Rows.Count; i++)
-                //{
-                //    if (datos[0] == dt.Rows[i]["ID"].ToString())
-                //    {
-                //        //flag = true;
+                if (Repeticion_de_producto(Convert.ToInt32(datos[0])))
+                {
 
-                //        dt.Rows[i]["Cantidad"] = 1;
-
-                //        Session["Carrito"]
-
-                //    }
-                //}
-
-                //if (!flag)
-                //{
                     int ID_Producto = Convert.ToInt32(datos[0]);
                     string Categoria_Producto = datos[1];
                     string Nombre_Producto = datos[2];
@@ -80,7 +67,8 @@ namespace Adecom
                     float Precio_Producto = Convert.ToSingle(datos[4]);
 
                     Crear_columna((DataTable)Session["Carrito"], ID_Producto, Categoria_Producto, Nombre_Producto, Descripcion_Producto, Precio_Producto);
-                //}
+                }
+
             }
 
         }
@@ -116,6 +104,33 @@ namespace Adecom
 
         }
 
+        public bool Repeticion_de_producto(int id)
+        {
+
+            DataTable dt = (DataTable)Session["Carrito"];
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+
+                if (Convert.ToInt32(dt.Rows[i]["ID"]) == id)
+                {
+
+                    dt.Rows[i]["Cantidad"] = Convert.ToInt32(dt.Rows[i]["Cantidad"]) + 1;
+                    Session["Carrito"] = dt;
+
+
+                    return false;
+
+                }
+
+
+            }
+
+            return true;
+
+
+        }
+
         public void Crear_columna(DataTable aux_table, int ID_Producto, string Categoria_Producto, string Nombre_Producto, string Descripcion_Producto, float Precio_Producto)
         {
 
@@ -131,6 +146,7 @@ namespace Adecom
 
             aux_table.Rows.Add(aux_columna);
 
+            
         }
     }
 }

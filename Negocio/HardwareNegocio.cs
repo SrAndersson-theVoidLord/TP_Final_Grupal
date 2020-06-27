@@ -65,11 +65,11 @@ namespace Negocio
             return dao.get_Hardware(cat);
         }
 
-        public DataTable Obtener_tabla_Hardware()
+        public DataTable Obtener_tabla_Hardware(string comnado)
         {
             DAO_Hardware dao_hard = new DAO_Hardware();
 
-            return dao_hard.Obtener_tabla_Hardware();
+            return dao_hard.Obtener_tabla_Hardware(comnado);
             
         }
 
