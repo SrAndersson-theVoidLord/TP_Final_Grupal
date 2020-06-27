@@ -7,6 +7,9 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 
+using Negocio;
+using Dominio;
+
 namespace Adecom
 {
     public partial class Productos : System.Web.UI.Page
@@ -15,8 +18,18 @@ namespace Adecom
         {
             if (IsPostBack == false)
             {
-
+                Iniciar_DDL();
             }
+        }
+
+        public void Iniciar_DDL()
+        {
+
+            HardwareNegocio hard_neg = new HardwareNegocio();
+
+            lvProductos.DataSource = hard_neg.Obtener_tabla_Hardware();
+            lvProductos.DataBind();
+
         }
 
         protected void ListView1_SelectedIndexChanged(object sender, EventArgs e)

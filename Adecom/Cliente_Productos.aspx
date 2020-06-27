@@ -43,7 +43,7 @@
         <tr>
             <td class="auto-style3">&nbsp;</td>
             <td class="auto-style4">
-                <asp:ListView ID="lvProductos" runat="server" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="ListView1_SelectedIndexChanged" GroupItemCount="3">
+                <asp:ListView ID="lvProductos" runat="server"  OnSelectedIndexChanged="ListView1_SelectedIndexChanged" GroupItemCount="3">
 
 
                     <%--    <AlternatingItemTemplate>
@@ -157,7 +157,6 @@
         <tr>
             <td class="auto-style3">&nbsp;</td>
             <td class="auto-style4">
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AdecomConnectionString2 %>" SelectCommand="SELECT [Nombre_HAR], [Imagen_HAR], [Precio_HAR], [Id_Hardware_HAR], [Categoria_HAR], [Descripcion_HAR] FROM [Hardware]"></asp:SqlDataSource>
                 &nbsp;<asp:Label ID="Label1" runat="server"></asp:Label>
             </td>
         </tr>

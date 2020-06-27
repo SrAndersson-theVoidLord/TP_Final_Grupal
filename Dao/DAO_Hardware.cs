@@ -36,6 +36,12 @@ namespace Dao
             return cat;
         }
 
+        public DataTable Obtener_tabla_Hardware()
+        {
+
+            return ds.ObtenerTabla("Hardware", "SELECT [Nombre_HAR], [Imagen_HAR], [Precio_HAR], [Id_Hardware_HAR], [Categoria_HAR], [Descripcion_HAR] FROM [Hardware]");
+
+        }
 
     }
 }

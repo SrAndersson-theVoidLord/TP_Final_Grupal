@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using System.Data;
+using System.Data.SqlClient;
+
 using Dominio;
 using Dao;
 
@@ -61,6 +65,13 @@ namespace Negocio
             return dao.get_Hardware(cat);
         }
 
+        public DataTable Obtener_tabla_Hardware()
+        {
+            DAO_Hardware dao_hard = new DAO_Hardware();
+
+            return dao_hard.Obtener_tabla_Hardware();
+            
+        }
 
     }
 }
