@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using Negocio;
+using Dominio;
 
 namespace Adecom
 {
@@ -34,7 +35,7 @@ namespace Adecom
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
 
-                    total_carrito += Convert.ToSingle(dt.Rows[i]["Precio"]);
+                    total_carrito += Convert.ToSingle(dt.Rows[i]["Precio total"]);
 
 
 
@@ -67,6 +68,9 @@ namespace Adecom
 
         protected void btnBorrar_Click(object sender, EventArgs e)
         {
+
+
+
             if (Session["Carrito"] != null)
             {
 
@@ -75,38 +79,57 @@ namespace Adecom
 
             }
             
+
+
         }
 
 
 
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
-            VentasNegocio v_neg = new VentasNegocio();
-            DV_HardwareNegocio dv_h_neg = new DV_HardwareNegocio();
-            DataTable dt = (DataTable)Session["Carrito"];
-            int id_vent;
 
-            if (Session["Carrito"] != null)
-            {
+            if (Session["usuariovalidado"] != null) {
 
-                if (v_neg.agregar_Ventas(1)) //El 1 es de soporte, cuando sepa sacar el cliente de la sesson lo cambiare.
+                VentasNegocio v_neg = new VentasNegocio();
+                DV_HardwareNegocio dv_h_neg = new DV_HardwareNegocio();
+                DataTable dt = (DataTable)Session["Carrito"];
+                int id_vent;
+
+                if (Session["Carrito"] != null)
                 {
 
-                    id_vent = v_neg.Obtener_Ultimo_id_ventas();
+                    Usuario us = (Usuario)Session["usuariovalidado"];
 
-                    for (int i = 0; i < dt.Rows.Count; i++)
+                    if (v_neg.agregar_Ventas(us.Id_Usuario)) 
                     {
 
-                        dv_h_neg.agregar_DV_HardwareNegocio(id_vent, Convert.ToInt32(dt.Rows[i]["ID"]), Convert.ToInt32(dt.Rows[i]["Cantidad"]));
+                        id_vent = v_neg.Obtener_Ultimo_id_ventas();
+
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+
+                            dv_h_neg.agregar_DV_HardwareNegocio(id_vent, Convert.ToInt32(dt.Rows[i]["ID"]), Convert.ToInt32(dt.Rows[i]["Cantidad"]));
 
 
+                        }
+
+                        Borrar_carrito();
+                        Total.Text = "Venta exitosa";
                     }
 
-                    Borrar_carrito();
-                    Total.Text = "Venta exitosa";
                 }
 
             }
+            else
+            {
+                lab_mensaje.Text = "Ingrese un usuario antes de confirmar una venta.";
+            }
+
+
+
         }
+
+
+
     }
 }

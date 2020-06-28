@@ -56,7 +56,7 @@ namespace Adecom
                 string[] datos = new string[5];
                 datos = e.CommandArgument.ToString().Split(';');
 
-                if (Repeticion_de_producto(Convert.ToInt32(datos[0])))
+                if (Repeticion_de_producto(Convert.ToInt32(datos[0]), 1, "Producto"))
                 {
 
                     int ID_Producto = Convert.ToInt32(datos[0]);
@@ -66,7 +66,7 @@ namespace Adecom
                     //string Imagen_Producto = datos[4];
                     float Precio_Producto = Convert.ToSingle(datos[4]);
 
-                    Crear_columna((DataTable)Session["Carrito"], ID_Producto, Categoria_Producto, Nombre_Producto, Descripcion_Producto, Precio_Producto);
+                    Crear_columna((DataTable)Session["Carrito"], ID_Producto, Categoria_Producto, Nombre_Producto, Descripcion_Producto, Precio_Producto, 1, "Producto");
                 }
 
             }
@@ -91,20 +91,23 @@ namespace Adecom
             aux_column = new DataColumn("Descripcion", System.Type.GetType("System.String"));
             aux_table.Columns.Add(aux_column);
 
-            //aux_column = new DataColumn("Imagen", System.Type.GetType("System.String"));
-            //aux_table.Columns.Add(aux_column);
-
-            aux_column = new DataColumn("Precio", System.Type.GetType("System.Single"));
+            aux_column = new DataColumn("Precio unitario", System.Type.GetType("System.Double"));
             aux_table.Columns.Add(aux_column);
 
             aux_column = new DataColumn("Cantidad", System.Type.GetType("System.Int32"));
+            aux_table.Columns.Add(aux_column);
+
+            aux_column = new DataColumn("Precio total", System.Type.GetType("System.Double"));
+            aux_table.Columns.Add(aux_column);
+
+            aux_column = new DataColumn("Producto/Servicio", System.Type.GetType("System.String"));
             aux_table.Columns.Add(aux_column);
 
             return aux_table;
 
         }
 
-        public bool Repeticion_de_producto(int id)
+        public bool Repeticion_de_producto(int id, int cantidad, string tipo)
         {
 
             DataTable dt = (DataTable)Session["Carrito"];
@@ -112,10 +115,13 @@ namespace Adecom
             for (int i = 0; i < dt.Rows.Count; i++)
             {
 
-                if (Convert.ToInt32(dt.Rows[i]["ID"]) == id)
+                if (Convert.ToInt32(dt.Rows[i]["ID"]) == id && Convert.ToString(dt.Rows[i]["Producto/Servicio"]) == tipo)
                 {
 
-                    dt.Rows[i]["Cantidad"] = Convert.ToInt32(dt.Rows[i]["Cantidad"]) + 1;
+                    dt.Rows[i]["Cantidad"] = Convert.ToInt32(dt.Rows[i]["Cantidad"]) + cantidad;
+
+                    dt.Rows[i]["Precio total"] = Convert.ToSingle(Convert.ToInt32(dt.Rows[i]["Cantidad"]) * Convert.ToSingle(dt.Rows[i]["Precio unitario"]));
+
                     Session["Carrito"] = dt;
 
 
@@ -131,7 +137,7 @@ namespace Adecom
 
         }
 
-        public void Crear_columna(DataTable aux_table, int ID_Producto, string Categoria_Producto, string Nombre_Producto, string Descripcion_Producto, float Precio_Producto)
+        public void Crear_columna(DataTable aux_table, int ID_Producto, string Categoria_Producto, string Nombre_Producto, string Descripcion_Producto, double Precio_Producto, int cantidad, string tipo)
         {
 
             DataRow aux_columna = aux_table.NewRow();
@@ -140,13 +146,14 @@ namespace Adecom
             aux_columna["Categoria"] = Categoria_Producto;
             aux_columna["Nombre"] = Nombre_Producto;
             aux_columna["Descripcion"] = Descripcion_Producto;
-            //aux_columna["Imagen"] = Imagen_Producto;
-            aux_columna["Precio"] = Precio_Producto;
-            aux_columna["Cantidad"] = 1;
+            aux_columna["Precio unitario"] = Precio_Producto;
+            aux_columna["Cantidad"] = cantidad;
+            aux_columna["Precio total"] = Convert.ToSingle(Precio_Producto * cantidad);
+
+            aux_columna["Producto/Servicio"] = tipo;
 
             aux_table.Rows.Add(aux_columna);
 
-            
         }
     }
 }

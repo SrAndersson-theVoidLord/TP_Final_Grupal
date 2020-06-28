@@ -38,6 +38,7 @@
 
 
     <br />
+    <asp:Label ID="lab_mensaje" runat="server"></asp:Label>
     <br />
     <asp:Button ID="btnConfirmar" runat="server" OnClick="btnConfirmar_Click" Text="Confirmar compra" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

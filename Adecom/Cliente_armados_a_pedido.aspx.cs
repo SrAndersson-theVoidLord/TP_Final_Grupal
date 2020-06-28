@@ -76,18 +76,18 @@ namespace Adecom
 
             
 
-            Llenar_carrito(Convert.ToInt32(DropDownList1.SelectedValue));
-            Llenar_carrito(Convert.ToInt32(DropDownList2.SelectedValue));
-            Llenar_carrito(Convert.ToInt32(DropDownList3.SelectedValue));
-            Llenar_carrito(Convert.ToInt32(DropDownList4.SelectedValue));
-            Llenar_carrito(Convert.ToInt32(DropDownList5.SelectedValue));
-            Llenar_carrito(Convert.ToInt32(DropDownList6.SelectedValue));
-            Llenar_carrito(Convert.ToInt32(DropDownList7.SelectedValue));
-            Llenar_carrito(Convert.ToInt32(DropDownList8.SelectedValue));
+            Llenar_carrito(Convert.ToInt32(DropDownList1.SelectedValue), Convert.ToInt32(ddl_disco.SelectedValue), "Producto");
+            Llenar_carrito(Convert.ToInt32(DropDownList2.SelectedValue), 1, "Producto");
+            Llenar_carrito(Convert.ToInt32(DropDownList3.SelectedValue), 1, "Producto");
+            Llenar_carrito(Convert.ToInt32(DropDownList4.SelectedValue), Convert.ToInt32(ddl_placa_video.SelectedValue), "Producto");
+            Llenar_carrito(Convert.ToInt32(DropDownList5.SelectedValue), Convert.ToInt32(ddl_memoria_ram.SelectedValue), "Producto");
+            Llenar_carrito(Convert.ToInt32(DropDownList6.SelectedValue), 1, "Producto");
+            Llenar_carrito(Convert.ToInt32(DropDownList7.SelectedValue), 1, "Producto");
+            Llenar_carrito(Convert.ToInt32(DropDownList8.SelectedValue), 1, "Producto");
 
         }
 
-        public bool Repeticion_de_producto(int id)
+        public bool Repeticion_de_producto(int id, int cantidad, string tipo)
         {
             
             DataTable dt = (DataTable)Session["Carrito"];
@@ -95,10 +95,13 @@ namespace Adecom
             for (int i = 0; i < dt.Rows.Count; i++)
             {
 
-                if (Convert.ToInt32(dt.Rows[i]["ID"]) == id)
+                if (Convert.ToInt32(dt.Rows[i]["ID"]) == id && Convert.ToString(dt.Rows[i]["Producto/Servicio"]) == tipo )
                 {
 
-                    dt.Rows[i]["Cantidad"] = Convert.ToInt32(dt.Rows[i]["Cantidad"]) + 1;
+                    dt.Rows[i]["Cantidad"] = Convert.ToInt32(dt.Rows[i]["Cantidad"]) + cantidad;
+
+                    dt.Rows[i]["Precio total"] = Convert.ToInt32(dt.Rows[i]["Cantidad"]) * Convert.ToSingle(dt.Rows[i]["Precio unitario"]);
+
                     Session["Carrito"] = dt;
 
 
@@ -114,24 +117,32 @@ namespace Adecom
 
         }
 
-        public void Llenar_carrito(int id)
+        public void Llenar_carrito(int id, int cantidad, string tipo)
         {
-            if (Repeticion_de_producto(id)) {
+            if (tipo == "Producto") {
+                if (Repeticion_de_producto(id, cantidad, tipo)) {
 
-                Hardware hard = new Hardware();
-                HardwareNegocio neg = new HardwareNegocio();
+                    Hardware hard = new Hardware();
+                    HardwareNegocio neg = new HardwareNegocio();
 
-                hard = neg.get_HardwareNegocio(id);
+                    hard = neg.get_HardwareNegocio(id);
 
-                int ID_Producto = hard.Id_hardware;
-                string Categoria_Producto = hard.Str_categoria;
-                string Nombre_Producto = hard.Nombre;
-                string Descripcion_Producto = hard.Descripcion;
-                double Precio_Producto = hard.Precio_unitario;
+                    int ID_Producto = hard.Id_hardware;
+                    string Categoria_Producto = hard.Str_categoria;
+                    string Nombre_Producto = hard.Nombre;
+                    string Descripcion_Producto = hard.Descripcion;
+                    double Precio_Producto = hard.Precio_unitario;
 
-                Crear_columna((DataTable)Session["Carrito"], ID_Producto, Categoria_Producto, Nombre_Producto, Descripcion_Producto, Precio_Producto);
+                    Crear_columna((DataTable)Session["Carrito"], ID_Producto, Categoria_Producto, Nombre_Producto, Descripcion_Producto, Precio_Producto, cantidad, tipo);
+
+                }
 
             }
+            else
+            {
+
+            }
+
         }
 
         public DataTable Crear_tabla()
@@ -152,17 +163,23 @@ namespace Adecom
             aux_column = new DataColumn("Descripcion", System.Type.GetType("System.String"));
             aux_table.Columns.Add(aux_column);
 
-            aux_column = new DataColumn("Precio", System.Type.GetType("System.Double"));
+            aux_column = new DataColumn("Precio unitario", System.Type.GetType("System.Double"));
             aux_table.Columns.Add(aux_column);
 
             aux_column = new DataColumn("Cantidad", System.Type.GetType("System.Int32"));
+            aux_table.Columns.Add(aux_column);
+
+            aux_column = new DataColumn("Precio total", System.Type.GetType("System.Double"));
+            aux_table.Columns.Add(aux_column);
+
+            aux_column = new DataColumn("Producto/Servicio", System.Type.GetType("System.String"));
             aux_table.Columns.Add(aux_column);
 
             return aux_table;
 
         }
 
-        public void Crear_columna(DataTable aux_table, int ID_Producto, string Categoria_Producto, string Nombre_Producto, string Descripcion_Producto, double Precio_Producto)
+        public void Crear_columna(DataTable aux_table, int ID_Producto, string Categoria_Producto, string Nombre_Producto, string Descripcion_Producto, double Precio_Producto, int cantidad, string tipo)
         {
 
             DataRow aux_columna = aux_table.NewRow();
@@ -171,8 +188,11 @@ namespace Adecom
             aux_columna["Categoria"] = Categoria_Producto;
             aux_columna["Nombre"] = Nombre_Producto;
             aux_columna["Descripcion"] = Descripcion_Producto;
-            aux_columna["Precio"] = Precio_Producto;
-            aux_columna["Cantidad"] = 1;
+            aux_columna["Precio unitario"] = Precio_Producto;
+            aux_columna["Cantidad"] = cantidad;
+            aux_columna["Precio total"] = Precio_Producto * cantidad;
+
+            aux_columna["Producto/Servicio"] = tipo;
 
             aux_table.Rows.Add(aux_columna);
 

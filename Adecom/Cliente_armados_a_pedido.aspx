@@ -42,56 +42,74 @@
         <tr>
             <td class="auto-style5">Disco:</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList1" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR">
+                <asp:DropDownList ID="DropDownList1" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px">
+                </asp:DropDownList>
+                <asp:DropDownList ID="ddl_disco" runat="server">
+                    <asp:ListItem>1</asp:ListItem>
+                    <asp:ListItem>2</asp:ListItem>
+                    <asp:ListItem>3</asp:ListItem>
+                    <asp:ListItem>4</asp:ListItem>
                 </asp:DropDownList>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">Procesador:</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList2" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR">
+                <asp:DropDownList ID="DropDownList2" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px">
                 </asp:DropDownList>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">Motheboard:</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList3" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR">
+                <asp:DropDownList ID="DropDownList3" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px">
                 </asp:DropDownList>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">Placa de Video:</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList4" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR">
+                <asp:DropDownList ID="DropDownList4" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px">
+                </asp:DropDownList>
+                <asp:DropDownList ID="ddl_placa_video" runat="server">
+                    <asp:ListItem>1</asp:ListItem>
+                    <asp:ListItem>2</asp:ListItem>
+                    <asp:ListItem>3</asp:ListItem>
+                    <asp:ListItem>4</asp:ListItem>
                 </asp:DropDownList>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">Memoria Ram:</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList5" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR">
+                <asp:DropDownList ID="DropDownList5" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px">
+                </asp:DropDownList>
+                <asp:DropDownList ID="ddl_memoria_ram" runat="server">
+                    <asp:ListItem>1</asp:ListItem>
+                    <asp:ListItem>2</asp:ListItem>
+                    <asp:ListItem>3</asp:ListItem>
+                    <asp:ListItem>4</asp:ListItem>
                 </asp:DropDownList>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">Fuente:</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList6" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR">
+                <asp:DropDownList ID="DropDownList6" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px">
                 </asp:DropDownList>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">Gabinete:</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList7" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR">
+                <asp:DropDownList ID="DropDownList7" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px">
                 </asp:DropDownList>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">Sistema Operativo:</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList8" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR">
+                <asp:DropDownList ID="DropDownList8" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px">
                 </asp:DropDownList>
             </td>
         </tr>

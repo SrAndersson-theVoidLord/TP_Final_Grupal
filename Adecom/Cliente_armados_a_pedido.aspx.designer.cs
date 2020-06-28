@@ -24,6 +24,15 @@ namespace Adecom
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
 
         /// <summary>
+        /// Control ddl_disco.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_disco;
+
+        /// <summary>
         /// Control DropDownList2.
         /// </summary>
         /// <remarks>
@@ -51,6 +60,15 @@ namespace Adecom
         protected global::System.Web.UI.WebControls.DropDownList DropDownList4;
 
         /// <summary>
+        /// Control ddl_placa_video.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_placa_video;
+
+        /// <summary>
         /// Control DropDownList5.
         /// </summary>
         /// <remarks>
@@ -58,6 +76,15 @@ namespace Adecom
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList5;
+
+        /// <summary>
+        /// Control ddl_memoria_ram.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_memoria_ram;
 
         /// <summary>
         /// Control DropDownList6.
