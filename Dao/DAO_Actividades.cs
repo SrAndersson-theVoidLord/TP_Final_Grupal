@@ -38,5 +38,62 @@ namespace Dao
             return cat;
         }
 
+        private void Armar_Parametros_agregar_Actividades(ref SqlCommand Comando, Actividad cat)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@Id_Cliente", SqlDbType.Int);
+            SqlParametros.Value = cat.Id_cliente;
+            SqlParametros = Comando.Parameters.Add("@Id_Empleado", SqlDbType.Int);
+            SqlParametros.Value = cat.Id_empleado;
+            SqlParametros = Comando.Parameters.Add("@Id_Tipo_de_Pedido", SqlDbType.Int);
+            SqlParametros.Value = cat.Id_tipo_pedido;
+            SqlParametros = Comando.Parameters.Add("@Descripcion", SqlDbType.VarChar);
+            SqlParametros.Value = cat.Descripcion;
+            SqlParametros = Comando.Parameters.Add("@Horas_trabajadas", SqlDbType.Int);
+            SqlParametros.Value = cat.Horas_trabajadas;
+
+        }
+
+        public int agregar_Actividades(Actividad cat)
+        {
+
+            SqlCommand comando = new SqlCommand();
+            Armar_Parametros_agregar_Actividades(ref comando, cat);
+            return ds.EjecutarProcedimiento(comando, "PRO_ingresar_datos_Actividades");
+        }
+
+        public int Obtener_Ultimo_id_Actividades()
+        {
+
+            return ds.Obtener_Ultimo_id("SELECT max(Id_Actividad_A) FROM Actividades");
+
+        }
+
+        //-------------
+
+        private void Armar_Parametros_agregar_Actividades_armado(ref SqlCommand Comando, Actividad cat)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@Id_Cliente", SqlDbType.Int);
+            SqlParametros.Value = cat.Id_cliente;
+            SqlParametros = Comando.Parameters.Add("@Id_Empleado", SqlDbType.Int);
+            SqlParametros.Value = cat.Id_empleado;
+            SqlParametros = Comando.Parameters.Add("@Id_Tipo_de_Pedido", SqlDbType.Int);
+            SqlParametros.Value = cat.Id_tipo_pedido;
+            SqlParametros = Comando.Parameters.Add("@Descripcion", SqlDbType.VarChar);
+            SqlParametros.Value = cat.Descripcion;
+            SqlParametros = Comando.Parameters.Add("@Total_del_armado", SqlDbType.Float);
+            SqlParametros.Value = cat.Subtotal;
+
+        }
+
+        public int agregar_Actividades_armado(Actividad cat)
+        {
+
+            SqlCommand comando = new SqlCommand();
+            Armar_Parametros_agregar_Actividades_armado(ref comando, cat);
+            return ds.EjecutarProcedimiento(comando, "PRO_ingresar_datos_Actividades_armado");
+        }
+
     }
 }

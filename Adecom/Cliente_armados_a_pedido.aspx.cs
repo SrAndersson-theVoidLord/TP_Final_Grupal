@@ -15,6 +15,9 @@ namespace Adecom
 {
     public partial class armados_a_pedido : System.Web.UI.Page
     {
+
+        double total_armado = 0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -74,7 +77,7 @@ namespace Adecom
 
             }
 
-            
+            total_armado = 0;
 
             Llenar_carrito(Convert.ToInt32(DropDownList1.SelectedValue), Convert.ToInt32(ddl_disco.SelectedValue), "Producto");
             Llenar_carrito(Convert.ToInt32(DropDownList2.SelectedValue), 1, "Producto");
@@ -84,6 +87,10 @@ namespace Adecom
             Llenar_carrito(Convert.ToInt32(DropDownList6.SelectedValue), 1, "Producto");
             Llenar_carrito(Convert.ToInt32(DropDownList7.SelectedValue), 1, "Producto");
             Llenar_carrito(Convert.ToInt32(DropDownList8.SelectedValue), 1, "Producto");
+
+            Llenar_carrito(3, 1, "Servicio");
+
+            total_armado = 0;
 
         }
 
@@ -95,12 +102,14 @@ namespace Adecom
             for (int i = 0; i < dt.Rows.Count; i++)
             {
 
-                if (Convert.ToInt32(dt.Rows[i]["ID"]) == id && Convert.ToString(dt.Rows[i]["Producto/Servicio"]) == tipo )
+                if (Convert.ToInt32(dt.Rows[i]["ID"]) == id && Convert.ToString(dt.Rows[i]["Producto/Servicio"]) == "Producto")
                 {
 
                     dt.Rows[i]["Cantidad"] = Convert.ToInt32(dt.Rows[i]["Cantidad"]) + cantidad;
 
                     dt.Rows[i]["Precio total"] = Convert.ToInt32(dt.Rows[i]["Cantidad"]) * Convert.ToSingle(dt.Rows[i]["Precio unitario"]);
+
+                    total_armado += cantidad * Convert.ToSingle(dt.Rows[i]["Precio unitario"]);
 
                     Session["Carrito"] = dt;
 
@@ -109,11 +118,36 @@ namespace Adecom
 
                 }
                 
-                
             }
 
             return true;
 
+
+        }
+
+        public bool Repeticion_de_servicios(int id, string tipo)
+        {
+
+            DataTable dt = (DataTable)Session["Carrito"];
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                
+                if (Convert.ToInt32(dt.Rows[i]["ID"]) == id && Convert.ToString(dt.Rows[i]["Producto/Servicio"]) == "Servicio")
+                {
+
+                    dt.Rows[i]["Precio total"] = Convert.ToSingle(dt.Rows[i]["Precio total"]) + (total_armado * 0.1);
+                    dt.Rows[i]["Precio unitario"] = Convert.ToSingle(dt.Rows[i]["Precio total"]);
+
+                    Session["Carrito"] = dt;
+
+                    return false;
+
+                }
+                
+            }
+
+            return true;
 
         }
 
@@ -133,6 +167,8 @@ namespace Adecom
                     string Descripcion_Producto = hard.Descripcion;
                     double Precio_Producto = hard.Precio_unitario;
 
+                    total_armado += hard.Precio_unitario * cantidad;
+
                     Crear_columna((DataTable)Session["Carrito"], ID_Producto, Categoria_Producto, Nombre_Producto, Descripcion_Producto, Precio_Producto, cantidad, tipo);
 
                 }
@@ -140,6 +176,22 @@ namespace Adecom
             }
             else
             {
+
+                if (Repeticion_de_servicios(id, tipo))
+                {
+
+
+                    int ID_Producto = 3;
+                    string Categoria_Producto = "Armado";
+                    string Nombre_Producto = "Armado";
+                    string Descripcion_Producto = "Armado";
+
+
+                    double Precio_Producto = total_armado * 0.10;
+
+                    Crear_columna((DataTable)Session["Carrito"], ID_Producto, Categoria_Producto, Nombre_Producto, Descripcion_Producto, Precio_Producto, cantidad, tipo);
+
+                }
 
             }
 
