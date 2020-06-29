@@ -76,6 +76,8 @@ namespace Adecom
             usuario.Email= ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("tb_email")).Text;
             usuario.Cp= ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("tb_codigopostal")).Text;
             usuario.Id_Usuario = Convert.ToInt32(((Label)gvUsuarios.Rows[e.RowIndex].FindControl("lbl_idusuario")).Text);
+            //usuario.Estado = Convert.ToBoolean(((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("tb_estado")).Text);
+
             UsuarioNegocio negocio = new UsuarioNegocio();
 
             if (Session["Grilla"].ToString() == "cliente")
@@ -98,6 +100,28 @@ namespace Adecom
             cargarGVClientes();
         }
 
+        protected void gvUsuarios_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            Usuario usuario = new Usuario();
+            usuario.Id_Usuario = Convert.ToInt32(((Label)gvUsuarios.Rows[e.RowIndex].FindControl("lbl_idusuario")).Text);
+            UsuarioNegocio negocio = new UsuarioNegocio();
 
+            if (Session["Grilla"].ToString() == "cliente")
+            {
+                negocio.EliminarCliente(usuario);
+
+            }
+            else
+            {
+                negocio.EliminarEmpleado(usuario);
+            }
+
+            gvUsuarios.EditIndex = -1;
+            cargarGVClientes();
+
+
+
+
+        }
     }
 }

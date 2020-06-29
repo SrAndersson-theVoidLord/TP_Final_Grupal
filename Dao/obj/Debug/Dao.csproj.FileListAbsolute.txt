@@ -22,3 +22,6 @@ C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Dao\obj\Debug\Dao.csproj.CoreCom
 C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Dao\obj\Debug\Dao.csproj.CopyComplete
 C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Dao\obj\Debug\Dao.dll
 C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Dao\obj\Debug\Dao.pdb
+C:\Mis Proyectos\TP_Final_Grupal\Dao\bin\Debug\Dominio.dll
+C:\Mis Proyectos\TP_Final_Grupal\Dao\bin\Debug\Dominio.pdb
+C:\Mis Proyectos\TP_Final_Grupal\Dao\obj\Debug\Dao.csproj.CopyComplete

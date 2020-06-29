@@ -23,7 +23,7 @@
 
 
     <div>
-        <asp:Button CssClass="btn btn-outline-success w-100" ID="btnAgregarHarware" Text="Agregar Hardware" runat="server" />
+        <asp:Button CssClass="btn btn-outline-success w-100" ID="btnAgregarHarware" Text="Agregar Hardware" runat="server" OnClick="btnAgregarHarware_Click" />
     </div>
     <div class="card-columns" style="margin-left: 10px; margin-right: 10px;">
         <% foreach (var item in ListaHardware)
@@ -35,8 +35,9 @@
                 <img src="<% = item.Imagen %>" class="card-img-top" alt="..." style="width: 200px;">
                 <div class="card-tite  w-100"><% = item.Nombre %></div>
             </div>
-            <asp:Button CssClass="btn btn-outline-warning w-100" ID="btnModificarHarware" Text="Modificar" runat="server" />
-            <asp:Button CssClass="btn btn-outline-danger w-100" ID="btnEliminarHarware" Text="Eliminar" runat="server" />
+           <!-- <asp:Button CssClass="btn btn-outline-warning w-100" ID="btnModificarHarware"  Text="Modificar" runat="server" />!-->
+            <a class="btn btn-outline-warning w-100" href="Empleados_AMProductos.aspx?idhw=<% = item.Id_hardware.ToString() %>">Modificar / Eliminar</a>
+
         </div>
         <% } %>
     </div>

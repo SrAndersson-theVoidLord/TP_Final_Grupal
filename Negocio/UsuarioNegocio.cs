@@ -52,7 +52,7 @@ namespace Negocio
             //INSTANCIO LA CONECCION A LA BASE
             AccesoDatos datos = new AccesoDatos();
             //TIRO LA QUERY
-            datos.setearQuery("select id_Cliente_CLI, DNI_CLI, Nombre_CLI, Apellido_CLI,NombreUsuario_CLI, Direccion_CLI, Localidad_CLI,Codigo_Postal_CLI, Telefono_CLI, Email_CLI,Estado_CLI from Clientes ");
+            datos.setearQuery("select id_Cliente_CLI, DNI_CLI, Nombre_CLI, Apellido_CLI,NombreUsuario_CLI, Direccion_CLI, Localidad_CLI,Codigo_Postal_CLI, Telefono_CLI, Email_CLI,Estado_CLI from Clientes WHERE Estado_CLI = 1");
             //EJECUTO EL LECTOR
             datos.ejecutarLector();
 
@@ -184,7 +184,7 @@ namespace Negocio
                 data.agregarParametro("@telefono", Cliente.Telefono);
                 data.agregarParametro("@mail", Cliente.Email);
                 data.agregarParametro("@cp", Cliente.Cp);
-                data.ejecutarAccion();
+                int filasafectadas= data.ejecutarAccion();
                 data.cerrarConexion();
             }
             catch (Exception ex)
@@ -195,7 +195,26 @@ namespace Negocio
 
 
 
+
         }
+
+        public void EliminarCliente(Usuario Cliente)
+        {
+            AccesoDatos data = new AccesoDatos();
+            try
+            {
+                data.setearQuery("update Clientes set Estado_CLI = 0 where id_Cliente_CLI = '" + Cliente.Id_Usuario + "'");
+                int filasafectadas=data.ejecutarAccion();
+                data.cerrarConexion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+
 
 
         public Usuario Validar_Clientes(string usuario)
@@ -242,7 +261,7 @@ namespace Negocio
             //INSTANCIO LA CONECCION A LA BASE
             AccesoDatos datos = new AccesoDatos();
             //TIRO LA QUERY
-            datos.setearQuery("select id_Empleado_EMP, DNI_EMP, Nombre_EMP, Apellido_EMP,NombreUsuario_EMP, Direccion_EMP, Localidad_EMP,Codigo_Postal_EMP, Telefono_EMP, Email_EMP,Estado_EMP from Empleados ");
+            datos.setearQuery("select id_Empleado_EMP, DNI_EMP, Nombre_EMP, Apellido_EMP,NombreUsuario_EMP, Direccion_EMP, Localidad_EMP,Codigo_Postal_EMP, Telefono_EMP, Email_EMP,Estado_EMP from Empleados WHERE Estado_EMP = 1 ");
             //EJECUTO EL LECTOR
             datos.ejecutarLector();
 
@@ -359,7 +378,7 @@ namespace Negocio
                 data.agregarParametro("@telefono", Empleado.Telefono);
                 data.agregarParametro("@mail", Empleado.Email);
                 data.agregarParametro("@cp", Empleado.Cp);
-                data.ejecutarAccion();
+                int filasafectadas=data.ejecutarAccion();
                 data.cerrarConexion();
             }
             catch (Exception ex)
@@ -371,6 +390,23 @@ namespace Negocio
 
 
         }
+
+        public void EliminarEmpleado(Usuario empleado)
+        {
+            AccesoDatos data = new AccesoDatos();
+            try
+            {
+                data.setearQuery("update Empleados set Estado_EMP = 0 where id_Empleado_EMP = '" + empleado.Id_Usuario + "'");
+                int filasafectadas=data.ejecutarAccion();
+                data.cerrarConexion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
 
         public Usuario Validar_Empleados(string usuario)
         {

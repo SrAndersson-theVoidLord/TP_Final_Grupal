@@ -90,12 +90,13 @@ namespace Dao
 
 
         //ejecuta acciones que no son de lectura
-        public void ejecutarAccion()
+        public int ejecutarAccion()
         {
             try
             {
                 conexion.Open();
-                comando.ExecuteNonQuery();
+                int filasafectadas = comando.ExecuteNonQuery();
+                return filasafectadas;
             }
             catch (Exception ex)
             {

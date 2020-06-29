@@ -26,5 +26,10 @@ namespace Adecom
             ListaHardware = negocio.listar();
 
         }
+
+        protected void btnAgregarHarware_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Empleados_AMProductos.aspx");
+        }
     }
 }

@@ -28,15 +28,17 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearQuery("SELECT Id_Hardware_HAR,Nombre_HAR,Descripcion_HAR,SUBSTRING(Imagen_HAR, 2, 256) as Imagen,Precio_HAR,Estado_HAR FROM Hardware"); 
+                datos.setearQuery("SELECT Id_Hardware_HAR,Categoria_HAR,Nombre_HAR,Descripcion_HAR,SUBSTRING(Imagen_HAR, 2, 256) as Imagen,Precio_HAR,Estado_HAR FROM Hardware where Estado_HAR = 1"); 
                 datos.ejecutarLector();
                 while (datos.lector.Read())
                 {
                     aux = new Hardware();
                     aux.Id_hardware = (int)datos.lector["id_Hardware_HAR"];
+                    aux.Categoria = new CategoriaHardware();
+                    aux.Categoria.Id_categoria = (string)datos.lector["Categoria_HAR"];
                     aux.Nombre = (string)datos.lector["Nombre_HAR"];
                     aux.Descripcion = (string)datos.lector["Descripcion_HAR"];
-                    aux.Imagen = (string)datos.lector["Imagen"];
+                    aux.Imagen = datos.lector["Imagen"].ToString();
                     aux.Precio_unitario = (double)datos.lector["Precio_HAR"];
                     aux.Estado = (Boolean)datos.lector["Estado_HAR"];
 
@@ -72,6 +74,83 @@ namespace Negocio
             return dao_hard.Obtener_tabla_Hardware(comnado);
             
         }
+
+        public bool EliminarHardware(int aux)
+        {
+            AccesoDatos data = new AccesoDatos();
+            try
+            {
+                data.setearQuery("update Hardware set Estado_HAR = 0 where id_Hardware_HAR = '" + aux + "'");
+                int filasafectadas= data.ejecutarAccion();
+                data.cerrarConexion();
+                if(filasafectadas > 0)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+
+        public bool ModificarHardware(Hardware aux)
+        {
+            AccesoDatos data = new AccesoDatos();
+            try
+            {
+                data.setearQuery("update Hardware set Categoria_HAR=@Categoria,Nombre_HAR =@Nombre , Descripcion_HAR = @Descripcion, Imagen_HAR=@Imagen,Precio_HAR=@Precio where id_Hardware_HAR = '" + aux.Id_hardware + "'");
+                data.agregarParametro("@Categoria", aux.Categoria.Id_categoria);
+                data.agregarParametro("@Nombre", aux.Nombre);
+                data.agregarParametro("@Descripcion", aux.Descripcion);
+                data.agregarParametro("@Imagen", aux.Imagen);
+                data.agregarParametro("@Precio", aux.Precio_unitario);
+                int filasafectadas = data.ejecutarAccion();
+                data.cerrarConexion();
+                if (filasafectadas > 0)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public bool agregarHardware(Hardware aux)
+        {
+            AccesoDatos data = new AccesoDatos();
+            try
+            {
+                data.setearQuery("insert into Hardware values (@Categoria, @Nombre , @Descripcion, @Imagen, @Precio , @Estado)");
+                data.agregarParametro("@Categoria", aux.Categoria.Id_categoria);
+                data.agregarParametro("@Nombre", aux.Nombre);
+                data.agregarParametro("@Descripcion", aux.Descripcion);
+                data.agregarParametro("@Imagen", aux.Imagen);
+                data.agregarParametro("@Precio", aux.Precio_unitario);
+                data.agregarParametro("@Estado", aux.Estado);
+                int filasafectadas = data.ejecutarAccion();
+                data.cerrarConexion();
+                if (filasafectadas > 0)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+
 
     }
 }
