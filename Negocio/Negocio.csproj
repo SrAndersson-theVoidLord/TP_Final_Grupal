@@ -46,7 +46,9 @@
     <Compile Include="DV_HardwareNegocio.cs" />
     <Compile Include="DV_ServiciosNegocio.cs" />
     <Compile Include="HardwareNegocio.cs" />
+    <Compile Include="Presupuesto_de_servicio_Negocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Solicitud_de_servicio_Negocio.cs" />
     <Compile Include="TipoPedidoNegocio.cs" />
     <Compile Include="UsuarioNegocio.cs" />
     <Compile Include="VentasNegocio.cs" />

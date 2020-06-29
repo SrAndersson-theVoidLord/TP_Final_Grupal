@@ -13,5 +13,17 @@ namespace Adecom
         {
 
         }
+
+        protected void btnEnviar_Click(object sender, EventArgs e)
+        {
+
+            if (Session["usuariovalidado"] != null)
+            { 
+
+
+
+            }
+
+        }
     }
 }

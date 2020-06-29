@@ -41,8 +41,9 @@
     </p>
     <p class="auto-style2">
         &nbsp;
+        <asp:Label ID="leb_mensaje" runat="server"></asp:Label>
     </p>
     <p class="auto-style2">
-        <asp:Button ID="btnEnviar" runat="server" Text="Enviar Formulario" />
+        <asp:Button ID="btnEnviar" runat="server" Text="Enviar Formulario" OnClick="btnEnviar_Click" />
     </p>
 </asp:Content>

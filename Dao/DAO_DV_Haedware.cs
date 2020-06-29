@@ -34,6 +34,7 @@ namespace Dao
 
         private void Armar_Parametros_agregar_DV_Haedware(ref SqlCommand Comando, DV_Hardware cat)
         {
+            
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = Comando.Parameters.Add("@Id_Venta", SqlDbType.Int);
             SqlParametros.Value = cat.Id_ventas;
