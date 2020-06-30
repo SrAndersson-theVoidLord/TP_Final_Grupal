@@ -30,5 +30,12 @@ namespace Dao
             return cat;
         }
 
+        public DataTable Obtener_tabla_Tipos_de_pedido(string comnado)
+        {
+
+            return ds.ObtenerTabla("Tipos_de_pedido", comnado);
+
+        }
+
     }
 }

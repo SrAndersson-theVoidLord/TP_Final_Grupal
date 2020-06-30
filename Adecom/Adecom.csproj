@@ -76,6 +76,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Empleados_AMProductos.aspx" />
     <Content Include="Empleados_armados_a_pedido.aspx" />
+    <Content Include="Empleados_Configurar_Reparaciones.aspx" />
     <Content Include="Empleados_Informes.aspx" />
     <Content Include="Empleados_Productos.aspx" />
     <Content Include="Empleados_Reparaciones.aspx" />
@@ -159,6 +160,13 @@
     </Compile>
     <Compile Include="Empleados_armados_a_pedido.aspx.designer.cs">
       <DependentUpon>Empleados_armados_a_pedido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados_Configurar_Reparaciones.aspx.cs">
+      <DependentUpon>Empleados_Configurar_Reparaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados_Configurar_Reparaciones.aspx.designer.cs">
+      <DependentUpon>Empleados_Configurar_Reparaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Empleados_Informes.aspx.cs">
       <DependentUpon>Empleados_Informes.aspx</DependentUpon>

@@ -23,10 +23,27 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" AutoGenerateSelectButton="True" OnSelectedIndexChanging="GridView1_SelectedIndexChanging1">
+            <Columns>
+                <asp:TemplateField HeaderText="Id">
+                    <ItemTemplate>
+                        <asp:Label ID="lab_id" runat="server" Text='<%# Bind("Id") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Cliente">
+                    <ItemTemplate>
+                        <asp:Label ID="lab_cliente" runat="server" Text='<%# Bind("Cliente") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Descripcion">
+                    <ItemTemplate>
+                        <asp:Label ID="lab_descripcion" runat="server" Text='<%# Bind("Descripcion") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
         <br />
     </p>
     <p class="auto-style1">
-        <asp:GridView ID="GridView1" runat="server">
-        </asp:GridView>
-    </p>
+        &nbsp;</p>
 </asp:Content>
