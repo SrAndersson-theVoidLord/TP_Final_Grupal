@@ -25,11 +25,17 @@ namespace Adecom
             {
 
                 Iniciar_DDLs();
-
+               
             }
+
+            Llenar_labels_precios();
+
+
+
 
         }
 
+        
 
         public void Iniciar_DDLs()
         {
@@ -38,6 +44,7 @@ namespace Adecom
 
             DropDownList1.DataSource = hard_neg.Obtener_tabla_Hardware("SELECT [Id_Hardware_HAR], [Nombre_HAR] FROM [Hardware] WHERE ([Categoria_HAR] = 'DISO') OR ([Categoria_HAR] = 'DIRI')");
             DropDownList1.DataBind();
+           
 
             DropDownList2.DataSource = hard_neg.Obtener_tabla_Hardware("SELECT [Id_Hardware_HAR], [Nombre_HAR] FROM [Hardware] WHERE ([Categoria_HAR] = 'PROC')");
             DropDownList2.DataBind();
@@ -62,6 +69,28 @@ namespace Adecom
 
         }
 
+        public void Llenar_labels_precios()
+        {
+
+            lvlDisco.Text= "$" + preciolabel(Convert.ToInt32(DropDownList1.SelectedValue));
+            lvlProcesador.Text = "$" + preciolabel(Convert.ToInt32(DropDownList2.SelectedValue));
+            lvlMother.Text = "$" + preciolabel(Convert.ToInt32(DropDownList3.SelectedValue));
+            lvlPlacadeVideo.Text = "$" + preciolabel(Convert.ToInt32(DropDownList4.SelectedValue));
+            lvlRam.Text = "$" + preciolabel(Convert.ToInt32(DropDownList5.SelectedValue));
+            lvlFuente.Text = "$" + preciolabel(Convert.ToInt32(DropDownList6.SelectedValue));
+            lvlGabinete.Text = "$" + preciolabel(Convert.ToInt32(DropDownList7.SelectedValue));
+            lvlSistema.Text = "$" + preciolabel(Convert.ToInt32(DropDownList8.SelectedValue));
+        }
+        string preciolabel(int id)
+        {
+            Hardware hard = new Hardware();
+            HardwareNegocio neg = new HardwareNegocio();
+
+            hard = neg.get_HardwareNegocio(id);
+            int n = Convert.ToInt32(hard.Precio_unitario);
+            string b = Convert.ToString(n);
+            return b;
+        }
             protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
 

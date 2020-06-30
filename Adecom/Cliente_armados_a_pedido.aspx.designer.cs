@@ -33,6 +33,15 @@ namespace Adecom
         protected global::System.Web.UI.WebControls.DropDownList ddl_disco;
 
         /// <summary>
+        /// Control lvlDisco.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lvlDisco;
+
+        /// <summary>
         /// Control DropDownList2.
         /// </summary>
         /// <remarks>
@@ -42,6 +51,15 @@ namespace Adecom
         protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
 
         /// <summary>
+        /// Control lvlProcesador.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lvlProcesador;
+
+        /// <summary>
         /// Control DropDownList3.
         /// </summary>
         /// <remarks>
@@ -49,6 +67,15 @@ namespace Adecom
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+
+        /// <summary>
+        /// Control lvlMother.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lvlMother;
 
         /// <summary>
         /// Control DropDownList4.
@@ -69,6 +96,15 @@ namespace Adecom
         protected global::System.Web.UI.WebControls.DropDownList ddl_placa_video;
 
         /// <summary>
+        /// Control lvlPlacadeVideo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lvlPlacadeVideo;
+
+        /// <summary>
         /// Control DropDownList5.
         /// </summary>
         /// <remarks>
@@ -87,6 +123,15 @@ namespace Adecom
         protected global::System.Web.UI.WebControls.DropDownList ddl_memoria_ram;
 
         /// <summary>
+        /// Control lvlRam.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lvlRam;
+
+        /// <summary>
         /// Control DropDownList6.
         /// </summary>
         /// <remarks>
@@ -94,6 +139,15 @@ namespace Adecom
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList6;
+
+        /// <summary>
+        /// Control lvlFuente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lvlFuente;
 
         /// <summary>
         /// Control DropDownList7.
@@ -105,6 +159,15 @@ namespace Adecom
         protected global::System.Web.UI.WebControls.DropDownList DropDownList7;
 
         /// <summary>
+        /// Control lvlGabinete.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lvlGabinete;
+
+        /// <summary>
         /// Control DropDownList8.
         /// </summary>
         /// <remarks>
@@ -112,6 +175,15 @@ namespace Adecom
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList8;
+
+        /// <summary>
+        /// Control lvlSistema.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lvlSistema;
 
         /// <summary>
         /// Control btnRealizarpedido.

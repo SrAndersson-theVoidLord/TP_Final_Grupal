@@ -42,75 +42,91 @@
         <tr>
             <td class="auto-style5">Disco:</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList1" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px">
+                <asp:DropDownList ID="DropDownList1" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px" AutoPostBack="True">
                 </asp:DropDownList>
-                <asp:DropDownList ID="ddl_disco" runat="server">
+                <asp:DropDownList ID="ddl_disco" runat="server" AutoPostBack="True">
                     <asp:ListItem>1</asp:ListItem>
                     <asp:ListItem>2</asp:ListItem>
                     <asp:ListItem>3</asp:ListItem>
                     <asp:ListItem>4</asp:ListItem>
                 </asp:DropDownList>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="lvlDisco" runat="server"></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">Procesador:</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList2" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px">
+                <asp:DropDownList ID="DropDownList2" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px" AutoPostBack="True">
                 </asp:DropDownList>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="lvlProcesador" runat="server"></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">Motheboard:</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList3" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px">
+                <asp:DropDownList ID="DropDownList3" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px" AutoPostBack="True">
                 </asp:DropDownList>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="lvlMother" runat="server"></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">Placa de Video:</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList4" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px">
+                <asp:DropDownList ID="DropDownList4" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px" AutoPostBack="True">
                 </asp:DropDownList>
-                <asp:DropDownList ID="ddl_placa_video" runat="server">
+                <asp:DropDownList ID="ddl_placa_video" runat="server" AutoPostBack="True">
                     <asp:ListItem>1</asp:ListItem>
                     <asp:ListItem>2</asp:ListItem>
                     <asp:ListItem>3</asp:ListItem>
                     <asp:ListItem>4</asp:ListItem>
                 </asp:DropDownList>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="lvlPlacadeVideo" runat="server"></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">Memoria Ram:</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList5" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px">
+                <asp:DropDownList ID="DropDownList5" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px" AutoPostBack="True">
                 </asp:DropDownList>
-                <asp:DropDownList ID="ddl_memoria_ram" runat="server">
+                <asp:DropDownList ID="ddl_memoria_ram" runat="server" AutoPostBack="True">
                     <asp:ListItem>1</asp:ListItem>
                     <asp:ListItem>2</asp:ListItem>
                     <asp:ListItem>3</asp:ListItem>
                     <asp:ListItem>4</asp:ListItem>
                 </asp:DropDownList>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="lvlRam" runat="server"></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">Fuente:</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList6" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px">
+                <asp:DropDownList ID="DropDownList6" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px" AutoPostBack="True">
                 </asp:DropDownList>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="lvlFuente" runat="server"></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">Gabinete:</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList7" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px">
+                <asp:DropDownList ID="DropDownList7" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px" AutoPostBack="True">
                 </asp:DropDownList>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="lvlGabinete" runat="server"></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">Sistema Operativo:</td>
             <td class="auto-style6">
-                <asp:DropDownList ID="DropDownList8" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px">
+                <asp:DropDownList ID="DropDownList8" runat="server"  DataTextField="Nombre_HAR" DataValueField="Id_Hardware_HAR" Width="400px" AutoPostBack="True">
                 </asp:DropDownList>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="lvlSistema" runat="server"></asp:Label>
             </td>
         </tr>
     </table>
