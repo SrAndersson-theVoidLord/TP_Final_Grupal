@@ -76,7 +76,7 @@ namespace Dao
 
             SqlCommand comando = new SqlCommand();
             Armar_Parametros_Dar_de_baja_Solicitud_de_servicio(ref comando, cat);
-            return ds.EjecutarProcedimiento(comando, "PRO_Desabilitar_Presupuesto_de_servicio");
+            return ds.EjecutarProcedimiento(comando, "PRO_Desabilitar_Solicitud_de_servicio");
         }
 
     }

@@ -39,7 +39,25 @@ namespace Adecom
         protected void but_Aceptar_Click(object sender, EventArgs e)
         {
 
-            Presupuesto_de_servicio ps = new Presupuesto_de_servicio(); 
+            Presupuesto_de_servicio_Negocio ps = new Presupuesto_de_servicio_Negocio();
+
+            Solicitud_de_servicio ss = new Solicitud_de_servicio();
+            Solicitud_de_servicio_Negocio ss_neg = new Solicitud_de_servicio_Negocio();
+
+            Usuario usu = new Usuario();
+
+            usu = (Usuario)Session["usuariovalidado"];
+
+            ss = ss_neg.get_Solicitud_de_servicio_Negocio(Convert.ToInt32(Session["Id_reparacion"]));
+
+            int tipo = Convert.ToInt32(DropDownList1.SelectedValue);
+            int horas = Convert.ToInt32(TextBox2.Text);
+            string descripcion = TextBox1.Text;
+
+            ps.agregar_Presupuesto_de_servicio(ss.Id_solicitud_de_servicio, ss.Id_cliente, usu.Id_Usuario, tipo, horas, descripcion);
+            ss_neg.Dar_de_baja_Solicitud_de_servicio(ss.Id_solicitud_de_servicio);
+
+            Response.Redirect("/Empleados_Reparaciones.aspx");
 
         }
 

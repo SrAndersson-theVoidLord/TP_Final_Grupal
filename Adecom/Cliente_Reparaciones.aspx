@@ -46,4 +46,29 @@
     <p class="auto-style2">
         <asp:Button ID="btnEnviar" runat="server" Text="Enviar Formulario" OnClick="btnEnviar_Click" />
     </p>
+    <p class="auto-style2">
+        &nbsp;</p>
+    <p class="auto-style2">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" AutoGenerateSelectButton="True" OnSelectedIndexChanging="GridView1_SelectedIndexChanging">
+            <Columns>
+                <asp:TemplateField HeaderText="Id">
+                    <ItemTemplate>
+                        <asp:Label ID="lab_presupuesto" runat="server" Text='<%# Bind("Id_Presupuesto_PdS") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Descripcion">
+                    <ItemTemplate>
+                        <asp:Label ID="lab_descripcion" runat="server" Text='<%# Bind("Descripcion_PdS") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Precio">
+                    <ItemTemplate>
+                        <asp:Label ID="lab_precio_total" runat="server" Text='<%# Bind("Subtotal_PdS") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
+    </p>
+    <p class="auto-style2">
+        &nbsp;</p>
 </asp:Content>
