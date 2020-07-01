@@ -186,6 +186,15 @@ namespace Adecom
         protected global::System.Web.UI.WebControls.Label lvlSistema;
 
         /// <summary>
+        /// Control lab_armado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lab_armado;
+
+        /// <summary>
         /// Control btnRealizarpedido.
         /// </summary>
         /// <remarks>

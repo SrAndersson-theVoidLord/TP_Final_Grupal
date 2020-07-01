@@ -71,25 +71,45 @@ namespace Adecom
 
         public void Llenar_labels_precios()
         {
+            double precio;
+            double precio_total = 0;
 
-            lvlDisco.Text= "$" + preciolabel(Convert.ToInt32(DropDownList1.SelectedValue));
-            lvlProcesador.Text = "$" + preciolabel(Convert.ToInt32(DropDownList2.SelectedValue));
-            lvlMother.Text = "$" + preciolabel(Convert.ToInt32(DropDownList3.SelectedValue));
-            lvlPlacadeVideo.Text = "$" + preciolabel(Convert.ToInt32(DropDownList4.SelectedValue));
-            lvlRam.Text = "$" + preciolabel(Convert.ToInt32(DropDownList5.SelectedValue));
-            lvlFuente.Text = "$" + preciolabel(Convert.ToInt32(DropDownList6.SelectedValue));
-            lvlGabinete.Text = "$" + preciolabel(Convert.ToInt32(DropDownList7.SelectedValue));
-            lvlSistema.Text = "$" + preciolabel(Convert.ToInt32(DropDownList8.SelectedValue));
+            precio = preciolabel(Convert.ToInt32(DropDownList1.SelectedValue)) * Convert.ToInt32(ddl_disco.SelectedValue);
+            lvlDisco.Text= "$" + precio;
+            precio_total += precio;
+            precio = preciolabel(Convert.ToInt32(DropDownList2.SelectedValue));
+            lvlProcesador.Text = "$" + precio;
+            precio_total += precio;
+            precio = preciolabel(Convert.ToInt32(DropDownList3.SelectedValue));
+            lvlMother.Text = "$" + precio;
+            precio_total += precio;
+            precio = preciolabel(Convert.ToInt32(DropDownList4.SelectedValue)) * Convert.ToInt32(ddl_placa_video.SelectedValue);
+            lvlPlacadeVideo.Text = "$" + precio;
+            precio_total += precio;
+            precio = preciolabel(Convert.ToInt32(DropDownList5.SelectedValue)) * Convert.ToInt32(ddl_memoria_ram.SelectedValue);
+            lvlRam.Text = "$" + precio;
+            precio_total += precio;
+            precio = preciolabel(Convert.ToInt32(DropDownList6.SelectedValue));
+            lvlFuente.Text = "$" + precio;
+            precio_total += precio;
+            precio = preciolabel(Convert.ToInt32(DropDownList7.SelectedValue));
+            lvlGabinete.Text = "$" + precio;
+            precio_total += precio;
+            precio = preciolabel(Convert.ToInt32(DropDownList8.SelectedValue));
+            lvlSistema.Text = "$" + precio;
+            precio_total += precio;
+
+            lab_armado.Text = Convert.ToString(precio_total * 0.1); 
+
         }
-        string preciolabel(int id)
+        public double preciolabel(int id)
         {
             Hardware hard = new Hardware();
             HardwareNegocio neg = new HardwareNegocio();
 
             hard = neg.get_HardwareNegocio(id);
-            int n = Convert.ToInt32(hard.Precio_unitario);
-            string b = Convert.ToString(n);
-            return b;
+            
+            return hard.Precio_unitario;
         }
             protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {

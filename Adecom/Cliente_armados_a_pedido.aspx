@@ -131,6 +131,9 @@
         </tr>
     </table>
     <p class="auto-style2">
+        Costo del armado: $<asp:Label ID="lab_armado" runat="server"></asp:Label>
+    </p>
+    <p class="auto-style2">
         <asp:Button ID="btnRealizarpedido" runat="server" OnClick="Button1_Click" Text="Realizar pedido" />
     </p>
 </asp:Content>
