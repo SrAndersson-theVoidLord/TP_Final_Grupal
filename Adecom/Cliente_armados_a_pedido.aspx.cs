@@ -99,7 +99,9 @@ namespace Adecom
             lvlSistema.Text = "$" + precio;
             precio_total += precio;
 
+            lblComponentes.Text =  Convert.ToString(precio_total);
             lab_armado.Text = Convert.ToString(precio_total * 0.1); 
+            lbltotalArmado.Text =Convert.ToString(precio_total * 1.1);
 
         }
         public double preciolabel(int id)

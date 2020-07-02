@@ -186,6 +186,15 @@ namespace Adecom
         protected global::System.Web.UI.WebControls.Label lvlSistema;
 
         /// <summary>
+        /// Control lblComponentes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblComponentes;
+
+        /// <summary>
         /// Control lab_armado.
         /// </summary>
         /// <remarks>
@@ -193,6 +202,15 @@ namespace Adecom
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lab_armado;
+
+        /// <summary>
+        /// Control lbltotalArmado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbltotalArmado;
 
         /// <summary>
         /// Control btnRealizarpedido.
