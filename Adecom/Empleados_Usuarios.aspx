@@ -21,8 +21,9 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="d-flex p-2 bd-highlight">
 
-        <asp:Button ID="btnMostrarClientes" CssClass="btn btn-outline-success btn-lg border-dark w-50" Text="Mostrar Clientes" runat="server" OnClick="btnMostrarClientes_Click" />
-        <asp:Button ID="btnMostrarEmpleados" CssClass="btn btn-outline-success btn-lg border-dark w-50" Text="Mostrar Empleados" runat="server" OnClick="btnMostrarEmpleados_Click" />
+        <asp:Button ID="btnMostrarClientes" CssClass="btn btn-outline-dark btn-lg border-dark w-auto" Text="Mostrar Clientes" runat="server" OnClick="btnMostrarClientes_Click" />
+        <asp:Button ID="btnMostrarEmpleados" CssClass="btn btn-outline-dark btn-lg border-dark w-auto" Text="Mostrar Empleados" runat="server" OnClick="btnMostrarEmpleados_Click" />
+        <asp:Button ID="btnRegistroEmpleados" CssClass="btn btn-outline-dark btn-lg border-dark w-auto"  Text="Registrar Nuevos Empleados" runat="server" OnClick="btnRegistroEmpleados_Click" />
     </div>
     
     <div class="overflow-auto">   

@@ -3,18 +3,39 @@
     
 </asp:Content>
 <asp:Content ContentPlaceHolderID="Contenido_menu_contextual" runat="server">
-    <div class="d-flex flex-column p-2 bd-highlight">
+      <% if(usuarioregistrado() == "Empleado")
+        {%>
+        <div class="d-flex flex-column p-2 bd-highlight">
+        <a class="btn btn-outline-secondary btn-lg border-dark" href="/Empleados_Productos.aspx">Hardware</a>
+        <a class="btn btn-outline-secondary btn-lg border-dark" href="/Empleados_armados_a_pedido.aspx">Armados a Pedido</a>
+        <a class="btn btn-outline-secondary btn-lg border-dark" href="/Empleados_Reparaciones.aspx">Reparaciones</a>
+        <a class="btn btn-outline-secondary btn-lg border-dark" href="/Empleados_Usuarios.aspx">Usuarios</a>
+        <a class="btn btn-outline-secondary btn-lg border-dark" href="/Empleados_Informes.aspx">Informes</a>
+
+    </div>
+
+        <%}
+        else
+        {%>
+        <div class="d-flex flex-column p-2 bd-highlight">
         <a class="btn btn-outline-secondary btn-lg border-dark w-100" href="/Cliente_Productos.aspx" >Productos</a>
         <a class="btn btn-outline-secondary btn-lg border-dark w-100" href="/Cliente_armados_a_pedido.aspx" >Armados a Pedido</a>
         <a class="btn btn-outline-secondary btn-lg border-dark w-100" href="/Cliente_Reparaciones.aspx" >Reparaciones</a>
         <a class="btn btn-outline-secondary btn-lg border-dark w-100" href="/Cliente_Contactos.aspx" >Contacto</a>
-    </div>
+        </div>
 
+
+       <% } %> 
+        
+
+    
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="Contenido_menu_principal" runat="server">
         <div class="bg-light text-center font-weight-bold " >
         <h3>Registro de Usuarios</h3>
+            <br />
+            <asp:Label id="lblAltaUsuario" Text="" runat="server"  />
     </div>
 
 </asp:Content>
@@ -83,7 +104,7 @@
     <div style="height: 70px; width: 10%; float: left">&nbsp</div>
     <div style="height: 70px; width: 60%; float: left">
         <label class="col-form-label">DNI</label>
-        <asp:TextBox ID="tbDni" CssClass="form-control" Width="80%" runat="server" />
+        <asp:TextBox ID="tbDni" CssClass="form-control" Width="80%" runat="server" AutoPostBack="True" OnTextChanged="tbDni_TextChanged" />
     </div>
     <div style="height: 70px; width: 30%; float: left">&nbsp<br />
         <asp:CustomValidator ID="cvDni" runat="server" ControlToValidate="tbDni" ErrorMessage="* Ya existe un usuario con mismo DNI" ForeColor="Red" OnServerValidate="cvDni_ServerValidate" ValidationGroup="Grupo1"></asp:CustomValidator>
@@ -116,18 +137,6 @@
     </div>
     <div style="height: 20px; width: 100%; float: left">&nbsp</div>
 
-    <div style="height: 70px; width: 10%; float: left">&nbsp</div>
-    <div style="height: 70px; width: 60%; float: left">
-        <label class="col-form-label">Numero</label>
-        <asp:TextBox ID="tbNumero" CssClass="form-control" Width="80%" runat="server" />
-    </div>
-    <div style="height: 70px; width: 30%; float: left">&nbsp<br />
-        <br />
-        <asp:RequiredFieldValidator ID="rfvNumero" runat="server" ControlToValidate="tbNumero" ErrorMessage="* El campo no puede estar vacío" ForeColor="Red" ValidationGroup="Grupo1"></asp:RequiredFieldValidator>
-        <br />
-        <asp:RegularExpressionValidator ID="revNumero" runat="server" ControlToValidate="tbNumero" ErrorMessage="* El campo debe ser valido" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="Grupo1"></asp:RegularExpressionValidator>
-    </div>
-    <div style="height: 20px; width: 100%; float: left">&nbsp</div>
 
     <div style="height: 70px; width: 10%; float: left">&nbsp</div>
     <div style="height: 70px; width: 60%; float: left">
@@ -166,7 +175,9 @@
         <br />
         <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="tbEmail" ErrorMessage="* El campo debe ser valido" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="Grupo1"></asp:RegularExpressionValidator>
     </div>
-    <div style="height: 20px; width: 100%; float: left">&nbsp</div>
+    <div style="height: 20px; width: 100%; float: left">&nbsp
+        
+    </div>
 
         <div style="height: 70px; width: 10%; float: left">&nbsp</div>
     <div style="height: 70px; width: 60%; float: left">

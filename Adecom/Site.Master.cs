@@ -26,6 +26,7 @@ namespace Adecom
                 usuariologin = (Usuario)Session["usuariovalidado"];
                 hlIniciarSesion.Enabled = false;
                 hlIniciarSesion.Text = "Bienvenido " + usuariologin.Nombre + " " + usuariologin.Apellido;
+                
                 btnCerrarSesion.Enabled = true;
                 btnCerrarSesion.Visible = true;
             }
@@ -34,6 +35,7 @@ namespace Adecom
                 
                 hlIniciarSesion.Enabled = true;
                 hlIniciarSesion.Text = "Iniciar Sesion";
+                
                 btnCerrarSesion.Enabled = false;
                 btnCerrarSesion.Visible = false;
 

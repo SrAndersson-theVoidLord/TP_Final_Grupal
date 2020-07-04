@@ -11,55 +11,148 @@ namespace Adecom
 {
     public partial class Registro : System.Web.UI.Page
     {
+
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             this.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
+            
         }
 
         protected void btnRegistrarseRegistro_Click(object sender, EventArgs e)
         {
+            int altausuario;
             Usuario u = new Usuario();
             UsuarioNegocio un = new UsuarioNegocio();
             u = Cargar_Usuario_Registro();
-            //un.agregarcliente(u);
+            if(usuarioregistrado() == "null")
+            {
+            altausuario = un.agregarcliente(u);
+            }
+            else
+            {
+            altausuario = un.agregarempleado(u);
+            }
+
+
+            if (altausuario == 1)
+            {
+                lblAltaUsuario.Text = "El Usuario ha sido dado de alta con Exito!!";
+                limpiarregistro();
+            }
+            else
+            {
+                lblAltaUsuario.Text = "Ocurrio un problema, intentelo en unos minutos.....";
+            }
+
+        }
+
+        protected void limpiarregistro()
+        {
+            tbUsuarioRegistro.Text = null;
+            tbContraseñaRegistro.Text = null;
+            tbNombre.Text = null;
+            tbApellido.Text = null;
+            tbDni.Text = null;
+            tbLocalidad.Text = null;
+            tbDireccion.Text = null;
+            
+            tbCP.Text = null;
+            tbTelefono.Text = null;
+            tbEmail.Text = null;
+            
+
         }
 
         protected Usuario Cargar_Usuario_Registro()
         {
             Usuario u = new Usuario();
-            u.Nombreusuario = tbUsuarioRegistro.ToString();
-            u.Constraseña = tbContraseñaRegistro.ToString();
-            u.Nombre = tbNombre.ToString();
-            u.Apellido = tbApellido.ToString();
-            u.Dni = tbDni.ToString();
-            u.Localidad = tbLocalidad.ToString();
-            u.Direccion = tbDireccion.ToString() + " " + tbNumero.ToString();
-            u.Cp = tbCP.ToString();
-            u.Telefono = tbTelefono.ToString();
-            u.Email = tbEmail.ToString();
+            u.Nombreusuario = tbUsuarioRegistro.Text;
+            u.Constraseña = tbContraseñaRegistro.Text;
+            u.Nombre = tbNombre.Text;
+            u.Apellido = tbApellido.Text;
+            u.Dni = tbDni.Text;
+            u.Localidad = tbLocalidad.Text;
+            u.Direccion = tbDireccion.Text;
+            u.Cp = tbCP.Text;
+            u.Telefono = tbTelefono.Text;
+            u.Email = tbEmail.Text;
             u.Estado = true;
             return u;
         }
 
         protected void cvDni_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            /*
-            UsuarioNegocio un = new UsuarioNegocio();
-            Usuario u = new Usuario();
-            u = un.ValidarDNI_cliente(args.ToString());
-            if ( u != null )
-            {
-                args.IsValid = false;
-                return;
+           /*
+
             }
-            u = un.ValidarDNI_Empleado(args.ToString());
-            if ( u != null)
-            {
-                args.IsValid = false;
-                return;
-            }
-            */
+           */
             args.IsValid = true;
         }
+
+        protected void cargarregistro(Usuario u)
+        {
+            tbUsuarioRegistro.Text = u.Nombreusuario;
+            tbContraseñaRegistro.Text = u.Constraseña;
+            tbRepetirContraseña.Text = u.Constraseña;
+            tbNombre.Text = u.Nombre;
+            tbApellido.Text = u.Apellido;
+            tbDni.Text = u.Dni;
+            tbLocalidad.Text = u.Localidad;
+            tbDireccion.Text = u.Direccion;
+            tbCP.Text = u.Cp;
+            tbTelefono.Text = u.Telefono;
+            tbEmail.Text = u.Email;
+
+        }
+
+        protected void tbDni_TextChanged(object sender, EventArgs e)
+        {
+            UsuarioNegocio un = new UsuarioNegocio();
+            Usuario u = new Usuario();
+            if(usuarioregistrado() != "Empleado")
+            { 
+                u = un.Validar_DNI_Cliente(tbDni.Text);
+                if (u.Dni != null)
+                    {
+                
+                    lblAltaUsuario.Text = "ATENCION: Ya existe un Usuario creado con este DNI!!!";
+                    limpiarregistro();
+                }
+            }
+            else
+            {
+                u = un.Validar_DNI_Empleado(tbDni.Text);
+                if (u.Dni != null)
+                {
+                lblAltaUsuario.Text = "ATENCION: Ya existe un Usuario creado con este DNI!!!";
+                    limpiarregistro();
+                }
+            }
+                
+        }
+
+        public String usuarioregistrado()
+        {
+            if (Session["usuariovalidado"] != null)
+            {
+                UsuarioNegocio un = new UsuarioNegocio();
+                Usuario usuariologin = new Usuario();
+                usuariologin = (Usuario)Session["usuariovalidado"];
+                Usuario aux = new Usuario();
+                aux = un.Validar_DNI_Empleado(usuariologin.Dni);
+                if(aux.Dni == usuariologin.Dni)
+                {
+                    return "Empleado";
+                }
+                else
+                {
+                    return "null";
+                }
+            }
+            return "null";
+        }
+
+
     }
 }

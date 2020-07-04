@@ -6,7 +6,6 @@ C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\Microsoft.CodeAnalysis.CSharp
 C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\System.Collections.Immutable.dll
 C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\System.IO.FileSystem.dll
-C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\System.IO.FileSystem.Primitives.dll
 C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\System.Reflection.Metadata.dll
 C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\System.Security.Cryptography.Primitives.dll
 C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\System.Text.Encoding.CodePages.dll
@@ -147,6 +146,12 @@ D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final
 D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Adecom\obj\Debug\Adecom.csproj.CopyComplete
 D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Adecom\obj\Debug\Adecom.dll
 D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Adecom\obj\Debug\Adecom.pdb
+C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\Dao.dll
+C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\Dao.pdb
+C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Adecom\bin\Dao.dll
+C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Adecom\bin\Dao.pdb
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Adecom\bin\Dao.dll
+D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Adecom\bin\Dao.pdb
 C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\csc.exe.config
 C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\csc.rsp
 C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\csi.exe
@@ -170,6 +175,7 @@ C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\System.Diagnostics.StackTrace
 C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\System.Globalization.Calendars.dll
 C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\System.IO.Compression.dll
 C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\System.IO.FileSystem.Primitives.dll
 C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\System.Net.Http.dll
 C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\System.Net.Sockets.dll
 C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
@@ -187,9 +193,3 @@ C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\vbc.exe.config
 C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\vbc.rsp
 C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\VBCSCompiler.exe
 C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\roslyn\VBCSCompiler.exe.config
-C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\Dao.dll
-C:\Mis Proyectos\TP_Final_Grupal\Adecom\bin\Dao.pdb
-C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Adecom\bin\Dao.dll
-C:\Users\theco\Documents\GitHub\TP_Final_Grupal\Adecom\bin\Dao.pdb
-D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Adecom\bin\Dao.dll
-D:\Desktop\Mini laboratorio\3° Cuatrimestre\Programacion\TP integrador\TP_Final_Grupal\Adecom\bin\Dao.pdb

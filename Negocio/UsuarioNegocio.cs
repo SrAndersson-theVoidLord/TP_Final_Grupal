@@ -14,34 +14,43 @@ namespace Negocio
     {
 
         /// Clientes:
-        public void agregarcliente(Usuario cliente)
+        /// 
+         // Utilizado y creado por Gabriel
+        public int agregarcliente(Usuario cliente)
         {
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearQuery("insert into clientes values(@nombreusuario,@contraseña,@nombre,@apellido,@dni,@localidad,@direccion,@cp,@telefono,@email,@estado)");
-                datos.agregarParametro("@nombreusuario", cliente.Nombre);
-                datos.agregarParametro("@contraseña", cliente.Constraseña);
+                datos.setearQuery("insert into Clientes values(@dni,@nombre,@apellido,@nombreusuario,@contraseña,@direccion,@localidad,@cp,@telefono,@email,@estado)");
+                datos.agregarParametro("@dni", cliente.Dni);
                 datos.agregarParametro("@nombre", cliente.Nombre);
                 datos.agregarParametro("@apellido", cliente.Apellido);
-                datos.agregarParametro("@dni", cliente.Dni);
-                datos.agregarParametro("@localidad", cliente.Localidad);
+                datos.agregarParametro("@nombreusuario", cliente.Nombreusuario);
+                datos.agregarParametro("@contraseña", cliente.Constraseña);
                 datos.agregarParametro("@direccion", cliente.Direccion);
+                datos.agregarParametro("@localidad", cliente.Localidad);
                 datos.agregarParametro("@cp", cliente.Cp);
                 datos.agregarParametro("@telefono", cliente.Telefono);
                 datos.agregarParametro("@email", cliente.Email);
-                datos.agregarParametro("@estado", cliente.Estado);
+                datos.agregarParametro("@estado", Convert.ToInt16(cliente.Estado));
 
-                datos.ejecutarAccion();
+                int filasafectadas = datos.ejecutarAccion();
+                datos.cerrarConexion();
+                if(filasafectadas > 0)
+                {
+                    return 1;
+
+                }
+                return 0;
             }
             catch (Exception ex)
             {
                 throw ex ;
             }
 
-
         }
-
+        
+        // Utilizado y creado por Gabriel
         //FUNCION PARA LISTAR LOS DATOS DE LA BBDD
         public List<Usuario> listar_Clientes()
         {
@@ -166,7 +175,8 @@ namespace Negocio
             }
             return cliente;
         }
-
+        
+        // Utilizado y creado por Gabriel
         public void ModificarCliente(Usuario Cliente)
         {
             AccesoDatos data = new AccesoDatos();
@@ -197,7 +207,7 @@ namespace Negocio
 
 
         }
-
+        // Utilizado y creado por Gabriel
         public void EliminarCliente(Usuario Cliente)
         {
             AccesoDatos data = new AccesoDatos();
@@ -217,6 +227,7 @@ namespace Negocio
 
 
 
+        // Utilizado y creado por Gabriel
         public Usuario Validar_Clientes(string usuario)
         {
 
@@ -246,12 +257,44 @@ namespace Negocio
             return aux;
         }
 
+        // Utilizado y creado por Gabriel
+        public Usuario Validar_DNI_Cliente(string dni)
+        {
+
+            Usuario aux = new Usuario();
+            AccesoDatos datos = new AccesoDatos();
+            datos.setearQuery("select id_Cliente_CLI, DNI_CLI, Nombre_CLI, Apellido_CLI,NombreUsuario_CLI,Contrasenia_CLI, Direccion_CLI, Localidad_CLI,Codigo_Postal_CLI, Telefono_CLI, Email_CLI,Estado_CLI from Clientes where DNI_CLI = '" + dni + "'");
+            datos.ejecutarLector();
+            while (datos.lector.Read())
+            {
+                aux.Id_Usuario = (int)datos.lector["id_Cliente_CLI"];
+                aux.Dni = datos.lector["DNI_CLI"].ToString().Trim();
+                aux.Nombre = datos.lector["Nombre_CLI"].ToString().Trim();
+                aux.Apellido = datos.lector["Apellido_CLI"].ToString().Trim();
+                aux.Nombreusuario = datos.lector["NombreUsuario_CLI"].ToString().Trim();
+                aux.Constraseña = datos.lector["Contrasenia_CLI"].ToString().Trim();
+                aux.Direccion = datos.lector["Direccion_CLI"].ToString().Trim();
+                aux.Localidad = datos.lector["Localidad_CLI"].ToString().Trim();
+                aux.Cp = datos.lector["Codigo_Postal_CLI"].ToString().Trim();
+                aux.Telefono = datos.lector["Telefono_CLI"].ToString().Trim();
+                aux.Email = datos.lector["Email_CLI"].ToString().Trim();
+                aux.Estado = (Boolean)datos.lector["Estado_CLI"];
+
+            }
+
+            datos.cerrarConexion();
+
+            return aux;
+        }
+
+
+
         /////////////////////////////////////////////////////////////////////////////////////
 
 
         /// Empleados:
 
-
+        // Utilizado y creado por Gabriel
         public List<Usuario> listar_Empleados()
         {
             //INSTANCIO LA LISTA
@@ -361,7 +404,7 @@ namespace Negocio
             return Empleado;
         }
 
-
+        // Utilizado y creado por Gabriel
         public void ModificarEmpleado(Usuario Empleado)
         {
             AccesoDatos data = new AccesoDatos();
@@ -378,7 +421,7 @@ namespace Negocio
                 data.agregarParametro("@telefono", Empleado.Telefono);
                 data.agregarParametro("@mail", Empleado.Email);
                 data.agregarParametro("@cp", Empleado.Cp);
-                int filasafectadas=data.ejecutarAccion();
+                int filasafectadas = data.ejecutarAccion();
                 data.cerrarConexion();
             }
             catch (Exception ex)
@@ -390,7 +433,9 @@ namespace Negocio
 
 
         }
-
+        
+        
+        // Utilizado y creado por Gabriel
         public void EliminarEmpleado(Usuario empleado)
         {
             AccesoDatos data = new AccesoDatos();
@@ -407,7 +452,7 @@ namespace Negocio
             }
         }
 
-
+        // Utilizado y creado por Gabriel
         public Usuario Validar_Empleados(string usuario)
         {
 
@@ -436,6 +481,72 @@ namespace Negocio
 
             return aux;
         }
+
+        // utilizado y creado por Gabriel
+        public Usuario Validar_DNI_Empleado(string dni)
+        {
+
+            Usuario aux = new Usuario();
+            AccesoDatos datos = new AccesoDatos();
+            datos.setearQuery("select id_Empleado_EMP, DNI_EMP, Nombre_EMP, Apellido_EMP,NombreUsuario_EMP,Contrasenia_EMP, Direccion_EMP, Localidad_EMP,Codigo_Postal_EMP, Telefono_EMP, Email_EMP,Estado_EMP from Empleados where DNI_EMP = '" + dni + "'");
+            datos.ejecutarLector();
+            while (datos.lector.Read())
+            {
+                aux.Id_Usuario = (int)datos.lector["id_Empleado_EMP"];
+                aux.Dni = datos.lector["DNI_EMP"].ToString().Trim();
+                aux.Nombre = datos.lector["Nombre_EMP"].ToString().Trim();
+                aux.Apellido = datos.lector["Apellido_EMP"].ToString().Trim();
+                aux.Nombreusuario = datos.lector["NombreUsuario_EMP"].ToString().Trim();
+                aux.Constraseña = datos.lector["Contrasenia_EMP"].ToString().Trim();
+                aux.Direccion = datos.lector["Direccion_EMP"].ToString().Trim();
+                aux.Localidad = datos.lector["Localidad_EMP"].ToString().Trim();
+                aux.Cp = datos.lector["Codigo_Postal_EMP"].ToString().Trim();
+                aux.Telefono = datos.lector["Telefono_EMP"].ToString().Trim();
+                aux.Email = datos.lector["Email_EMP"].ToString().Trim();
+                aux.Estado = (Boolean)datos.lector["Estado_EMP"];
+
+            }
+
+            datos.cerrarConexion();
+
+            return aux;
+        }
+
+        //creado y utilizado por Gabriel
+        public int agregarempleado(Usuario empleado)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearQuery("insert into Empleados values(@dni,@nombre,@apellido,@nombreusuario,@contraseña,@direccion,@localidad,@cp,@telefono,@email,@estado)");
+                datos.agregarParametro("@dni", empleado.Dni);
+                datos.agregarParametro("@nombre", empleado.Nombre);
+                datos.agregarParametro("@apellido", empleado.Apellido);
+                datos.agregarParametro("@nombreusuario", empleado.Nombreusuario);
+                datos.agregarParametro("@contraseña", empleado.Constraseña);
+                datos.agregarParametro("@direccion", empleado.Direccion);
+                datos.agregarParametro("@localidad", empleado.Localidad);
+                datos.agregarParametro("@cp", empleado.Cp);
+                datos.agregarParametro("@telefono", empleado.Telefono);
+                datos.agregarParametro("@email", empleado.Email);
+                datos.agregarParametro("@estado", Convert.ToInt16(empleado.Estado));
+
+                int filasafectadas = datos.ejecutarAccion();
+                datos.cerrarConexion();
+                if (filasafectadas > 0)
+                {
+                    return 1;
+
+                }
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
 
 
 

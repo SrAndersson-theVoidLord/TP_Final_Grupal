@@ -28,7 +28,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearQuery("SELECT Id_Hardware_HAR,Categoria_HAR,Nombre_HAR,Descripcion_HAR,SUBSTRING(Imagen_HAR, 2, 256) as Imagen,Precio_HAR,Estado_HAR FROM Hardware where Estado_HAR = 1"); 
+                datos.setearQuery("SELECT Id_Hardware_HAR,Categoria_HAR,Nombre_HAR,Descripcion_HAR,Imagen_HAR as Imagen,Precio_HAR,Estado_HAR FROM Hardware where Estado_HAR = 1"); 
                 datos.ejecutarLector();
                 while (datos.lector.Read())
                 {
@@ -39,6 +39,10 @@ namespace Negocio
                     aux.Nombre = (string)datos.lector["Nombre_HAR"];
                     aux.Descripcion = (string)datos.lector["Descripcion_HAR"];
                     aux.Imagen = datos.lector["Imagen"].ToString();
+                    if(aux.Imagen.StartsWith("~"))
+                    {
+                        aux.Imagen = aux.Imagen.Substring(1);
+                    }
                     aux.Precio_unitario = (double)datos.lector["Precio_HAR"];
                     aux.Estado = (Boolean)datos.lector["Estado_HAR"];
 

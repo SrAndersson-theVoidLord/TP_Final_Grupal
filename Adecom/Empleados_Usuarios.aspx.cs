@@ -123,5 +123,10 @@ namespace Adecom
 
 
         }
+
+        protected void btnRegistroEmpleados_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Registro.aspx");
+        }
     }
 }
