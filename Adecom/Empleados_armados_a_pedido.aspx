@@ -21,7 +21,34 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p>
         <br />
-        <asp:GridView ID="GridView1" runat="server">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+            <Columns>
+                <asp:TemplateField HeaderText="Id actividad">
+                    <ItemTemplate>
+                        <asp:Label ID="lab_id_actividad" runat="server" Text='<%# Bind("Id_Actividad_A") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Id cliente">
+                    <ItemTemplate>
+                        <asp:Label ID="lab_id_cliente" runat="server" Text='<%# Bind("Id_Cliente_A") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Id empleado">
+                    <ItemTemplate>
+                        <asp:Label ID="lab_id_empleado" runat="server" Text='<%# Bind("Id_Empleado_A") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Precio total">
+                    <ItemTemplate>
+                        <asp:Label ID="lab_precio_total" runat="server" Text='<%# Bind("Subtotal_A") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Fecha">
+                    <ItemTemplate>
+                        <asp:Label ID="lab_fecha" runat="server" Text='<%# Bind("Fecha_A") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
         </asp:GridView>
     </p>
     <p>

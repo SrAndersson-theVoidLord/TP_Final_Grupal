@@ -26,7 +26,7 @@ namespace Adecom
         {
 
             HardwareNegocio hard_neg = new HardwareNegocio();
-            string comnado = "SELECT [Nombre_HAR], [Imagen_HAR], [Precio_HAR], [Id_Hardware_HAR], [Categoria_HAR], [Descripcion_HAR] FROM [Hardware]";
+            string comnado = "SELECT [Nombre_HAR], [Imagen_HAR], [Precio_HAR], [Id_Hardware_HAR], [Categoria_HAR], [Descripcion_HAR] FROM [Hardware] WHERE [Estado_HAR] = 1";
 
             lvProductos.DataSource = hard_neg.Obtener_tabla_Hardware(comnado);
             lvProductos.DataBind();

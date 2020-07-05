@@ -64,6 +64,8 @@ namespace Adecom
             Presupuesto_de_servicio ps = new Presupuesto_de_servicio();
             Presupuesto_de_servicio_Negocio ps_n = new Presupuesto_de_servicio_Negocio();
             ActividadNegocio a_n = new ActividadNegocio();
+            VentasNegocio v_n = new VentasNegocio();
+            DV_ServiciosNegocio dv_s_n = new DV_ServiciosNegocio();
 
             Label la = (Label)GridView1.Rows[e.NewSelectedIndex].FindControl("lab_presupuesto");
             int id = Convert.ToInt32(la.Text);
@@ -73,6 +75,14 @@ namespace Adecom
             a_n.agregar_ActividadNegocio(ps.Id_cliente, ps.Id_empleado, ps.Id_tipo, ps.Descripcion, ps.Horas_trabajadas);
 
             ps_n.Dar_de_baja_Presupuesto_de_servicio(id);
+
+            v_n.agregar_Ventas(ps.Id_cliente);
+
+            int id_venta = v_n.Obtener_Ultimo_id_ventas();
+            int id_actividad = a_n.Obtener_Ultimo_id_Actividad();
+
+            dv_s_n.agregar_DV_ServiciosNegocio(id_venta, id_actividad, ps.Descripcion);
+
 
             Iniciar_grid();
 

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using Dominio;
 using Dao;
 
+using System.Data;
+using System.Data.SqlClient;
+
 
 namespace Negocio
 {
@@ -52,6 +55,14 @@ namespace Negocio
 
             DAO_Actividades dao = new DAO_Actividades();
             return dao.Obtener_Ultimo_id_Actividades();
+
+        }
+
+        public DataTable Obtener_tabla_Actividad(string comnado)
+        {
+            DAO_Actividades dao_act = new DAO_Actividades();
+
+            return dao_act.Obtener_tabla_Actividades(comnado);
 
         }
 

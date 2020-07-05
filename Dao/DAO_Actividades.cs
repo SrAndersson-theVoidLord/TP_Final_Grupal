@@ -38,6 +38,13 @@ namespace Dao
             return cat;
         }
 
+        public DataTable Obtener_tabla_Actividades(string comnado)
+        {
+
+            return ds.ObtenerTabla("Actividades", comnado);
+
+        }
+
         private void Armar_Parametros_agregar_Actividades(ref SqlCommand Comando, Actividad cat)
         {
             SqlParameter SqlParametros = new SqlParameter();
