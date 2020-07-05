@@ -29,8 +29,9 @@
    
     <div style="height: 70px; width: 10%; float: left">&nbsp</div>
     <div style="height: 70px; width: 60%; float: left">
-        <label class="col-form-label">Usuario</label>
+        <label class="col-form-label">Usuario</label> <asp:Label id="lblusuarionoencontrado" runat="server" ForeColor="Red" />
         <asp:TextBox ID="tbUsuario" CssClass="form-control" Width="80%" runat="server" />
+        <asp:RequiredFieldValidator ErrorMessage="Debe Ingresar un Usuario!" ControlToValidate="tbUsuario" Text="Debe ingresar un usuario!!" ForeColor="Red" runat="server" ValidationGroup="Iniciosesion" />
     </div>
     <div style="height: 70px; width: 30%; float: left">&nbsp</div>
 
@@ -40,6 +41,7 @@
     <div style="height: 70px; width: 60%; float: left">
         <label class="col-form-label">Contraseña</label>
         <asp:TextBox ID="tbContraseña" CssClass="form-control" Width="80%" runat="server" />
+        <asp:RequiredFieldValidator ErrorMessage="Debe ingresar una contraseña!!" Text="Debe ingresar una contraseña !!" ForeColor="Red" ControlToValidate="tbContraseña" runat="server" ValidationGroup="Iniciosesion" />
     </div>
     <div style="height: 70px; width: 30%; float: left">&nbsp</div>
     
@@ -56,7 +58,7 @@
 
     <div style="height: 70px; width: 10%; float: left">&nbsp</div>
     <div style="height: 70px; width: 15%; float: left">
-        <asp:Button ID="btnInciarSesion" Text="Iniciar Sesion" CssClass="btn btn-dark" runat="server" Width="80%" OnClick="btnInciarSesion_Click" />
+        <asp:Button ID="btnInciarSesion" Text="Iniciar Sesion" CssClass="btn btn-dark" runat="server" Width="80%" OnClick="btnInciarSesion_Click" ValidationGroup="Iniciosesion" />
     </div>
         <div style="height: 70px; width: 45%; float: left">
         <asp:Button ID="btnRegistrarse" Text="Registrarse" CssClass="btn btn-danger" runat="server" Width="80%" OnClick="btnRegistrarse_Click" />

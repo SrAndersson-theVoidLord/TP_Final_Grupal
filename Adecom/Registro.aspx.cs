@@ -81,14 +81,6 @@ namespace Adecom
             return u;
         }
 
-        protected void cvDni_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-           /*
-
-            }
-           */
-            args.IsValid = true;
-        }
 
         protected void cargarregistro(Usuario u)
         {
@@ -136,19 +128,10 @@ namespace Adecom
         {
             if (Session["usuariovalidado"] != null)
             {
-                UsuarioNegocio un = new UsuarioNegocio();
-                Usuario usuariologin = new Usuario();
-                usuariologin = (Usuario)Session["usuariovalidado"];
-                Usuario aux = new Usuario();
-                aux = un.Validar_DNI_Empleado(usuariologin.Dni);
-                if(aux.Dni == usuariologin.Dni)
-                {
-                    return "Empleado";
-                }
-                else
-                {
-                    return "null";
-                }
+                string tipousuario;
+                tipousuario = (string)Session["tipousuario"];
+
+                return tipousuario;
             }
             return "null";
         }

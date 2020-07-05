@@ -13,7 +13,9 @@ namespace Adecom
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(IsPostBack == false)
+
+            this.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
+            if (IsPostBack == false)
             {
 
             }
@@ -34,10 +36,13 @@ namespace Adecom
                     if (usuariologin.Constraseña == tbContraseña.Text)
                     {
                         Session["usuariovalidado"] = (Usuario)usuariologin;
+                        Session["tipousuario"] = "Empleado";
+                        lblusuarionoencontrado.Text = "";
                         Response.Redirect("/Empleados_Productos.aspx");
                     }
                 }
 
+                lblusuarionoencontrado.Text = "El usuario no se encuentra registrado";
        
 
             }
@@ -52,10 +57,12 @@ namespace Adecom
                     if (usuariologin.Constraseña == tbContraseña.Text)
                     {
                         Session["usuariovalidado"] = (Usuario)usuariologin;
+                        Session["tipousuario"] = "Cliente";
+                        lblusuarionoencontrado.Text = "";
                         Response.Redirect("/Cliente_Productos.aspx");
                     }
                 }
-
+                lblusuarionoencontrado.Text = "El usuario no se encuentra registrado";
 
             }
         }

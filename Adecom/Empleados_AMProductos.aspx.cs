@@ -15,6 +15,7 @@ namespace Adecom
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
             if (IsPostBack == false)
             {
 
@@ -51,10 +52,19 @@ namespace Adecom
                 if(hardwareseleccionado > 0 )
                 {
 
-                 btnAgregar.Visible = false;
-                    btn_Modificar.Visible = true;
-                    btn_Eliminar.Visible = true;
-                h = negocio.buscarhardware(hardwareseleccionado);
+                btnAgregar.Visible = false;
+                btn_Modificar.Visible = true;
+                btn_Eliminar.Visible = true;
+                    //se habilitan controles requeridos para agregar hardware
+                    lbl_idhardware.Visible = true;
+                    tb_IDHardware.Visible = true;
+                    rfvidhardware.Enabled = true;
+                    lbl_Estado.Visible = true;
+                    tb_Estado.Visible = true;
+                    rfvtb_Estado.Enabled = true;
+
+
+                    h = negocio.buscarhardware(hardwareseleccionado);
                 tb_IDHardware.Text = h.Id_hardware.ToString();
                 ddl_Categoria.SelectedValue = h.Categoria.Id_categoria.ToString();
                 tb_Nombre.Text = h.Nombre.ToString();
@@ -68,6 +78,15 @@ namespace Adecom
                     btnAgregar.Visible = true;
                     btn_Modificar.Visible = false;
                     btn_Eliminar.Visible = false;
+
+                    //se deshabilitan controles no requeridos para agregar hardware
+                    lbl_idhardware.Visible = false;
+                    tb_IDHardware.Visible = false;
+                    rfvidhardware.Enabled = false;
+                    lbl_Estado.Visible = false;
+                    tb_Estado.Visible = false;
+                    rfvtb_Estado.Enabled = false;
+
 
                 }
 

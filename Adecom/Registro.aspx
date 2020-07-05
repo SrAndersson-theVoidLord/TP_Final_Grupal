@@ -44,6 +44,8 @@
    
     
 
+
+
     <div style="height: 70px; width: 10%; float: left">&nbsp</div>
     <div style="height: 70px; width: 60%; float: left">
         <label class="col-form-label">Ingresar Usuario</label>
@@ -107,7 +109,7 @@
         <asp:TextBox ID="tbDni" CssClass="form-control" Width="80%" runat="server" AutoPostBack="True" OnTextChanged="tbDni_TextChanged" />
     </div>
     <div style="height: 70px; width: 30%; float: left">&nbsp<br />
-        <asp:CustomValidator ID="cvDni" runat="server" ControlToValidate="tbDni" ErrorMessage="* Ya existe un usuario con mismo DNI" ForeColor="Red" OnServerValidate="cvDni_ServerValidate" ValidationGroup="Grupo1"></asp:CustomValidator>
+        
         <br />
         <asp:RequiredFieldValidator ID="rfvDni" runat="server" ControlToValidate="tbDni" ErrorMessage="* El campo no puede estar vacío" ForeColor="Red" ValidationGroup="Grupo1"></asp:RequiredFieldValidator>
         <br />
@@ -181,7 +183,7 @@
 
         <div style="height: 70px; width: 10%; float: left">&nbsp</div>
     <div style="height: 70px; width: 60%; float: left">
-        <asp:Button ID="btnRegistrarseRegistro" Text="Registrarse" CssClass="btn btn-danger" runat="server" Width="80%" OnClick="btnRegistrarseRegistro_Click" ValidationGroup="Grupo1" />
+        <asp:Button ID="btnRegistrarseRegistro" Text="Registrarse" CssClass="btn btn-danger" runat="server" Width="80%"  OnClick="btnRegistrarseRegistro_Click" ValidationGroup="Grupo1" />
     </div>
     <div style="height: 70px; width: 30%; float: left">&nbsp</div>
 

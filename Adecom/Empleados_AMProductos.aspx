@@ -23,9 +23,12 @@
 
     <div style="float: left; width: 100%; text-align:start">
         <asp:Label id="lbl_Notificaciones" class=" text-danger" Text="" runat="server" /></div>
-    <div style="float: left; width: 10%; text-align: end">ID Hardware:&nbsp</div>
+    <div style="float: left; width: 10%; text-align: end">
+        <asp:Label id="lbl_idhardware" Text="ID Hardware:" runat="server" />&nbsp</div>
     <div style="float: left; width: 90%">
-        <asp:TextBox ID="tb_IDHardware" class=" form-control" Width="60%" runat="server" Enabled="False" /></div>
+        <asp:TextBox ID="tb_IDHardware" class=" form-control" Width="60%" runat="server" Enabled="False" />
+        <asp:RequiredFieldValidator id="rfvidhardware" text="* El campo no puede quedar vacio" ControlToValidate="tb_IDHardware" ForeColor="Red" runat="server" />
+    </div>
     <div style="float: left; height: 10px; width: 100%">&nbsp</div>
     <div style="float: left; width: 10%; text-align: end">Categoria:&nbsp</div>
     <div style="float: left; width: 90%">
@@ -36,24 +39,36 @@
     <div style="float: left; width: 10%; text-align: end">Nombre:&nbsp</div>
     <div style="float: left; width: 90%">
         <asp:TextBox ID="tb_Nombre" class=" form-control" Width="60%" runat="server" />
+        <asp:RequiredFieldValidator id="rfvtb_Nombre" text="* El campo no puede quedar vacio" ControlToValidate="tb_Nombre" ForeColor="Red" runat="server" />
     </div>
     <div style="float: left; height: 10px; width: 100%">&nbsp</div>
     <div style="float: left; width: 10%; text-align: end">Descripcion:&nbsp</div>
     <div style="float: left; width: 90%">
-        <asp:TextBox ID="tb_Descripcion" class=" form-control" Width="60%" runat="server" /></div>
+        <asp:TextBox ID="tb_Descripcion" class=" form-control" Width="60%" runat="server" />
+        <asp:RequiredFieldValidator id="rfvtb_descripcion" text="* El campo no puede quedar vacio" ControlToValidate="tb_Descripcion" ForeColor="Red" runat="server" />
+    </div>
     <div style="float: left; height: 10px; width: 100%">&nbsp</div>
     <div style="float: left; width: 10%; text-align: end">Imagen:&nbsp</div>
     <div style="float: left; width: 90%">
-        <asp:TextBox ID="tb_Imagen" class=" form-control" Width="60%" runat="server" /></div>
+        <asp:TextBox ID="tb_Imagen" class=" form-control" Width="60%" runat="server" />
+
+        <asp:RequiredFieldValidator id="rfvtb_Imagen" text="* El campo no puede quedar vacio" ControlToValidate="tb_Imagen" ForeColor="Red" runat="server" />
+    </div>
     <div style="float: left; height: 10px; width: 100%">&nbsp</div>
     <div style="float: left; width: 10%; text-align: end">Precio:&nbsp</div>
     <div style="float: left; width: 90%">
-        <asp:TextBox ID="tb_Precio" class=" form-control" Width="60%" runat="server" /></div>
+        <asp:TextBox ID="tb_Precio" class=" form-control" Width="60%" runat="server" />
+        <asp:RequiredFieldValidator id="rfvtb_Precio" text="* El campo no puede quedar vacio" ControlToValidate="tb_Precio" ForeColor="Red" runat="server" />    
+    </div>
+
     <div style="float: left; height: 10px; width: 100%">&nbsp</div>
-    <div style="float: left; width: 10%; text-align: end">Estado:&nbsp</div>
+    <div style="float: left; width: 10%; text-align: end">
+        <asp:Label id="lbl_Estado" Text="Estado:" runat="server" />&nbsp</div>
     <div style="float: left; width: 90%">
-        <asp:TextBox ID="tb_Estado" class=" form-control" Width="60%" runat="server" Enabled="False" /></div>
-    
+        <asp:TextBox ID="tb_Estado" class=" form-control" Width="60%" runat="server" Enabled="False" />
+        <asp:RequiredFieldValidator id="rfvtb_Estado" text="* El campo no puede quedar vacio" ControlToValidate="tb_Estado" ForeColor="Red" runat="server" />
+    </div>
+
     <div style="float:left;height:60px;width:100%">&nbsp</div>
 
     <div style="float:left;width:10%">&nbsp</div>

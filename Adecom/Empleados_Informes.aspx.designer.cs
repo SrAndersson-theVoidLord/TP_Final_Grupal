@@ -22,6 +22,15 @@ namespace Adecom {
         protected global::System.Web.UI.WebControls.TextBox tbfechadesde;
         
         /// <summary>
+        /// Control rfvtbfechadesde.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvtbfechadesde;
+        
+        /// <summary>
         /// Control tbfechahasta.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,24 @@ namespace Adecom {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbfechahasta;
+        
+        /// <summary>
+        /// Control rfvfechahasta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvfechahasta;
+        
+        /// <summary>
+        /// Control cvfechas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvfechas;
         
         /// <summary>
         /// Control btnBuscar.

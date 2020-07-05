@@ -25,10 +25,13 @@
     <div>
         Fecha desde :  
         <asp:TextBox id="tbfechadesde"  type="date" runat="server" />
+        &nbsp<asp:RequiredFieldValidator id="rfvtbfechadesde" text="Debe ingresar una fecha!" ControlToValidate="tbfechadesde" ForeColor="Red" runat="server" />
     </div>
     <div>
         Fecha Hasta :  
         <asp:TextBox id="tbfechahasta"  type="date" runat="server" />
+    &nbsp<asp:RequiredFieldValidator id="rfvfechahasta" text="Debe ingresar una fecha!" ControlToValidate="tbfechahasta" ForeColor="Red" runat="server" />
+      <br />&nbsp  <asp:CompareValidator  ControlToValidate="tbfechahasta" runat="server" ID="cvfechas" ControlToCompare="tbfechadesde" ForeColor="Red" Text="La fecha ingresada debe ser mayor o igual a la fecha desde!!" Type="Date" Operator="GreaterThanEqual" />
     </div>
     <div>
           

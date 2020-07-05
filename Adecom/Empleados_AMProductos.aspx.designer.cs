@@ -31,6 +31,15 @@ namespace Adecom {
         protected global::System.Web.UI.WebControls.Label lbl_Notificaciones;
         
         /// <summary>
+        /// Control lbl_idhardware.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_idhardware;
+        
+        /// <summary>
         /// Control tb_IDHardware.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace Adecom {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_IDHardware;
+        
+        /// <summary>
+        /// Control rfvidhardware.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvidhardware;
         
         /// <summary>
         /// Control ddl_Categoria.
@@ -58,6 +76,15 @@ namespace Adecom {
         protected global::System.Web.UI.WebControls.TextBox tb_Nombre;
         
         /// <summary>
+        /// Control rfvtb_Nombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvtb_Nombre;
+        
+        /// <summary>
         /// Control tb_Descripcion.
         /// </summary>
         /// <remarks>
@@ -65,6 +92,15 @@ namespace Adecom {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_Descripcion;
+        
+        /// <summary>
+        /// Control rfvtb_descripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvtb_descripcion;
         
         /// <summary>
         /// Control tb_Imagen.
@@ -76,6 +112,15 @@ namespace Adecom {
         protected global::System.Web.UI.WebControls.TextBox tb_Imagen;
         
         /// <summary>
+        /// Control rfvtb_Imagen.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvtb_Imagen;
+        
+        /// <summary>
         /// Control tb_Precio.
         /// </summary>
         /// <remarks>
@@ -85,6 +130,24 @@ namespace Adecom {
         protected global::System.Web.UI.WebControls.TextBox tb_Precio;
         
         /// <summary>
+        /// Control rfvtb_Precio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvtb_Precio;
+        
+        /// <summary>
+        /// Control lbl_Estado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Estado;
+        
+        /// <summary>
         /// Control tb_Estado.
         /// </summary>
         /// <remarks>
@@ -92,6 +155,15 @@ namespace Adecom {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_Estado;
+        
+        /// <summary>
+        /// Control rfvtb_Estado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvtb_Estado;
         
         /// <summary>
         /// Control btn_Modificar.
