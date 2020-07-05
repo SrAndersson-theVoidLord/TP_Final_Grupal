@@ -21,14 +21,16 @@ namespace Negocio
 
         }
 
-        public List<Hardware> listar()
+        public List<Hardware> listar(string estado,string categoria)
         {
             List<Hardware> lista = new List<Hardware>();
             Hardware aux;
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearQuery("SELECT Id_Hardware_HAR,Categoria_HAR,Nombre_HAR,Descripcion_HAR,Imagen_HAR as Imagen,Precio_HAR,Estado_HAR FROM Hardware where Estado_HAR = 1"); 
+                datos.setearQuery("SELECT Id_Hardware_HAR,Categoria_HAR,Nombre_HAR,Descripcion_HAR,Imagen_HAR as Imagen,Precio_HAR,Estado_HAR FROM Hardware where Estado_HAR = @Estado and Categoria_HAR like @Categoria");
+                datos.agregarParametro("@Estado", estado);
+                datos.agregarParametro("@Categoria", categoria);
                 datos.ejecutarLector();
                 while (datos.lector.Read())
                 {
@@ -61,6 +63,51 @@ namespace Negocio
                 datos = null;
             }
         }
+
+
+        public Hardware buscarhardware(int id)
+        {
+            
+            Hardware aux = new Hardware(); ;
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearQuery("SELECT Id_Hardware_HAR,Categoria_HAR,Nombre_HAR,Descripcion_HAR,Imagen_HAR as Imagen,Precio_HAR,Estado_HAR FROM Hardware where Id_Hardware_HAR = @Id");
+                datos.agregarParametro("Id", id);
+                datos.ejecutarLector();
+                while (datos.lector.Read())
+                {
+                    aux.Id_hardware = (int)datos.lector["id_Hardware_HAR"];
+                    aux.Categoria = new CategoriaHardware();
+                    aux.Categoria.Id_categoria = (string)datos.lector["Categoria_HAR"];
+                    aux.Nombre = (string)datos.lector["Nombre_HAR"];
+                    aux.Descripcion = (string)datos.lector["Descripcion_HAR"];
+                    aux.Imagen = datos.lector["Imagen"].ToString();
+                    if (aux.Imagen.StartsWith("~"))
+                    {
+                        aux.Imagen = aux.Imagen.Substring(1);
+                    }
+                    aux.Precio_unitario = (double)datos.lector["Precio_HAR"];
+                    aux.Estado = (Boolean)datos.lector["Estado_HAR"];
+
+                   
+                }
+                return aux;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+                datos = null;
+            }
+        }
+
+
+
 
         public Hardware get_HardwareNegocio(int id)
         {

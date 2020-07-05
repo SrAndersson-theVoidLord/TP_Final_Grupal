@@ -117,7 +117,7 @@ namespace Dao
                 adaptador = new SqlDataAdapter(consultaSql, cn);
                 return adaptador;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }

@@ -44,15 +44,17 @@ namespace Adecom
         {
             Hardware h = new Hardware();
             HardwareNegocio negocio = new HardwareNegocio();
-            List<Hardware> listah;
+            
             try
             {
                 var hardwareseleccionado = Convert.ToInt32(Request.QueryString["idhw"]);
                 if(hardwareseleccionado > 0 )
-                { 
-                listah = negocio.listar();
-                h = listah.Find(J => J.Id_hardware == hardwareseleccionado);
+                {
 
+                 btnAgregar.Visible = false;
+                    btn_Modificar.Visible = true;
+                    btn_Eliminar.Visible = true;
+                h = negocio.buscarhardware(hardwareseleccionado);
                 tb_IDHardware.Text = h.Id_hardware.ToString();
                 ddl_Categoria.SelectedValue = h.Categoria.Id_categoria.ToString();
                 tb_Nombre.Text = h.Nombre.ToString();
@@ -60,6 +62,13 @@ namespace Adecom
                 tb_Imagen.Text = h.Imagen.ToString();
                 tb_Precio.Text = h.Precio_unitario.ToString();
                 tb_Estado.Text = h.Estado.ToString();
+                }
+                else
+                {
+                    btnAgregar.Visible = true;
+                    btn_Modificar.Visible = false;
+                    btn_Eliminar.Visible = false;
+
                 }
 
             }

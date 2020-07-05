@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Dominio;
+using Negocio;
 
 namespace Adecom
 {
@@ -29,13 +30,27 @@ namespace Adecom
                 
                 btnCerrarSesion.Enabled = true;
                 btnCerrarSesion.Visible = true;
+                if(tipousuarioregistrado() == "Empleado")
+                {
+                    hlVerCarrito.Visible = false;
+                    hlPaginaPrincipal.Enabled = false;
+                }
+                else
+                {
+                    hlVerCarrito.Visible = true ;
+                    hlPaginaPrincipal.Enabled = true;
+                }
+
+
             }
             else
             {
                 
                 hlIniciarSesion.Enabled = true;
                 hlIniciarSesion.Text = "Iniciar Sesion";
-                
+                hlVerCarrito.Visible = true;
+                hlPaginaPrincipal.Enabled = true;
+
                 btnCerrarSesion.Enabled = false;
                 btnCerrarSesion.Visible = false;
 
@@ -48,5 +63,30 @@ namespace Adecom
             Response.Redirect("/Login.aspx");
 
         }
+
+        public String tipousuarioregistrado()
+        {
+            if (Session["usuariovalidado"] != null)
+            {
+                UsuarioNegocio un = new UsuarioNegocio();
+                Usuario usuariologin = new Usuario();
+                usuariologin = (Usuario)Session["usuariovalidado"];
+                Usuario aux = new Usuario();
+                aux = un.Validar_DNI_Empleado(usuariologin.Dni);
+                if (aux.Dni == usuariologin.Dni)
+                {
+                    return "Empleado";
+                }
+                else
+                {
+                    return "null";
+                }
+            }
+            return "null";
+        }
+
+
+
+
     }
 }

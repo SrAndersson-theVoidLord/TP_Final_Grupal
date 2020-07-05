@@ -20,12 +20,73 @@
 
 
     <div class="d-flex p-2 bd-highlight">
-        <a class="btn btn-outline-secondary btn-lg border-dark w-25" href="#">Productos mas Vendidos</a>
-        <a class="btn btn-outline-secondary btn-lg border-dark w-50" href="#">Facturacion por Fechas</a>
-        <a class="btn btn-outline-secondary btn-lg border-dark w-25" href="#">Productividad Empleados</a>
-
+        <h2>Facturacion por Fechas</h2>
     </div>
+    <div>
+        Fecha desde :  
+        <asp:TextBox id="tbfechadesde"  type="date" runat="server" />
+    </div>
+    <div>
+        Fecha Hasta :  
+        <asp:TextBox id="tbfechahasta"  type="date" runat="server" />
+    </div>
+    <div>
+          
+        <asp:Button id="btnBuscar" Text="Buscar" runat="server" OnClick="btnBuscar_Click" />
+    </div>
+
+   
+
 
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+     <asp:GridView id="gvInformeVentas"  runat="server" AutoGenerateColumns="False" AutoGenerateSelectButton="True" HorizontalAlign="Center" OnSelectedIndexChanging="gvInformeVentas_SelectedIndexChanging">
+            <Columns>
+                <asp:TemplateField HeaderText="Fecha"> 
+                    <ItemTemplate >
+                        <asp:Label id="lbl_fecha" Text='<%# Bind("Venta.Fecha") %>' runat="server" />
+                    </ItemTemplate>  
+               </asp:TemplateField>            
+               <asp:TemplateField HeaderText="ID Venta"> 
+                    <ItemTemplate >
+                        <asp:Label id="lbl_idventa" Text='<%# Bind("Venta.Id_venta") %>' runat="server" />
+                </ItemTemplate>  
+                </asp:TemplateField>     
+               <asp:TemplateField HeaderText="DNI"> 
+                    <ItemTemplate >
+                        <asp:Label id="lbl_dni" Text='<%# Bind("Usuario.Dni") %>' runat="server" />
+                </ItemTemplate>  
+                </asp:TemplateField>     
+               
+                
+                
+                <asp:TemplateField HeaderText="Nombre"> 
+                 <ItemTemplate >
+                        <asp:Label id="lbl_nombre" Text='<%# Bind("Usuario.Nombre") %>' runat="server" />
+                </ItemTemplate>  
+                </asp:TemplateField>
+               <asp:TemplateField HeaderText="Apellido"> 
+                    <ItemTemplate >
+                        <asp:Label id="lbl_Apellido" Text='<%# Bind("Usuario.Apellido") %>' runat="server" />
+                </ItemTemplate>  
+                </asp:TemplateField>    
+
+               <asp:TemplateField HeaderText="Total"> 
+                    <ItemTemplate >
+                        <asp:Label id="lbl_Total" Text='<%# Bind("Venta.Total") %>' runat="server" />
+                </ItemTemplate>  
+                </asp:TemplateField>    
+
+
+            </Columns>
+            <SelectedRowStyle BackColor="#CCFFCC" />
+     </asp:GridView>
+    <div style="height:10px">&nbsp</div>
+     <div >Detalle de Factura Seleccionada :</div>
+    <div>
+        <asp:GridView id="gvDetalleVentas"  runat="server" HorizontalAlign="Center"> </asp:GridView>
+
+    </div>
+
 </asp:Content>
