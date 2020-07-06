@@ -30,7 +30,7 @@
     <div style="height: 70px; width: 10%; float: left">&nbsp</div>
     <div style="height: 70px; width: 60%; float: left">
         <label class="col-form-label">Usuario</label> <asp:Label id="lblusuarionoencontrado" runat="server" ForeColor="Red" />
-        <asp:TextBox ID="tbUsuario" CssClass="form-control" Width="80%" runat="server" />
+        <asp:TextBox ID="tbUsuario" CssClass="form-control" Width="80%" runat="server" MaxLength="15" />
         <asp:RequiredFieldValidator ErrorMessage="Debe Ingresar un Usuario!" ControlToValidate="tbUsuario" Text="Debe ingresar un usuario!!" ForeColor="Red" runat="server" ValidationGroup="Iniciosesion" />
     </div>
     <div style="height: 70px; width: 30%; float: left">&nbsp</div>
@@ -40,7 +40,7 @@
     <div style="height: 70px; width: 10%; float: left">&nbsp</div>
     <div style="height: 70px; width: 60%; float: left">
         <label class="col-form-label">Contraseña</label>
-        <asp:TextBox ID="tbContraseña" CssClass="form-control" Width="80%" runat="server" />
+        <asp:TextBox ID="tbContraseña" CssClass="form-control" Width="80%" runat="server" MaxLength="15" TextMode="Password" />
         <asp:RequiredFieldValidator ErrorMessage="Debe ingresar una contraseña!!" Text="Debe ingresar una contraseña !!" ForeColor="Red" ControlToValidate="tbContraseña" runat="server" ValidationGroup="Iniciosesion" />
     </div>
     <div style="height: 70px; width: 30%; float: left">&nbsp</div>

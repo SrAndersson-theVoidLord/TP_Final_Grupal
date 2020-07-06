@@ -38,19 +38,19 @@
     <div style="float: left; height: 10px; width: 100%">&nbsp</div>
     <div style="float: left; width: 10%; text-align: end">Nombre:&nbsp</div>
     <div style="float: left; width: 90%">
-        <asp:TextBox ID="tb_Nombre" class=" form-control" Width="60%" runat="server" />
+        <asp:TextBox ID="tb_Nombre" class=" form-control" Width="60%" runat="server" MaxLength="150" />
         <asp:RequiredFieldValidator id="rfvtb_Nombre" text="* El campo no puede quedar vacio" ControlToValidate="tb_Nombre" ForeColor="Red" runat="server" />
     </div>
     <div style="float: left; height: 10px; width: 100%">&nbsp</div>
     <div style="float: left; width: 10%; text-align: end">Descripcion:&nbsp</div>
     <div style="float: left; width: 90%">
-        <asp:TextBox ID="tb_Descripcion" class=" form-control" Width="60%" runat="server" />
+        <asp:TextBox ID="tb_Descripcion" class=" form-control" Width="60%" runat="server" MaxLength="1000" />
         <asp:RequiredFieldValidator id="rfvtb_descripcion" text="* El campo no puede quedar vacio" ControlToValidate="tb_Descripcion" ForeColor="Red" runat="server" />
     </div>
     <div style="float: left; height: 10px; width: 100%">&nbsp</div>
     <div style="float: left; width: 10%; text-align: end">Imagen:&nbsp</div>
     <div style="float: left; width: 90%">
-        <asp:TextBox ID="tb_Imagen" class=" form-control" Width="60%" runat="server" />
+        <asp:TextBox ID="tb_Imagen" class=" form-control" Width="60%" runat="server" MaxLength="256" />
 
         <asp:RequiredFieldValidator id="rfvtb_Imagen" text="* El campo no puede quedar vacio" ControlToValidate="tb_Imagen" ForeColor="Red" runat="server" />
     </div>
